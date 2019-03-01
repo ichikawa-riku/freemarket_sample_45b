@@ -111,7 +111,7 @@
 ## Association
 
 
-##categoriesテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |large_category|references|null: false, foreign_key: true|
