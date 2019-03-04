@@ -78,8 +78,6 @@ GEM
     excon (0.62.0)
     execjs (2.7.0)
     ffi (1.10.0)
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
     fog-aws (3.3.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -246,11 +244,6 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   erb2haml
-<<<<<<< HEAD
-  font-awesome-rails
-  haml-rails
-=======
->>>>>>> Ykum4/master
   fog-aws
   font-awesome-rails
   haml-rails
