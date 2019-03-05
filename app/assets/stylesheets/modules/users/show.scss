@@ -1,4 +1,4 @@
-.mypage-top {
+.mypage-all {
   margin: 0;
   padding: 0;
   border-style: solid;
@@ -11,10 +11,6 @@
   color: #000;
   min-height: 100%;
 
-  header {
-  height: 90px;
-  }
-
   .bread-crumbs {
     border-top: 1px solid #eee;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
@@ -22,10 +18,10 @@
     background-color: #fff;
   }
 
-  .content {
+  .mypage-body {
     margin: 40px auto;
     width: 1020px;
-    &__right {
+    &__main {
       float: right;
       width: 700px;
 
@@ -97,7 +93,7 @@
               line-height: 72px;
             }
           }
-          .active {
+          .notification {
             background-color: #fff;
             a {
               border-top: 2px solid #ea352d;
@@ -196,7 +192,7 @@
               line-height: 72px;
             }
           }
-          .active {
+          .trading {
             background-color: #fff;
             a {
               border-top: 2px solid #ea352d;

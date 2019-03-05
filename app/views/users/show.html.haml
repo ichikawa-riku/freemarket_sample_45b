@@ -1,18 +1,17 @@
-.mypage-top
+.mypage-all
   %header
-    = render "/shared/logo-header"
+    = render "shared/logo-header"
 
   %nav.bread-crumbs
 
-  %main.content.clearfix
+  %main.mypage-body.clearfix
 
-    .content__right
+    .mypage-body__main
       %section.mypage-user-icon
-        = link_to ""
-        %a{href: "ユーザープロフィールページへ"}
+        = link_to "#" do
           %figure
             = image_tag "icon.png", alt: 'ユーザーアイコン'
-          %h2.bold ユーザー名
+          %h2 ユーザー名
           .mypage-number
             %p
               評価
@@ -23,11 +22,11 @@
 
       %section.mypage-tab-notification-todo
         %ul.mypage-tabs
-          %li.active
+          %li.notification
             %h3
               %a{:href => ""}
                 お知らせ
-          %li
+          %li.todo
             %h3
               %a{:href => ""}
                 やることリスト
@@ -89,11 +88,11 @@
       %section.mypage-tab-trading-traded
         %h2.mypage-tab-head 購入した商品
         %ul.mypage-tabs
-          %li.active
+          %li.trading
             %h3
               %a{:href => ""}
                 取引中
-          %li
+          %li.traded
             %h3
               %a{:href => ""}
                 過去の取引
@@ -103,9 +102,6 @@
               %img.file{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
             .traded-list__not-found 取引中の商品がありません
 
+    = render "shared/mypage-sidebar"
 
-    .content__sidebar
-      = render "shared/mypage-sidebar"
-
-  %footer
-    = render "shared/logo-footer"
+  = render "shared/logo-footer"
