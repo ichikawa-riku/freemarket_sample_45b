@@ -1,0 +1,52 @@
+.single-container
+  = render 'shared/logo-header'
+  %main.single-main
+    %section.l-single-container.buy-item-container
+      %h2.l-single-head 購入を確定しますか？
+      %section.buy-content.buy-item
+        .buy-content-inner
+          %h3.buy-item-image
+            %img.lazyload{:alt => "div", :src => "https://1.bp.blogspot.com/-e7Hvw2yizl0/VtoxsbG6o0I/AAAAAAAA4dI/WuU7SgoKgZQ/s800/building_kaisya_small.png",:width => "160", :height => "160"}/
+          %p.buy-item-name.bold 株式会社div
+          %form.buy-form{:action => "https://www.mercari.com/jp/transaction/buy/done/m99196646477/", :method => "POST", :novalidate => "novalidate"}
+            %p.buy-price-ja.bold
+              ¥ 980
+              %span.item-shipping-fee.f14.bold 送料込み
+            %ul.buy-accordion.not-have
+              %li.accordion-parent
+                .accordion-toggle
+                  ポイントはありません
+            %ul.buy-price-table
+              %li.buy-price-row.buy-you-pay.bold
+                .buy-price-cell 支払い金額
+                .buy-price-cell
+                  %span{"data-buy-pay" => "980"} ¥ 980
+
+            %button.btn-default.btn-red.bold{:type => "submit"} 購入する
+      %section.buy-content.buy-user-info
+        .buy-content-inner
+          %h3 配送先
+          %address.buy-user-info-text
+            〒144-0052
+            %br/
+            東京都 港区六本木６ 六本木ヒルズレジデンスB棟
+            %br/
+            奥名 優次
+          %p.buy-user-info-text
+          = link_to root_path , class: "buy-user-info-fix" do
+            %span 変更する
+            = fa_icon 'angle-right'
+      %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
+        .buy-content-inner
+          %h3 支払い方法
+          %p.buy-user-info-text
+            ************9106
+            %br/
+            11 / 23
+          %figure
+            %img{:alt => "master-card", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2855175014", :width => "34"}/
+          %p
+          = link_to root_path , class: "buy-user-info-fix" do
+            %span 変更する
+            = fa_icon 'angle-right'
+  = render 'shared/logo-footer'
