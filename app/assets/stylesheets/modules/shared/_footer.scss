@@ -1,0 +1,55 @@
+.footerAll {
+  padding: 60px 0;
+  text-align: center;
+  background-color: #212121;
+  color: #fff;
+  nav {
+    width: 80%;
+    margin: 0 auto;
+  }
+  &__cell {
+    display: inline-block;
+    width: 20%;
+    margin: 0 2% 0 0;
+    vertical-align: top;
+    li {
+      margin: 16px 0 0;
+     a {
+        text-decoration-line: none;
+        color: white;
+        font-size: 14px;
+        display: block;
+      }
+    }
+    &--head {
+      font-size: 16px;
+    }
+  }
+}
+
+.footer-logo {
+    display: block;
+    margin: 40px 0 0;
+    text-align: center;
+}
+.footer-sell-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    z-index: 1000;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #ea352d;
+    color: #fff;
+    text-align: center;
+    text-decoration-line: none;
+}
+.footer-sell-btn div {
+  font-size: 20px;
+  margin: 32px 0 0;
+}
+
+.footer-sell-btn i {
+  font-size: 60px;
+}
