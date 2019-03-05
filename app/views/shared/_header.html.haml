@@ -1,22 +1,24 @@
-.pc-header-inner
+.pc-header__inner
   %h1.logo-left
-    %a{:href => "https://www.mercari.com/jp/"}
-      %img{:alt => "mercari", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1445690901"}/
-    %form.pc-header-form{:action => "https://www.mercari.com/jp/search/"}
+    = link_to root_path do
+      = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1445690901")
+    = form_tag(root_path, method: :get,class: "pc-header__form",enforce_utf8: false ) do
       %input.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
       %i.fas.fa-search
-  .pc-header-nav-box
+  .pc-header__navbox
     .l-left
-      %ul.pc-header-nav
+      %ul.pc-header__nav
         %li
           %h2
-            %a.pc-header-nav-root{:href => "#"} カテゴリーから探す
+            = link_to root_path ,class: "pc-header__nav-root" do
+              カテゴリーから探す
         %li
           %h2
-            %a.pc-header-nav-root{:href => "#"} ブランドから探す
+            = link_to root_path ,class: "pc-header__nav-root" do
+              ブランドから探す
     .l-right
-      %ul.pc-header-login-nav
+      %ul.pc-header__login-nav
         %li
-          %a.pc-header-btn.btn-red{:href => "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F"} ログイン
+          %a.pc-header__btn--btn-red{:href => "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F"} ログイン
         %li
-          %a.pc-header-btn.header-signup{:href => "https://www.mercari.com/jp/signup/"} 新規会員登録
+          %a.pc-header__btn--signup{:href => "https://www.mercari.com/jp/signup/"} 新規会員登録
