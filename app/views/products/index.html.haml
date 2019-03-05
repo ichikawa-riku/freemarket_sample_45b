@@ -1,0 +1,52 @@
+.default-container
+  %header.pc-header.visible-pc
+    = render 'shared/header'
+
+    %main.white{:role => "main"}
+      .owl-item.active
+        %img{:src => "https://www.mercari.com/jp/assets/img/common/jp/top/banner-new-life.jpg"}/
+        %a.top-banner.banner-new-life{:href => "#"}
+      %section.pickup-container
+        %h2.pickup-head ピックアップカテゴリー
+        %section.items-box-container.clearfix
+          %h3.text-center
+            %a{:href => "#"} レディース 新着アイテム
+          .items-box-content.clearfix
+            %section.items-box
+              %img{:src => "https://images-na.ssl-images-amazon.com/images/I/51E-p2sSp8L._UX522_.jpg"}/
+            %section.items-box
+              %img{:src => "https://images-na.ssl-images-amazon.com/images/I/51E-p2sSp8L._UX522_.jpg"}/
+            %section.items-box
+              %img{:src => "https://images-na.ssl-images-amazon.com/images/I/51E-p2sSp8L._UX522_.jpg"}/
+            %section.items-box
+              %img{:src => "https://images-na.ssl-images-amazon.com/images/I/51E-p2sSp8L._UX522_.jpg"}/
+        %section.items-box-container.clearfix
+          %h3.text-center
+            %a{:href => "#"} メンズ 新着アイテム
+        %section.items-box-container.clearfix
+          %h3.text-center
+            %a{:href => "#"} ベビー・キッズ 新着アイテム
+        %section.items-box-container.clearfix
+          %h3.text-center
+            %a{:href => "#"} コスメ・香水・美容 新着アイテム
+        %h2.pickup-head ピックアップブランド
+        %section.items-box-container.clearfix
+          %h3.text-center
+            %a{:href => "#"} シャネル 新着アイテム
+        %section.items-box-container.clearfix
+          %h3.text-center
+            %a{:href => "#"} ルイ ヴィトン 新着アイテム
+        %section.items-box-container.clearfix
+          %h3.text-center
+            %a{:href => "#"} シュプリーム 新着アイテム
+        %section.items-box-container.clearfix
+          %h3.text-center
+            %a{:href => "#"} ナイキ 新着アイテム
+      %aside.app-banner
+
+        = render 'shared/footer'
+
+        %a.footer-sell-btn{:href => "https://www.mercari.com/jp/sell/"}
+          %div 出品
+          %i.fas.fa-camera
+
