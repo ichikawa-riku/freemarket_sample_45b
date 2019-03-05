@@ -34,7 +34,7 @@
             %br/
             ｏｋｕｎａ ｙｕｊｉ
           %p.buy-user-info-text
-          %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/address/m99196646477/"}
+          = link_to root_path , class: "buy-user-info-fix" do
             %span 変更する >
             %i.icon-arrow-right
       %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
@@ -47,7 +47,7 @@
           %figure
             %img{:alt => "master-card", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2855175014", :width => "34"}/
           %p
-          %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/select_card/m99196646477/"}
+          = link_to root_path , class: "buy-user-info-fix" do
             %span 変更する >
             %i.icon-arrow-right
   = render 'shared/logo-footer'
