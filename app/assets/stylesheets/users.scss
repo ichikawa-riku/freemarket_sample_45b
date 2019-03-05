@@ -227,38 +227,6 @@
       }
     }
 
-    &__left {
-      float: left;
-      width: 280px;
-      margin: 0 40px 0 0;
-      .mypage-nav {
-        &__list {
-          li {
-            border: 0;
-            border-top: 1px solid #eee;
-          }
-          &__item {
-            position: relative;
-            display: block;
-            min-height: 16px;
-            padding: 16px;
-            background: #fff;
-            .icon-arrow-right {
-              position: absolute;
-              top: 50%;
-              right: 16px;
-              color: #ccc;
-              -webkit-transform: translate(0, -50%);
-              transform: translate(0, -50%);
-            }
-          }
-        }
-        &__head {
-          margin: 40px 0 8px ;
-          font-size: 16px;
-        }
-      }
-    }
   }
 
   .clearfix:after {
@@ -288,7 +256,7 @@
     right: 16px;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
-    font-size: 24px;
+    font-size: 26px;
   }
   i {
   display: inline-block;
