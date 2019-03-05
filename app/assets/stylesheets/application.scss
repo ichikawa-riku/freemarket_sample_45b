@@ -1,10 +1,12 @@
 @import "./reset";
 @import "font-awesome";
-@import "modules/header";
-@import "modules/main";
-@import "modules/appbanner";
-@import "modules/footer";
+@import "modules/shared/mypage-sidebar";
+@import "modules/shared/header";
+@import "modules/shared/app_banner";
+@import "modules/shared/footer";
+@import "modules/products/index";
 @import "modules/logo-header";
 @import "modules/logo-footer";
 @import "purchases/new";
 @import "modules/single-container";
+@import "modules/users/show";

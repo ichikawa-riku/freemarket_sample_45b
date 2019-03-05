@@ -122,5 +122,19 @@ select {
 legend {
     color:#000;
 }
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
