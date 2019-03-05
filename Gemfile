@@ -61,6 +61,7 @@ gem 'fog-aws'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
+gem 'devise'
 
 group :production do
   gem 'unicorn'
