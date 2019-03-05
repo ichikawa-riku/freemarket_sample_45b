@@ -1,5 +1,6 @@
 @import "./reset";
 @import "font-awesome";
+@import "modules/shared/mypage-sidebar";
 @import "modules/products/shared/header";
 @import "modules/products/shared/app_banner";
 @import "modules/products/shared/footer";
@@ -8,3 +9,4 @@
 @import "modules/logo-footer";
 @import "purchases/new";
 @import "modules/single-container";
+@import "modules/users/show";
