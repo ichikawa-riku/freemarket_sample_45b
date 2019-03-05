@@ -41,9 +41,6 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'haml-rails'
-  gem 'erb2haml'
-  gem 'font-awesome-rails'
 end
 
 group :development do
@@ -61,7 +58,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mysql2'
 gem 'carrierwave'
 gem 'fog-aws'
-
+gem 'haml-rails'
+gem 'erb2haml'
+gem 'font-awesome-rails'
+gem 'devise'
 
 group :production do
   gem 'unicorn'
