@@ -6,7 +6,7 @@
       %input.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
       %i.fas.fa-search
   .pc-header__navbox
-    .l-left
+    .dropbox
       %ul.pc-header__nav
         %li
           %h2
@@ -16,7 +16,7 @@
           %h2
             = link_to root_path ,class: "pc-header__nav-root" do
               ブランドから探す
-    .l-right
+    .loginRegister
       %ul.pc-header__login-nav
         %li
           %a.pc-header__btn--btn-red{:href => "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F"} ログイン
