@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :edit] do
     resources :user_details, only: [:new, :create, :edit, :update, :show]
+    resources :credit_cards, only: [:new, :edit]
   end
 
 
