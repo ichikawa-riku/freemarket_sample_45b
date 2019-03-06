@@ -4,8 +4,10 @@
   margin: 0 40px 0 0;
   .mypage-nav {
     &__list {
-      li {
+      li:first-child {
         border: 0;
+      }
+      li {
         border-top: 1px solid #eee;
       }
       &__item {
