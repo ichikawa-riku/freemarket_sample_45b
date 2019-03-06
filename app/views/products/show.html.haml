@@ -103,13 +103,13 @@
     %br
     チャームがないのを届いて数日後に知ったので、初めからなかったのか？よくわからないのでご了承願います。チャームを外して送る事も可能です。箱あり箱なしも可能です！
   .product-page-detail__buttons
-    =button_tag "", class: "product-page-detail__buttons--liked" do
+    = button_tag "", class: "product-page-detail__buttons--liked" do
       = fa_icon "heart lg"
       %span
         いいね!
       %span
         12
-    =link_to "", class: "product-page-detail__buttons--report" do
+    = link_to "", class: "product-page-detail__buttons--report" do
       = fa_icon "flag lg"
       %span
         不適切な商品の報告
@@ -122,7 +122,7 @@
     %ul.product-page-comment__messages.item-messages
       %li.item-messages__message.clearfix
         .item-messages__message--user
-          =link_to "" do
+          = link_to "" do
             %figure.message-user
               .message-user__image
                 %image{ src: "https://img.buzzfeed.com/buzzfeed-static/static/2018-01/19/4/enhanced/buzzfeed-prod-fastlane-01/longform-original-6927-1516353932-3.jpg?downsize=1600:*&output-format=auto&output-quality=auto" }
@@ -135,7 +135,7 @@
             =fa_icon "clock lg", text:"６日前"
       %li.item-messages__message.clearfix
         .item-messages__message--user
-          =link_to "" do
+          = link_to "" do
             %figure.message-user
               .message-user__image
                 %image{ src: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg" }
@@ -156,13 +156,13 @@
 
 %ul.product-page-prev-next-link.clearfix
   %li.product-page-prev-next-link__prev
-    =link_to "", class: "clearfix" do
-      =fa_icon "angle-left lg", class: "product-page-prev-next-link__prev--icon"
+    = link_to "", class: "clearfix" do
+      = fa_icon "angle-left lg", class: "product-page-prev-next-link__prev--icon"
       %span.product-page-prev-next-link__prev--item-name
         未使用 TED BAKER 名刺入れ
   %li.product-page-prev-next-link__next
-    =link_to "", class: "clearfix"  do
-      =fa_icon "angle-right lg", class: "product-page-prev-next-link__next--icon"
+    = link_to "", class: "clearfix"  do
+      = fa_icon "angle-right lg", class: "product-page-prev-next-link__next--icon"
       %span.product-page-prev-next-link__next--item-name
         bulle de savon　波の刺繍スカート
 
