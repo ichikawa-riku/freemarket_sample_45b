@@ -1,0 +1,260 @@
+.sell-container-inner {
+  .sell-form {
+    border-top: 1px solid #eee;
+  }
+  .sell-form-box {
+    float: right;
+    width: 400px;
+    margin: 0;
+  }
+  .form-group:first-child{
+    margin-top: 0;
+  }
+  .form-group {
+    margin-top: 40px;
+  }
+  .sell-upload-box {
+    width: 620px;
+    height: 303px;
+    padding: 40px;
+  }
+  .sell-upload-head {
+    font-size: 16px !important;
+  }
+  .sell-upload-head+p {
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+  .sell-upload-items ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  .sell-upload-drop-box .icon-camera {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+  }
+  .sell-upload-drop-box pre {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    right: 16px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    pointer-events: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .form-require {
+    background: #ea352d;
+  }
+  .form-require, .form-arbitrary, .message-is-seller, .news-private {
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .sell-dropbox-container.state-image-number-10 {
+    display: block;
+    width: 620px;
+    margin: 16px auto 0;
+  }
+  .sell-dropbox-container.state-image-number-10 .sell-upload-items-container .sell-upload-items {
+    display: inline;
+  }
+  .sell-dropbox-container.state-image-number-10 .sell-upload-items-container .sell-upload-items ul {
+    display: inline;
+  }
+
+  .sell-dropbox-container.state-image-number-10 .sell-upload-drop-box.have-item-0 {
+    width: 100%;
+    height: 162px;
+    margin-left: 0;
+  }
+  .sell-dropbox-container.state-image-number-10 .sell-upload-drop-box {
+    float: right;
+    padding: 40px;
+    position: relative;
+    min-height: 80px;
+    background: #f5f5f5;
+    border: 1px dashed #ccc;
+    font-size: 0;
+    text-align: center;
+    -webkit-transition: -webkit-box-shadow ease-out .3s;
+    transition: -webkit-box-shadow ease-out .3s;
+    transition: box-shadow ease-out .3s;
+    transition: box-shadow ease-out .3s, -webkit-box-shadow ease-out .3s;
+    cursor: pointer;
+    float: right;
+    margin-left: 2%;
+  }
+
+  pre {
+    overflow: auto;
+  }
+
+  .sell-content {
+    padding: 40px;
+    border-top: 1px solid #eee;
+    .form-group:last-child {
+      margin-top: 40px;
+    }
+  }
+  .sell-content.clearfix1 {
+    height: 261px;
+  }
+  .sell-content.clearfix2 {
+    height: 371px;
+  }
+  .sell-content.clearfix3 {
+    height: 299px;
+  }
+  .form-group label {
+    font-weight: 600;
+  }
+  label {
+    display: inline-block;
+  }
+  .form-group label+.textarea-default {
+    margin: 8px 0 0;
+  }
+  .textarea-default {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 104px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .sell-sub-head {
+    color: #888;
+    font-size: 14px;
+    display: inline-block;
+  }
+  .select-wrap {
+    position: relative;
+    background: #fff;
+  }
+  .form-group select {
+    width: 100%;
+  }
+  .form-group .select-wrap {
+    margin: 8px 0 0;
+  }
+  .form-group .input-default {
+    width: 100%;
+    height: 48px;
+    margin: 8px 0 0;
+    padding: 10px 16px 8px ;
+  }
+  .select-default {
+    position: relative;
+    z-index: 2;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .form-question {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0099e8;
+    color: #fff;
+    line-height: 14px;
+    font-size: 12px;
+    text-align: center;
+    }
+  .sell-price>li:first-child {
+    padding: 0 0 24px;
+    border: 0;
+    height: 72px;
+  }
+  .sell-price>li {
+    padding: 24px 0 24px;
+    border-top: 1px solid #ccc;
+  }
+  .sell-price .form-group .l-left {
+    width: 50%;
+    line-height: 48px;
+  }
+  .sell-price .form-group .l-right {
+    width: 50%;
+  }
+  .sell-price .clearfix {
+    height: 63px;
+  }
+  .sell-price .bold .l-left {
+    font-size: 16px;
+  }
+  .sell-price .bold .l-right {
+    font-size: 34px;
+  }
+  .sell-price-input {
+    text-align: right;
+    margin: 0;
+  }
+  .sell-price-input>div {
+    display: inline-block;
+    width: 80%;
+    margin: 0 0 0 5%;
+  }
+  .sell-price-input .input-default {
+    margin: 0;
+    text-align: right;
+    width: 160px;
+  }
+  .l-right {
+    float: right;
+    padding: 0;
+  }
+  .l-left {
+    float: left;
+    padding: 0;
+  }
+  .bold {
+    font-weight: 600;
+  }
+  .sell-btn-box p {
+    line-height: 1.5;
+  }
+  .sell-btn-box {
+    .btn-red {
+      width: 100%;
+    }
+  }
+  .blue-icon {
+    color: #0099e8;
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2999;
+    background: rgba(0,0,0,0.64);
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    opacity: 0;
+  }
+}
