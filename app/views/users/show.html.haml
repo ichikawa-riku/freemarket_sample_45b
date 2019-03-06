@@ -1,15 +1,15 @@
-.mypage-all
+.mypage
   = render "shared/header"
 
   %nav.bread-crumbs
 
-  %main.mypage-body.clearfix
+  %main.mypage__body.clearfix
 
-    .mypage-body__main
+    .mypage__body__main
       %section.mypage-user-icon
         = link_to "#" do
           %figure
-            = image_tag "icon.png", alt: "ユーザーアイコン"
+            = image_tag "icon.png", alt: "ユーザーアイコン", height: "60", width: "60"
           %h2 ユーザー名
           .mypage-number
             %p
@@ -104,6 +104,15 @@
 
     = render "shared/mypage-sidebar"
 
-  = render "shared/appbanner"
+  %aside.app-banner
 
-  = render "shared/footer"
+    = render 'shared/appbanner'
+
+  %footer.footerAll
+
+    = render 'shared/footer'
+
+  %a.footer-sell-btn{:href => "https://www.mercari.com/jp/sell/"}
+    %div 出品
+    %i.fas.fa-camera
+
