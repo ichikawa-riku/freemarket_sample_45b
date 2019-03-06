@@ -3,18 +3,18 @@
     NIKE ジャージ ナイキ ナイロンジャケット ウィンドブレーカー
   .product-page-detail__main.product-page-main.clearfix
     .product-page-main__images
-      %image.product-page-main__images--main{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "product-page-main__images--main"
       .product-page-main__images--others.clearfix
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
-        %image.other-image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
         .other-image-masks.clearfix
           .other-image-masks__mask--active
           .other-image-masks__mask
@@ -125,7 +125,7 @@
           = link_to "" do
             %figure.message-user
               .message-user__image
-                %image{ src: "https://img.buzzfeed.com/buzzfeed-static/static/2018-01/19/4/enhanced/buzzfeed-prod-fastlane-01/longform-original-6927-1516353932-3.jpg?downsize=1600:*&output-format=auto&output-quality=auto" }
+                = image_tag "https://img.buzzfeed.com/buzzfeed-static/static/2018-01/19/4/enhanced/buzzfeed-prod-fastlane-01/longform-original-6927-1516353932-3.jpg?downsize=1600:*&output-format=auto&output-quality=auto"
               %figcaption.message-user__name
                 石原
         .item-messages__message--body.message-body
@@ -138,7 +138,7 @@
           = link_to "" do
             %figure.message-user
               .message-user__image
-                %image{ src: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg" }
+                = image_tag "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg"
               %figcaption.message-user__name
                 市川
         .item-messages__message--body.message-body
@@ -172,7 +172,7 @@
       市川さんの別の商品
   .clearfix
     = link_to "", class: "product-page-assosiation-items__items-box items-box--first" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -185,7 +185,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -198,7 +198,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -211,7 +211,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box--first" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -224,7 +224,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -237,7 +237,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -255,7 +255,7 @@
       市川さんの別の商品
   .clearfix
     = link_to "", class: "product-page-assosiation-items__items-box items-box--first" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -268,7 +268,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -281,7 +281,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -294,7 +294,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box--first" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -307,7 +307,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
@@ -320,7 +320,7 @@
           .item-details__tax
             (税込み)
     = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      %image.items-box__image{ src:"https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" }
+      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
       .items-box__body
         .items-box__body--details.item-details.clearfix
           %h3.item-details__name
