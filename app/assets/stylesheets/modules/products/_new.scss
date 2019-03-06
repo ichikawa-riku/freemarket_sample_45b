@@ -6,16 +6,16 @@
     float: right;
     width: 400px;
     margin: 0;
-    .form-group:first-child {
-      margin-top: 0;
-    }
-    .form-group{
-      margin-top: 40px;
-    }
+  }
+  .form-group:first-child{
+    margin-top: 0;
+  }
+  .form-group {
+    margin-top: 40px;
   }
   .sell-upload-box {
     width: 620px;
-    height: 223px;
+    height: 303px;
     padding: 40px;
   }
   .sell-upload-head {
@@ -77,8 +77,8 @@
   }
 
   .sell-dropbox-container.state-image-number-10 .sell-upload-drop-box.have-item-0 {
-    width: 538px;
-    height: 80px;
+    width: 100%;
+    height: 162px;
     margin-left: 0;
   }
   .sell-dropbox-container.state-image-number-10 .sell-upload-drop-box {
@@ -111,13 +111,13 @@
     }
   }
   .sell-content.clearfix1 {
-    height: 180px;
+    height: 261px;
   }
   .sell-content.clearfix2 {
-    height: 290px;
+    height: 371px;
   }
   .sell-content.clearfix3 {
-    height: 218px;
+    height: 299px;
   }
   .form-group label {
     font-weight: 600;
@@ -130,7 +130,7 @@
   }
   .textarea-default {
     display: block;
-    width: 96.5%;
+    width: 100%;
     max-width: 100%;
     min-height: 104px;
     padding: 10px;
@@ -155,8 +155,8 @@
     margin: 8px 0 0;
   }
   .form-group .input-default {
-    width: 94.5%;
-    height: 28px;
+    width: 100%;
+    height: 48px;
     margin: 8px 0 0;
     padding: 10px 16px 8px ;
   }
@@ -186,10 +186,10 @@
   .sell-price>li:first-child {
     padding: 0 0 24px;
     border: 0;
-    height: 48px;
+    height: 72px;
   }
   .sell-price>li {
-    padding: 24px 0 10px;
+    padding: 24px 0 24px;
     border-top: 1px solid #ccc;
   }
   .sell-price .form-group .l-left {
@@ -200,7 +200,7 @@
     width: 50%;
   }
   .sell-price .clearfix {
-    height: 28px;
+    height: 63px;
   }
   .sell-price .bold .l-left {
     font-size: 16px;
@@ -220,7 +220,7 @@
   .sell-price-input .input-default {
     margin: 0;
     text-align: right;
-    width: 126px;
+    width: 160px;
   }
   .l-right {
     float: right;
