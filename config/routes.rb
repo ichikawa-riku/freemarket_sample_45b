@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'products#index'
+
   get  'users/signout'  =>  'users#signout'
+
+  get '/users/identification' => 'users#identification'
+
   resources :products, only: [:show, :new, :create] do
     resources :purchases, only: [:new, :create]
   end
