@@ -8,27 +8,11 @@
       .product-page-main__images--soldout
         SOLD
       .product-page-main__images--others.clearfix
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
-        = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
+        - 10.times do
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg", class: "other-image"
         .other-image-masks.clearfix
-          .other-image-masks__mask--active
-          .other-image-masks__mask
-          .other-image-masks__mask
-          .other-image-masks__mask
-          .other-image-masks__mask
-          .other-image-masks__mask
-          .other-image-masks__mask
-          .other-image-masks__mask
-          .other-image-masks__mask
-          .other-image-masks__mask
+          - 10.times do
+            .other-image-masks__mask
     %table.product-page-main__details
       %tbody.item-detail-table
         %tr.item-detail-table__record
@@ -169,169 +153,23 @@
       %span.product-page-prev-next-link__next--item-name
         bulle de savon　波の刺繍スカート
 
-%section.product-page-assosiation-items
-  = link_to "" do
-    %h2.section.product-page-assosiation-items__title
-      市川さんの別の商品
-  .clearfix
-    = link_to "", class: "product-page-assosiation-items__items-box items-box--first" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box--first" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-%section.product-page-assosiation-items
-  = link_to "" do
-    %h2.section.product-page-assosiation-items__title
-      市川さんの別の商品
-  .clearfix
-    = link_to "", class: "product-page-assosiation-items__items-box items-box--first" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box--first" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
-    = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-      = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
-      .items-box__body
-        .items-box__body--details.item-details.clearfix
-          %h3.item-details__name
-            スキニーパンツ
-          .item-details__num.clearfix
-            .item-details__num--price
-              ￥7,000
-            .item-details__num--liked
-              = fa_icon "heart-o", text:"12"
-          .item-details__tax
-            (税込み)
+- 2.times do
+  %section.product-page-assosiation-items
+    = link_to "" do
+      %h2.section.product-page-assosiation-items__title
+        市川さんの別の商品
+    .clearfix
+      - 6.times do
+        = link_to "", class: "product-page-assosiation-items__items-box items-box" do
+          = image_tag "https://static.mercdn.net/item/detail/orig/photos/m73726995777_1.jpg" ,class: "items-box__image"
+          .items-box__body
+            .items-box__body--details.item-details.clearfix
+              %h3.item-details__name
+                スキニーパンツ
+              .item-details__num.clearfix
+                .item-details__num--price
+                  ￥7,000
+                .item-details__num--liked
+                  = fa_icon "heart-o", text:"12"
+              .item-details__tax
+                (税込み)

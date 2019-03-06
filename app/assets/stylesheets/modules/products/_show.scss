@@ -315,10 +315,6 @@
   display: block;
   width: 220px;
   margin: 0 0 20px 20px;
-  &--first{
-  @extend .items-box;
-  margin: 0 0 20px;
-  }
   &__image{
     width: 220px;
   }
@@ -331,6 +327,15 @@
       margin: 8px 0 0 0;
     }
   }
+}
+
+.items-box:first-of-type{
+  @extend .items-box;
+  margin: 0 0 20px;
+}
+.items-box:nth-of-type(4n){
+  @extend .items-box;
+  margin: 0 0 20px;
 }
 
 .item-details{
