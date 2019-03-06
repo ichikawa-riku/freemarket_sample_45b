@@ -1,0 +1,77 @@
+.wrapper
+  %header.pc-header.visible-pc
+  //  = render 'shared/pc-header-inner'
+
+  %nav.bread-crumbs
+    
+
+
+  %main.l-container.clearfix
+    .l-content
+      %section.l-chapter-container.mypage-identification
+        %h2.l-chapter-head
+          本人情報の登録
+        %form{action: "https://www.mercari.com/jp/mypage/identification/save/", method: "POST", class: "l-single-inner" }
+          %div
+            %p
+              お客さまの本人情報をご登録ください。
+              %br/
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            %p.text-right
+              = link_to "https://www.mercari.com/jp/help_center/article/495/" do
+                本人確認書類のアップロードについて
+                = fa_icon 'arrow-right', class: "icon_arrow_right"
+          .form-group
+            %label お名前
+            %p 内田賢二
+          .form-group
+            %label お名前カナ　
+            %p ウチダ ケンジ
+          .form-group
+            %label 生年月日
+            %p 1995/04/01
+          .form-group
+            %label{for: "zip_code"} 郵便番号
+            %span.form-arbitrary　任意
+            %input{type: "text", placeholder: "例) 1234567", name: "zip_code", class: "input-default"}
+          .form-group
+            %label{for: "pref"} 都道府県
+            %span.form-arbitrary　任意
+            .select-wrap
+              %select.select-default{name: "pref"}
+                %option{value: "東京"} 東京
+                %option{value: "神奈川"} 神奈川
+                %option{value: "千葉"} 千葉
+              = fa_icon 'arrow-bottom', class: "icon_arrow_bottom"
+          .form-group
+            %label{for: "city"} 市区町村
+            %span.form-arbitrary　任意
+            %input{type: "text", placeholder: "例) 横浜市緑区", name: "city", class: "input-default"}
+          .form-group
+            %label{for: "address1"} 番地
+            %span.form-arbitrary　任意
+            %input{type: "text", placeholder: "例) 青山1-1-1", name: "address1", class: "input-default"}
+          .form-group
+            %label{for: "building"} 建物名
+            %span.form-arbitrary　任意
+            %input{type: "text", placeholder: "例) 柳ビル103", name: "building", class: "input-default"}
+          %button{type: "submit", class: "btn-default btn-red"} 登録する
+          .form-group.text-right
+            %P.text-right
+              = link_to "https://www.mercari.com/jp/help_center/article/423/" do
+                本人情報の登録について
+                = fa_icon 'arrow-right', class: "icon_arrow_right"
+
+
+
+
+    .l-side
+      %nav.mypage-nav
+        %ul.maypage-nav-list
+          %li
+            = link_to "/" do
+              マイページ
+            = fa_icon 'arrow-right'
+          // %h3.mypage-nav-head　メルペイ
+    %aside.app-banner
+    %footer.global-footer
