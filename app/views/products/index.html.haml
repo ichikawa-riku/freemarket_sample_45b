@@ -1,7 +1,6 @@
 .default-container
-  %header.pc-header
 
-    = render 'shared/header'
+  = render 'shared/header'
 
   %main.white{:role => "main"}
     .owl-item.active
@@ -44,14 +43,8 @@
         %h3.text-center
           %a{:href => "#"} ナイキ 新着アイテム
 
-  %aside.app-banner
+  = render 'shared/appbanner'
 
-    = render 'shared/appbanner'
+  = render 'shared/footer'
 
-  %footer.footerAll
-
-    = render 'shared/footer'
-
-  %a.footer-sell-btn{:href => "https://www.mercari.com/jp/sell/"}
-    %div 出品
-    %i.fas.fa-camera
+  = render 'shared/sellbtn'

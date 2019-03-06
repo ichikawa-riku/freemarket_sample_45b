@@ -104,15 +104,8 @@
 
     = render "shared/mypage-sidebar"
 
-  %aside.app-banner
+  = render 'shared/appbanner'
 
-    = render 'shared/appbanner'
+  = render 'shared/footer'
 
-  %footer.footerAll
-
-    = render 'shared/footer'
-
-  %a.footer-sell-btn{:href => "https://www.mercari.com/jp/sell/"}
-    %div 出品
-    %i.fas.fa-camera
-
+  = render 'shared/sellbtn'
