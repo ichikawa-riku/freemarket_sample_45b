@@ -1,4 +1,4 @@
-.mypage-all {
+.mypage {
   margin: 0;
   padding: 0;
   border-style: solid;
@@ -18,9 +18,10 @@
     background-color: #fff;
   }
 
-  .mypage-body {
-    margin: 40px auto;
+  &__body {
+    margin: 40px auto 0;
     width: 1020px;
+    padding: 0 0 40px;
     &__main {
       float: right;
       width: 700px;
@@ -30,6 +31,7 @@
         text-align: center;
         height: 160px;
         padding: 20px;
+        background-color: #fff;
         background-image: url("JoJo.png");
         background-size: contain;
         background-repeat: no-repeat;
@@ -48,10 +50,6 @@
             width: 60px;
             margin: 0 auto;
             border-radius: 50%;
-            img {
-              height: 60px;
-              width: 60px;
-            }
           }
           h2 {
           margin: 8px 0 0;
