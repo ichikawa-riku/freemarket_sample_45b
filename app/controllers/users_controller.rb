@@ -15,4 +15,7 @@ class UsersController < ApplicationController
   def identification
   end
 
+  def creditcard
+  end
+
 end

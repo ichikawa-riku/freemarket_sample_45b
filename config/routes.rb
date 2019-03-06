@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/users/identification' => 'users#identification'
 
+  get '/users/creditcard' => 'users#creditcard'
+
   resources :products, only: [:show, :new, :create] do
     resources :purchases, only: [:new, :create]
   end
