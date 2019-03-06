@@ -74,6 +74,7 @@
     position: relative;
   }
   .btn-sns i {
+    font-size: 20px;
     position: absolute;
     top: 50%;
     left: 16px;
@@ -94,10 +95,10 @@
     border: #979797 solid 1px;
     color: #333;
   }
-  .icon-facebook {
-    color: #fff;
-    background: #385185;
-    font-size: 18px;
+  .fa-google {
+    background: linear-gradient(180deg, red, yellow, green, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .btn-red {
     background: #ea352d;
