@@ -1,17 +1,5 @@
 @import "./reset";
 @import "font-awesome";
-<<<<<<< HEAD
-@import "common";
-@import "modules/header";
-@import "modules/main";
-@import "modules/appbanner";
-@import "modules/footer";
-@import "modules/products/show";
-@import "modules/logo-header";
-@import "modules/logo-footer";
-@import "purchases/new";
-@import "modules/single-container";
-=======
 @import "modules/shared/mypage-sidebar";
 @import "modules/shared/header";
 @import "modules/shared/app_banner";
@@ -28,4 +16,5 @@
 @import "modules/users/signout";
 @import "modules/devise/sessions/new";
 @import "modules/users/identification";
->>>>>>> Ykum4/master
+@import "common";
+@import "modules/products/show";
