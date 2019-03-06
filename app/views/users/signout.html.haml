@@ -1,0 +1,24 @@
+= render 'shared/header'
+
+.mypage
+
+  %nav.bread-crumbs
+
+  %main.mypage__body.clearfix
+
+    .mypage__body__main
+      %section.signout
+        %nav.signout__box
+          %h6
+            %a{:href => ""}
+              ログアウト
+
+    = render 'shared/mypage-sidebar'
+
+  %aside.app-banner
+
+    = render 'shared/appbanner'
+
+  %footer.footerAll
+
+    = render 'shared/footer'
