@@ -1,6 +1,5 @@
 .mypage-all
-  %header
-    = render "shared/logo-header"
+  = render "shared/header"
 
   %nav.bread-crumbs
 
@@ -10,7 +9,7 @@
       %section.mypage-user-icon
         = link_to "#" do
           %figure
-            = image_tag "icon.png", alt: 'ユーザーアイコン'
+            = image_tag "icon.png", alt: "ユーザーアイコン"
           %h2 ユーザー名
           .mypage-number
             %p
@@ -24,18 +23,18 @@
         %ul.mypage-tabs
           %li.notification
             %h3
-              %a{:href => ""}
+              = link_to "#" do
                 お知らせ
           %li.todo
             %h3
-              %a{:href => ""}
+              = link_to "#" do
                 やることリスト
         .tab-content
           %ul.notification-list
             %li
-              %a.notification-list__link{:href => ""}
+              = link_to "#", class: "notification-list__link" do
                 %figure
-                  %img.file{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+                  = image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "メルカリロゴ"
                 .notification-list__body
                   .notification-list__body__text【7日間限定】10人に1人最大P6,000もらえるキャンペーン開始
                   %time
@@ -43,9 +42,9 @@
                     %span 22 時間前
                 = fa_icon "angle-right"
             %li
-              %a.notification-list__link{:href => ""}
+              = link_to "#", class: "notification-list__link" do
                 %figure
-                  %img.file{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+                  = image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "メルカリロゴ"
                 .notification-list__body
                   .notification-list__body__text 事務局から個別メッセージ「ログイン通知」
                   %time
@@ -53,9 +52,9 @@
                     %span 1 日前
                 = fa_icon "angle-right"
             %li
-              %a.notification-list__link{:href => "https://www.mercari.com/jp/mypage/news/"}
+              = link_to "#", class: "notification-list__link" do
                 %figure
-                  %img.file{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+                  = image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "メルカリロゴ"
                 .notification-list__body
                   .notification-list__body__text 事務局から個別メッセージ「ログイン通知」
                   %time
@@ -63,9 +62,9 @@
                     %span 1 日前
                 = fa_icon "angle-right"
             %li
-              %a.notification-list__link{:href => "https://www.mercari.com/jp/mypage/news/"}
+              = link_to "#", class: "notification-list__link" do
                 %figure
-                  %img.file{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+                  = image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "メルカリロゴ"
                 .notification-list__body
                   .notification-list__body__text 事務局から個別メッセージ「【重要】新サービス開始に伴う利用規約改訂のお知らせ」
                   %time
@@ -73,9 +72,9 @@
                     %span 16 日前
                 = fa_icon "angle-right"
             %li
-              %a.notification-list__link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+              = link_to "#", class: "notification-list__link" do
                 %figure
-                  %img.file{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+                  = image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "メルカリロゴ"
                 .notification-list__body
                   .notification-list__body__text 【あと3日】対象カテゴリーが売れたら“必ず“ポイントがもらえるキャンペーン開催中
                   %time
@@ -83,25 +82,28 @@
                     %span 21 日前
                 = fa_icon "angle-right"
             %li.notification-list__all
-              %a{:href => "お知らせ一覧へ"} 一覧を見る
+              = link_to "#" do
+                一覧を見る
 
       %section.mypage-tab-trading-traded
         %h2.mypage-tab-head 購入した商品
         %ul.mypage-tabs
           %li.trading
             %h3
-              %a{:href => ""}
+              = link_to "#" do
                 取引中
           %li.traded
             %h3
-              %a{:href => ""}
+              = link_to "#" do
                 過去の取引
         .tab-content
           .traded-list
             %figure
-              %img.file{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+              = image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "メルカリロゴ"
             .traded-list__not-found 取引中の商品がありません
 
     = render "shared/mypage-sidebar"
 
-  = render "shared/logo-footer"
+  = render "shared/appbanner"
+
+  = render "shared/footer"
