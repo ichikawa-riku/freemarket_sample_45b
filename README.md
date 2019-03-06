@@ -190,7 +190,7 @@ has_many :items
 ## item_commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|
+|text|text|null: false|
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 
