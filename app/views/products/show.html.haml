@@ -21,7 +21,7 @@
           %th.item-detail-table__record--key
             出品者
           %td.item-detail-table__record--value
-            市川
+            = link_to "市川", ""
             .user-raitings.clearfix
               .user-raitings__raiting
                 =fa_icon "smile lg", text:12
@@ -81,7 +81,7 @@
       (税込み)
     %span.product-page-detail__price--shipping-fee
       送料込み
-  .product-page-detail__buy-button
+  = link_to "", class: "product-page-detail__buy-button" do
     購入画面に進む
   .product-page-detail__buy-button--soldout
     売り切れました
