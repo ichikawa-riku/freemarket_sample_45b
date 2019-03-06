@@ -12,12 +12,12 @@ has_many :likes
 has_many :item_comments
 has_many :purchases
 has_many :items
-has_one :user_details
+has_one :profiles
 has_one :addresses
 has_one :credit_cards
 
 
-## user_detailsテーブル
+## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |family_name|string|null: false|
