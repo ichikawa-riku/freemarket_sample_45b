@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :user_details, only: [:new, :create, :edit, :update, :show]
+<<<<<<< HEAD
     resources :credit_card, only: [:new]
+=======
+    resources :credit_card, only: [:new, :show]
+>>>>>>> Ykum4/master
   end
 
 
