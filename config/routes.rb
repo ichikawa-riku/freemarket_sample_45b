@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show] do
   end
 
+  resources :brands, only: [:index, :show] do
+  end
+
   resources :users, only: [:new, :show, :edit] do
     collection do
       get 'signout'
