@@ -9,9 +9,9 @@
 
 ## Association
 has_many :likes
-has_many :item_comments
+has_many :product_comments
 has_many :purchases
-has_many :items
+has_many :products
 has_one :profiles
 has_one :addresses
 has_one :credit_cards
@@ -48,14 +48,14 @@ belongs_to :user
 belongs_to :area
 
 
-## aresテーブル
+## areasテーブル
 |Column|Type|Options|
 |------|----|-------|
 |prefecture|string|null: false|
 
 ## Association
 has_many :addresses
-has_many :items
+has_many :products
 
 
 ## credit_cardsテーブル
@@ -75,14 +75,14 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ## Association
 belongs_to :user
-belongs_to :item
+belongs_to :product
 
 
-## itemsテーブル
+## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -104,19 +104,19 @@ belongs_to :brand
 belongs_to :delivery_method
 belongs_to :estimated_date
 belongs_to :user
-has_many :item_images
-has_many :categories, through: :category_items
-has_many :category_items
+has_many :product_images
+has_many :categories, through: :category_products
+has_many :category_products
 
 
-## items_imageテーブル
+## products_imageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 |image|string|null: false|
 
 ## Association
-belongs_to :item
+belongs_to :product
 
 
 ## conditionsテーブル
@@ -125,7 +125,7 @@ belongs_to :item
 |status|string|null: false|
 
 ## Association
-has_many :items
+has_many :products
 
 
 ## sizesテーブル
@@ -134,7 +134,7 @@ has_many :items
 |list|string|null: false|
 
 ## Association
-has_many :items
+has_many :products
 
 
 ## categoriesテーブル
@@ -143,21 +143,21 @@ has_many :items
 |parent|references|null: false, foreign_key: true|
 
 ## Association
-has_many :items, through: :category_items
-has_many :category_items
+has_many :products, through: :category_products
+has_many :category_products
 belongs_to :parent_id, class_name: "Category"
 has_many :childern, class_name: "Category", foreign_key: :parent_id
 
 
-## category_itemsテーブル
+## category_productsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ## Association
 belongs_to :category
-belongs_to :item
+belongs_to :product
 
 
 ## brandsテーブル
@@ -166,7 +166,7 @@ belongs_to :item
 |name|string|null: false|
 
 ## Association
-has_many :items
+has_many :products
 
 
 ## delivery_methodsテーブル
@@ -175,7 +175,7 @@ has_many :items
 |way|string|null: false|
 
 ## Association
-has_many :items
+has_many :products
 
 
 ## estimated_datesテーブル
@@ -184,27 +184,27 @@ has_many :items
 |day|string|null: false|
 
 ## Association
-has_many :items
+has_many :products
 
 
-## item_commentsテーブル
+## product_commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 |user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ## Association
 belongs_to :user
-belongs_to :item
+belongs_to :product
 
 
 ## purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ## Association
 belongs_to :user
-belongs_to :item
+belongs_to :product
