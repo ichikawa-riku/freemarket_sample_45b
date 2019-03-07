@@ -1,5 +1,4 @@
 .pc-header {
-  background: #fff;
   &__inner {
     width: 900px;
     height: 100px;
@@ -62,7 +61,7 @@
     &--btn-red {
       border: 1px solid #ea352d;
       color: white;
-      background-color: #ea352d;
+      background-color: red;
       display: block;
     }
     &--signup {
