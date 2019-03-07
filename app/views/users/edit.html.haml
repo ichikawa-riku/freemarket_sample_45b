@@ -1,8 +1,8 @@
+= render "shared/header"
+
+%nav.bread-crumbs
+
 .mypage
-  = render "shared/header"
-
-  %nav.bread-crumbs
-
   %main.mypage__body.clearfix
     .mypage__body__main
       %h2.mypage__body__main__title プロフィール
@@ -19,7 +19,8 @@
 
     = render "shared/mypage-sidebar"
 
-  = render 'shared/appbanner'
+= render 'shared/appbanner'
 
-  = render 'shared/footer'
+= render 'shared/footer'
 
+= render 'shared/sellbtn'
