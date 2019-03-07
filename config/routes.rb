@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     end
     resources :profiles, only: [:new]
     resources :credit_card, only: [:new, :show]
-
   end
 
 
