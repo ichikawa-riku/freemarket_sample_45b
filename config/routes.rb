@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :user_details, only: [:new, :create, :edit, :update, :show]
+    resources :credit_card, only: [:new]
   end
 
 

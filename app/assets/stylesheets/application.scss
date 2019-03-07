@@ -1,5 +1,6 @@
 @import "./reset";
 @import "font-awesome";
+@import "common";
 @import "modules/shared/mypage-sidebar";
 @import "modules/shared/header";
 @import "modules/shared/app_banner";
@@ -11,3 +12,10 @@
 @import "modules/single-container";
 @import "modules/products/new";
 @import "modules/users/show";
+@import "modules/users/edit";
+@import "modules/users/new";
+@import "modules/users/signout";
+@import "modules/devise/sessions/new";
+@import "modules/users/identification";
+@import "modules/credit_card/new";
+@import "modules/products/show";
