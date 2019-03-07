@@ -4,83 +4,74 @@
 
   %main.white{:role => "main"}
     .owl-item.active
-      %img{:src => "https://www.mercari.com/jp/assets/img/common/jp/top/banner-new-life.jpg"}/
-      %a.top-banner.banner-new-life{:href => "#"}
+      = link_to "", "#", class: "header-banner"
     %section.pickup-container
       %h2.pickup-head ピックアップカテゴリー
       %section.items-box-container.clearfix
         %h3.items-box-container__title
-          %a{:href => "#"} レディース 新着アイテム
+          = link_to "レディース 新着アイテム", "/brands/1"
         .items-box-content.clearfix
           - 4.times do
             = render 'product'
         .view-all
-          = link_to "" do
-            すべての商品を見る
+          = link_to "すべての商品を見る", "/brands/1"
       %section.items-box-container.clearfix
         %h3.items-box-container__title
-          %a{:href => "#"} メンズ 新着アイテム
+          = link_to "メンズ 新着アイテム", "/brands/1"
         .items-box-content.clearfix
           - 4.times do
             = render 'product'
         .view-all
-          = link_to "" do
-            すべての商品を見る
+          = link_to "すべての商品を見る", "/brands/1"
       %section.items-box-container.clearfix
         %h3.items-box-container__title
-          %a{:href => "#"} ベビー・キッズ 新着アイテム
+          = link_to "ベビー・キッズ 新着アイテム", "/brands/1"
         .items-box-content.clearfix
           - 4.times do
             = render 'product'
         .view-all
-          = link_to "" do
-            すべての商品を見る
+          = link_to "すべての商品を見る", "/brands/1"
       %section.items-box-container.clearfix
         %h3.items-box-container__title
-          %a{:href => "#"} コスメ・香水・美容 新着アイテム
+          = link_to "コスメ・香水・美容 新着アイテム", "/brands/1"
         .items-box-content.clearfix
           - 4.times do
             = render 'product'
         .view-all
-          = link_to "" do
-            すべての商品を見る
+          = link_to "すべての商品を見る", "/brands/1"
       %h2.pickup-head ピックアップブランド
       %section.items-box-container.clearfix
         %h3.items-box-container__title
-          %a{:href => "#"} シャネル 新着アイテム
+          = link_to "シャネル 新着アイテム", "/brands/1"
         .items-box-content.clearfix
           - 4.times do
             = render 'product'
         .view-all
-          = link_to "" do
-            すべての商品を見る
+          = link_to "すべての商品を見る", "/brands/1"
       %section.items-box-container.clearfix
         %h3.items-box-container__title
-          %a{:href => "#"} ルイ ヴィトン 新着アイテム
+          = link_to "ルイ ヴィトン 新着アイテム", "/brands/1"
         .items-box-content.clearfix
           - 4.times do
             = render 'product'
         .view-all
-          = link_to "" do
-            すべての商品を見る
+          = link_to "すべての商品を見る", "/brands/1"
       %section.items-box-container.clearfix
         %h3.items-box-container__title
-          %a{:href => "#"} シュプリーム 新着アイテム
+          = link_to "シュプリーム 新着アイテム", "/brands/1"
         .items-box-content.clearfix
           - 4.times do
             = render 'product'
         .view-all
-          = link_to "" do
-            すべての商品を見る
+          = link_to "すべての商品を見る", "/brands/1"
       %section.items-box-container.clearfix
         %h3.items-box-container__title
-          %a{:href => "#"} ナイキ 新着アイテム
+          = link_to "ナイキ 新着アイテム", "/brands/1"
         .items-box-content.clearfix
           - 4.times do
             = render 'product'
         .view-all
-          = link_to "" do
-            すべての商品を見る
+          = link_to "すべての商品を見る", "/brands/1"
 
   = render 'shared/appbanner'
 
