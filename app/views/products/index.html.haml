@@ -9,39 +9,78 @@
     %section.pickup-container
       %h2.pickup-head ピックアップカテゴリー
       %section.items-box-container.clearfix
-        %h3.text-center
+        %h3.items-box-container__title
           %a{:href => "#"} レディース 新着アイテム
         .items-box-content.clearfix
-          %section.items-box
-            = image_tag ("https://images-na.ssl-images-amazon.com/images/I/51E-p2sSp8L._UX522_.jpg")
-          %section.items-box
-            = image_tag ("https://images-na.ssl-images-amazon.com/images/I/51E-p2sSp8L._UX522_.jpg")
-          %section.items-box
-            = image_tag ("https://images-na.ssl-images-amazon.com/images/I/51E-p2sSp8L._UX522_.jpg")
-          %section.items-box
-            = image_tag ("https://images-na.ssl-images-amazon.com/images/I/51E-p2sSp8L._UX522_.jpg")
+          - 4.times do
+            = render 'product'
+        .view-all
+          = link_to "" do
+            すべての商品を見る
       %section.items-box-container.clearfix
-        %h3.text-center
+        %h3.items-box-container__title
           %a{:href => "#"} メンズ 新着アイテム
+        .items-box-content.clearfix
+          - 4.times do
+            = render 'product'
+        .view-all
+          = link_to "" do
+            すべての商品を見る
       %section.items-box-container.clearfix
-        %h3.text-center
+        %h3.items-box-container__title
           %a{:href => "#"} ベビー・キッズ 新着アイテム
+        .items-box-content.clearfix
+          - 4.times do
+            = render 'product'
+        .view-all
+          = link_to "" do
+            すべての商品を見る
       %section.items-box-container.clearfix
-        %h3.text-center
+        %h3.items-box-container__title
           %a{:href => "#"} コスメ・香水・美容 新着アイテム
+        .items-box-content.clearfix
+          - 4.times do
+            = render 'product'
+        .view-all
+          = link_to "" do
+            すべての商品を見る
       %h2.pickup-head ピックアップブランド
       %section.items-box-container.clearfix
-        %h3.text-center
+        %h3.items-box-container__title
           %a{:href => "#"} シャネル 新着アイテム
+        .items-box-content.clearfix
+          - 4.times do
+            = render 'product'
+        .view-all
+          = link_to "" do
+            すべての商品を見る
       %section.items-box-container.clearfix
-        %h3.text-center
+        %h3.items-box-container__title
           %a{:href => "#"} ルイ ヴィトン 新着アイテム
+        .items-box-content.clearfix
+          - 4.times do
+            = render 'product'
+        .view-all
+          = link_to "" do
+            すべての商品を見る
       %section.items-box-container.clearfix
-        %h3.text-center
+        %h3.items-box-container__title
           %a{:href => "#"} シュプリーム 新着アイテム
+        .items-box-content.clearfix
+          - 4.times do
+            = render 'product'
+        .view-all
+          = link_to "" do
+            すべての商品を見る
       %section.items-box-container.clearfix
-        %h3.text-center
+        %h3.items-box-container__title
           %a{:href => "#"} ナイキ 新着アイテム
+        .items-box-content.clearfix
+          - 4.times do
+            = render 'product'
+        .view-all
+          = link_to "" do
+            すべての商品を見る
 
   = render 'shared/appbanner'
 

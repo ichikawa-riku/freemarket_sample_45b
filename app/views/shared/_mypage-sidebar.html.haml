@@ -2,7 +2,7 @@
   %nav.mypage-nav
     %ul.mypage-nav__list
       %li
-        = link_to user_path(current_user.id), class: "mypage-nav__list__item" do
+        = link_to "user_path(current_user.id)", class: "mypage-nav__list__item" do
           マイページ
           = fa_icon "angle-right"
       %li
@@ -74,7 +74,7 @@
     %h3.mypage-nav__head 設定
     %ul.mypage-nav__list
       %li
-        = link_to edit_user_path(current_user.id), class: "mypage-nav__list__item" do
+        = link_to "edit_user_path(current_user.id)", class: "mypage-nav__list__item" do
           プロフィール
           = fa_icon "angle-right"
       %li
@@ -90,7 +90,7 @@
           メール/パスワード
           = fa_icon "angle-right"
       %li
-        = link_to new_user_profile_path(current_user.id), class: "mypage-nav__list__item" do
+        = link_to "new_user_profile_path(current_user.id)", class: "mypage-nav__list__item" do
           本人情報
           = fa_icon "angle-right"
       %li
