@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20190304114527) do
     t.datetime "updated_at",                           null: false
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
   end
 
 end
