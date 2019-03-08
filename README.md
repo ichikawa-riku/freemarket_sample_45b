@@ -4,7 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, index: true|
-|email|string|null: false, unique: true|
+|email|string|null: false, index: true, unique: true|
 |introduction|text|
 
 ## Association
@@ -85,13 +85,13 @@ belongs_to :product
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 |description|text|null: false|
 |price|integer|null: false|
 |area_id|references|null: false, foreign_key: true|
 |condition_id|references|null: false, foreign_key: true|
-|size_id|references|foreign_key: true|
-|brand_id|references|foreign_key: true|
+|size_id|references|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
 |delivery_method_id|references|null: false, foreign_key: true|
 |estimated_date_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true|
