@@ -131,7 +131,7 @@ has_many :products
 ## product_sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|list|string|null: false|
+|size|string|null: false|
 
 ## Association
 has_many :products
