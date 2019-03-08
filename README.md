@@ -90,7 +90,7 @@ belongs_to :product
 |price|integer|null: false|
 |area_id|references|null: false, foreign_key: true|
 |condition_id|references|null: false, foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
+|product_size_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
 |delivery_method_id|references|null: false, foreign_key: true|
 |estimated_date_id|references|null: false, foreign_key: true|
@@ -99,7 +99,7 @@ belongs_to :product
 ## Association
 belongs_to :area
 belongs_to :condition
-belongs_to :size
+belongs_to :product_size
 belongs_to :brand
 belongs_to :delivery_method
 belongs_to :estimated_date
@@ -128,7 +128,7 @@ belongs_to :product
 has_many :products
 
 
-## sizesテーブル
+## product_sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |list|string|null: false|
