@@ -12,6 +12,13 @@
                 %ul
                   - resource.errors.full_messages.each do |message|
                     %li= message
+
+            .registration-form-nickname
+              = f.label :ニックネーム, class: "registration-form-nickname__label"
+              %span.registration-form-nickname__badge
+                必須
+              = f.text_field :nickname,autofocus: true, class: "registration-form-nickname__input"
+
             .registration-form-email
               = f.label :メールアドレス, class: "registration-form-email__label"
               %span.registration-form-email__badge
