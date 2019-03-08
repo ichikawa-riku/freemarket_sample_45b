@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     resources :purchases, only: [:new, :create]
   end
 
+  resources :categories, only: [:index, :show] do
+  end
+
+  resources :brands, only: [:index, :show] do
+  end
+
   resources :users, only: [:new, :show, :edit] do
     collection do
       get 'signout'

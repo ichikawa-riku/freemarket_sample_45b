@@ -16,7 +16,9 @@
 @import "modules/users/new";
 @import "modules/users/signout";
 @import "modules/devise/sessions/new";
+@import "modules/devise/registrations/new";
 @import "modules/profiles/new";
 @import "modules/credit_card/new";
 @import "modules/products/show";
 @import "modules/credit_card/show";
+@import "modules/shared/product-list";
