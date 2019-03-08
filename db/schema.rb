@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190308101512) do
+ActiveRecord::Schema.define(version: 20190308121644) do
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "prefecture", null: false
@@ -28,6 +28,20 @@ ActiveRecord::Schema.define(version: 20190308101512) do
     t.string "size", null: false
   end
 
+  create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "family_name",      null: false
+    t.string   "first_name",       null: false
+    t.string   "family_name_kana", null: false
+    t.string   "first_name_kana",  null: false
+    t.integer  "birth_year",       null: false
+    t.integer  "birth_month",      null: false
+    t.integer  "birth_day",        null: false
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                             null: false
     t.string   "email",                                null: false
@@ -43,4 +57,5 @@ ActiveRecord::Schema.define(version: 20190308101512) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
   end
 
+  add_foreign_key "profiles", "users"
 end
