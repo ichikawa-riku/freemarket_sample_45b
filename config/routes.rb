@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :brands, only: [:index, :show] do
   end
 
-  resources :users, only: [:new, :show, :edit] do
+  resources :users, only: [:new, :show, :edit, :update] do
     collection do
       get 'signout'
     end
