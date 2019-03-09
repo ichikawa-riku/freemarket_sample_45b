@@ -3,7 +3,7 @@ $(document).on('turbolinks:load',function(){
   const lowerLimitPrice = 300
   const upperLimitPrice = 9999999
 
-  function isCheckedPrice(price){
+  function isPossibleSalePrice(price){
     var result = false
     if ( price >= lowerLimitPrice && price <= upperLimitPrice){
       result = true
