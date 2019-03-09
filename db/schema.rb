@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190309080220) do
+ActiveRecord::Schema.define(version: 20190309081220) do
+
+  create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "zip_code",   null: false
+    t.integer  "area_id",    null: false
+    t.string   "city",       null: false
+    t.string   "adress1",    null: false
+    t.string   "adress2"
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_adresses_on_area_id", using: :btree
+    t.index ["user_id"], name: "index_adresses_on_user_id", using: :btree
+  end
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "prefecture", null: false
@@ -53,5 +66,7 @@ ActiveRecord::Schema.define(version: 20190309080220) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
   end
 
+  add_foreign_key "adresses", "areas"
+  add_foreign_key "adresses", "users"
   add_foreign_key "profiles", "users"
 end
