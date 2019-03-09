@@ -89,12 +89,12 @@ belongs_to :product
 |description|text|null: false|
 |price|integer|null: false|
 |area_id|references|null: false, foreign_key: true|
-|condition|integer|null: false, foreign_key: true, enum|
+|condition|integer|null: false, true, enum|
 |product_size_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|shipping_method|integer|null: false, foreign_key: true, enum|
-|shipping_burden|integer|null: false, foreign_key: true, enum|
-|estimated_date|integer|null: false, foreign_key: true, enum|
+|shipping_method|integer|null: false, true, enum|
+|shipping_burden|integer|null: false, true, enum|
+|estimated_date|integer|null: false, true, enum|
 |user_id|references|null: false, foreign_key: true|
 
 ## Association
