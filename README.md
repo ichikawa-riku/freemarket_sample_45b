@@ -57,7 +57,7 @@ belongs_to :area
 has_many :addresses
 has_many :products
 
-
+<!--
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -69,7 +69,7 @@ has_many :products
 
 ## Association
 belongs_to :user
-
+ -->
 
 ## likesテーブル
 |Column|Type|Options|
@@ -89,20 +89,18 @@ belongs_to :product
 |description|text|null: false|
 |price|integer|null: false|
 |area_id|references|null: false, foreign_key: true|
-|condition_id|references|null: false, foreign_key: true|
+|condition|integer|null: false, true, enum|
 |product_size_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|delivery_method_id|references|null: false, foreign_key: true|
-|estimated_date_id|references|null: false, foreign_key: true|
+|shipping_method|integer|null: false, true, enum|
+|shipping_burden|integer|null: false, true, enum|
+|estimated_date|integer|null: false, true, enum|
 |user_id|references|null: false, foreign_key: true|
 
 ## Association
 belongs_to :area
-belongs_to :condition
 belongs_to :product_size
 belongs_to :brand
-belongs_to :delivery_method
-belongs_to :estimated_date
 belongs_to :user
 has_many :product_images
 has_many :categories, through: :category_products
@@ -117,15 +115,6 @@ has_many :category_products
 
 ## Association
 belongs_to :product
-
-
-## conditionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|status|string|null: false|
-
-## Association
-has_many :products
 
 
 ## product_sizesテーブル
@@ -164,24 +153,6 @@ belongs_to :product
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-
-## Association
-has_many :products
-
-
-## delivery_methodsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|way|string|null: false|
-
-## Association
-has_many :products
-
-
-## estimated_datesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|day|string|null: false|
 
 ## Association
 has_many :products
