@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:edit]
+  before_action :set_user, only: [:edit, :update]
 
   def new
   end
@@ -13,9 +13,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    if user.id == current_user.id
-      user.update(user_params)
+    if @user.id == current_user.id
+      @user.update(user_params)
     end
     redirect_to :action => "edit"
   end
