@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190308121644) do
+ActiveRecord::Schema.define(version: 20190309080220) do
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "prefecture", null: false
@@ -18,10 +18,6 @@ ActiveRecord::Schema.define(version: 20190308121644) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
-  end
-
-  create_table "conditions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "status", null: false
   end
 
   create_table "product_sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -36,7 +32,7 @@ ActiveRecord::Schema.define(version: 20190308121644) do
     t.integer  "birth_year",       null: false
     t.integer  "birth_month",      null: false
     t.integer  "birth_day",        null: false
-    t.integer  "user_id"
+    t.integer  "user_id",          null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
