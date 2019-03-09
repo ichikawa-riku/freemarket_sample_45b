@@ -4,15 +4,13 @@ $(document).on('turbolinks:load',function(){
   const upperLimitPrice = 9999999
 
   function isPossibleSalePrice(price){
-    var result = false
-    if ( price >= lowerLimitPrice && price <= upperLimitPrice){
-      result = true
-    }
+    result = price >= lowerLimitPrice && price <= upperLimitPrice
     return result
   }
   inputForm.on("keyup", function(){
     var inputPrice = inputForm.val();
-    if ( isCheckedPrice(inputPrice) ){
+    console.log(isPossibleSalePrice(inputPrice))
+    if ( isPossibleSalePrice(inputPrice) ){
       var salesFee = Math.floor(inputPrice * 0.1);
       var profit = parseInt(inputPrice) - parseInt(salesFee);
       $(".sales-fee").text(salesFee);
