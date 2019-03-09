@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20190309090637) do
     t.string "name", null: false
   end
 
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id",    null: false
+    t.integer "product_id", null: false
+    t.index ["product_id"], name: "index_likes_on_product_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+  end
+
   create_table "product_sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "size", null: false
   end
@@ -89,6 +96,8 @@ ActiveRecord::Schema.define(version: 20190309090637) do
 
   add_foreign_key "adresses", "areas"
   add_foreign_key "adresses", "users"
+  add_foreign_key "likes", "products"
+  add_foreign_key "likes", "users"
   add_foreign_key "products", "areas"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "product_sizes"
