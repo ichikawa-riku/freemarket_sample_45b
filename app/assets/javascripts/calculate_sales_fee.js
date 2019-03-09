@@ -9,7 +9,6 @@ $(document).on('turbolinks:load',function(){
   }
   inputForm.on("keyup", function(){
     var inputPrice = inputForm.val();
-    console.log(isPossibleSalePrice(inputPrice))
     if ( isPossibleSalePrice(inputPrice) ){
       var salesFee = Math.floor(inputPrice * 0.1);
       var profit = parseInt(inputPrice) - parseInt(salesFee);
