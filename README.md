@@ -8,13 +8,13 @@
 |introduction|text|
 
 ## Association
-has_many :likes
-has_many :product_comments
-has_many :purchases
-has_many :products
-has_one :profiles
-has_one :addresses
-has_one :credit_cards
+- has_many :likes
+- has_many :product_comments
+- has_many :purchases
+- has_many :products
+- has_one :profiles
+- has_one :addresses
+- has_one :credit_cards
 
 
 ## profilesテーブル
@@ -30,7 +30,7 @@ has_one :credit_cards
 |user_id|references|null: false, foreign_key: true|
 
 ## Association
-belongs_to :user
+- belongs_to :user
 
 
 ## addressesテーブル
@@ -44,8 +44,8 @@ belongs_to :user
 |user_id|references|null: false, foreign_key: true|
 
 ## Association
-belongs_to :user
-belongs_to :area
+- belongs_to :user
+- belongs_to :area
 
 
 ## areasテーブル
@@ -54,8 +54,8 @@ belongs_to :area
 |prefecture|string|null: false|
 
 ## Association
-has_many :addresses
-has_many :products
+- has_many :addresses
+- has_many :products
 
 <!--
 ## credit_cardsテーブル
@@ -78,8 +78,8 @@ belongs_to :user
 |product_id|references|null: false, foreign_key: true|
 
 ## Association
-belongs_to :user
-belongs_to :product
+- belongs_to :user
+- belongs_to :product
 
 
 ## productsテーブル
@@ -98,13 +98,13 @@ belongs_to :product
 |user_id|references|null: false, foreign_key: true|
 
 ## Association
-belongs_to :area
-belongs_to :product_size
-belongs_to :brand
-belongs_to :user
-has_many :product_images
-has_many :categories, through: :category_products
-has_many :category_products
+- belongs_to :area
+- belongs_to :product_size
+- belongs_to :brand
+- belongs_to :user
+- has_many :product_images
+- has_many :categories, through: :category_products
+- has_many :category_products
 
 
 ## products_imageテーブル
@@ -114,7 +114,7 @@ has_many :category_products
 |image|string|null: false|
 
 ## Association
-belongs_to :product
+- belongs_to :product
 
 
 ## product_sizesテーブル
@@ -123,7 +123,7 @@ belongs_to :product
 |size|string|null: false|
 
 ## Association
-has_many :products
+-has_many :products
 
 
 ## categoriesテーブル
@@ -132,10 +132,10 @@ has_many :products
 |parent|references|null: false, foreign_key: true|
 
 ## Association
-has_many :products, through: :category_products
-has_many :category_products
-belongs_to :parent_id, class_name: "Category"
-has_many :childern, class_name: "Category", foreign_key: :parent_id
+- has_many :products, through: :category_products
+- has_many :category_products
+- belongs_to :parent_id, class_name: "Category"
+- has_many :childern, class_name: "Category", foreign_key: :parent_id
 
 
 ## category_productsテーブル
@@ -145,8 +145,8 @@ has_many :childern, class_name: "Category", foreign_key: :parent_id
 |product_id|references|null: false, foreign_key: true|
 
 ## Association
-belongs_to :category
-belongs_to :product
+- belongs_to :category
+- belongs_to :product
 
 
 ## brandsテーブル
@@ -155,7 +155,7 @@ belongs_to :product
 |name|string|null: false|
 
 ## Association
-has_many :products
+- has_many :products
 
 
 ## product_commentsテーブル
@@ -166,8 +166,8 @@ has_many :products
 |product_id|references|null: false, foreign_key: true|
 
 ## Association
-belongs_to :user
-belongs_to :product
+- belongs_to :user
+- belongs_to :product
 
 
 ## purchasesテーブル
@@ -177,5 +177,5 @@ belongs_to :product
 |product_id|references|null: false, foreign_key: true|
 
 ## Association
-belongs_to :user
-belongs_to :product
+- belongs_to :user
+- belongs_to :product
