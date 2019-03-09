@@ -10,7 +10,8 @@
         = link_to "#" do
           %figure
             = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", alt: "ユーザーアイコン", alt: "ユーザーアイコン", height: "60", width: "60"
-          %h2 ユーザー名
+          %h2
+            = current_user.nickname
           .mypage-number
             %p
               評価
