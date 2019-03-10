@@ -161,7 +161,7 @@ belongs_to :user
 ## product_commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|comment|text|null: false|
 |user_id|references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
 
