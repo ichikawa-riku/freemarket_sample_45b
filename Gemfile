@@ -67,19 +67,9 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'payjp'
-<<<<<<< HEAD
-<<<<<<< HEAD
-gem 'dotenv-rails'
-=======
 gem "jquery-slick-rails"
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
->>>>>>> master
-=======
-gem "jquery-slick-rails"
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
->>>>>>> master
 
 group :production do
   gem 'unicorn'
