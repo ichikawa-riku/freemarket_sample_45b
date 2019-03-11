@@ -89,8 +89,7 @@
 - belongs_to :brand
 - belongs_to :user
 - has_many :product_images
-- has_many :categories, through: :category_products
-- has_many :category_products
+- belongs_to :category
 
 
 ## products_imageテーブル
@@ -120,23 +119,11 @@
 |sub_category|references|null: true, index:true|
 
 ## Association
-- has_many :products, through: :category_products
-- has_many :category_products
+- has_many :products
 - has_many :category, class_name: "Category",foreign_key: "main_category_id"
 - has_many :category, class_name: "Category",foreign_key: "sub_category_id"
 - belongs_to :main_category, class_name: "Category"
 - belongs_to :sub_category, class_name: "Category"
-
-## category_productsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
-
-## Association
-- belongs_to :category
-- belongs_to :product
-
 
 ## brandsテーブル
 |Column|Type|Options|
