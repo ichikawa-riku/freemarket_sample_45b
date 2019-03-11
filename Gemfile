@@ -67,6 +67,9 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'payjp'
+gem "jquery-slick-rails"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :production do
   gem 'unicorn'
