@@ -2,76 +2,96 @@
 
   = render 'shared/header'
 
-  %main.white{:role => "main"}
-    .owl-item.active
-      = link_to "", "#", class: "header-banner"
-    %section.pickup-container
-      %h2.pickup-head ピックアップカテゴリー
-      %section.items-box-container.clearfix
-        %h3.items-box-container__title
-          = link_to "レディース 新着アイテム", "/brands/1"
-        .items-box-content.clearfix
-          - 4.times do
-            = render 'product'
-        .view-all
-          = link_to "すべての商品を見る", "/brands/1"
-      %section.items-box-container.clearfix
-        %h3.items-box-container__title
-          = link_to "メンズ 新着アイテム", "/brands/1"
-        .items-box-content.clearfix
-          - 4.times do
-            = render 'product'
-        .view-all
-          = link_to "すべての商品を見る", "/brands/1"
-      %section.items-box-container.clearfix
-        %h3.items-box-container__title
-          = link_to "ベビー・キッズ 新着アイテム", "/brands/1"
-        .items-box-content.clearfix
-          - 4.times do
-            = render 'product'
-        .view-all
-          = link_to "すべての商品を見る", "/brands/1"
-      %section.items-box-container.clearfix
-        %h3.items-box-container__title
-          = link_to "コスメ・香水・美容 新着アイテム", "/brands/1"
-        .items-box-content.clearfix
-          - 4.times do
-            = render 'product'
-        .view-all
-          = link_to "すべての商品を見る", "/brands/1"
-      %h2.pickup-head ピックアップブランド
-      %section.items-box-container.clearfix
-        %h3.items-box-container__title
-          = link_to "シャネル 新着アイテム", "/brands/1"
-        .items-box-content.clearfix
-          - 4.times do
-            = render 'product'
-        .view-all
-          = link_to "すべての商品を見る", "/brands/1"
-      %section.items-box-container.clearfix
-        %h3.items-box-container__title
-          = link_to "ルイ ヴィトン 新着アイテム", "/brands/1"
-        .items-box-content.clearfix
-          - 4.times do
-            = render 'product'
-        .view-all
-          = link_to "すべての商品を見る", "/brands/1"
-      %section.items-box-container.clearfix
-        %h3.items-box-container__title
-          = link_to "シュプリーム 新着アイテム", "/brands/1"
-        .items-box-content.clearfix
-          - 4.times do
-            = render 'product'
-        .view-all
-          = link_to "すべての商品を見る", "/brands/1"
-      %section.items-box-container.clearfix
-        %h3.items-box-container__title
-          = link_to "ナイキ 新着アイテム", "/brands/1"
-        .items-box-content.clearfix
-          - 4.times do
-            = render 'product'
-        .view-all
-          = link_to "すべての商品を見る", "/brands/1"
+  %section
+    .top-appbanner
+      .top-appbanner__slides
+        %div
+          .top-appbanner__slides--inner-left
+            %h2
+              スマホでかんたん
+              %br
+              フリマアプリ
+            %p
+              メルカリはスマホカメラからすぐに出品できる
+              %br
+              購入時も安心な独自システムのアプリです
+            .storelogo
+              = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+                = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?4136293187"
+              = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+                = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?4136293187"
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?4136293187",class: "iphone-picture"
+      .top-appbanner__slides--newlife
+        = link_to "",root_path,class: "top-banner banner-new-life"
+      .top-appbanner__slides--heisei
+        = link_to "",root_path,class: "top-banner banner-bokurano-heisei"
+  %section.pickup-container
+    %h2.pickup-head ピックアップカテゴリー
+    %section.items-box-container.clearfix
+      %h3.items-box-container__title
+        = link_to "レディース 新着アイテム", "/brands/1"
+      .items-box-content.clearfix
+        - 4.times do
+          = render 'product'
+      .view-all
+        = link_to "すべての商品を見る", "/brands/1"
+    %section.items-box-container.clearfix
+      %h3.items-box-container__title
+        = link_to "メンズ 新着アイテム", "/brands/1"
+      .items-box-content.clearfix
+        - 4.times do
+          = render 'product'
+      .view-all
+        = link_to "すべての商品を見る", "/brands/1"
+    %section.items-box-container.clearfix
+      %h3.items-box-container__title
+        = link_to "ベビー・キッズ 新着アイテム", "/brands/1"
+      .items-box-content.clearfix
+        - 4.times do
+          = render 'product'
+      .view-all
+        = link_to "すべての商品を見る", "/brands/1"
+    %section.items-box-container.clearfix
+      %h3.items-box-container__title
+        = link_to "コスメ・香水・美容 新着アイテム", "/brands/1"
+      .items-box-content.clearfix
+        - 4.times do
+          = render 'product'
+      .view-all
+        = link_to "すべての商品を見る", "/brands/1"
+    %h2.pickup-head ピックアップブランド
+    %section.items-box-container.clearfix
+      %h3.items-box-container__title
+        = link_to "シャネル 新着アイテム", "/brands/1"
+      .items-box-content.clearfix
+        - 4.times do
+          = render 'product'
+      .view-all
+        = link_to "すべての商品を見る", "/brands/1"
+    %section.items-box-container.clearfix
+      %h3.items-box-container__title
+        = link_to "ルイ ヴィトン 新着アイテム", "/brands/1"
+      .items-box-content.clearfix
+        - 4.times do
+          = render 'product'
+      .view-all
+        = link_to "すべての商品を見る", "/brands/1"
+    %section.items-box-container.clearfix
+      %h3.items-box-container__title
+        = link_to "シュプリーム 新着アイテム", "/brands/1"
+      .items-box-content.clearfix
+        - 4.times do
+          = render 'product'
+      .view-all
+        = link_to "すべての商品を見る", "/brands/1"
+    %section.items-box-container.clearfix
+      %h3.items-box-container__title
+        = link_to "ナイキ 新着アイテム", "/brands/1"
+      .items-box-content.clearfix
+        - 4.times do
+          = render 'product'
+      .view-all
+        = link_to "すべての商品を見る", "/brands/1"
 
   = render 'shared/appbanner'
 
