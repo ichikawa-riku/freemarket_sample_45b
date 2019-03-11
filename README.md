@@ -89,12 +89,12 @@ belongs_to :user
 |description|text|null: false|
 |price|integer|null: false|
 |area_id|references|null: false, foreign_key: true|
-|condition|integer|null: false, true, enum|
+|condition|integer|null: false, enum|
 |product_size_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|shipping_method|integer|null: false, true, enum|
-|shipping_burden|integer|null: false, true, enum|
-|estimated_date|integer|null: false, true, enum|
+|shipping_method|integer|null: false, enum|
+|shipping_burden|integer|null: false, enum|
+|estimated_date|integer|null: false, enum|
 |user_id|references|null: false, foreign_key: true|
 
 ## Association
@@ -111,7 +111,7 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |product_id|references|null: false, foreign_key: true|
-|image|string|null: false|
+|image|text|null: false|
 
 ## Association
 - belongs_to :product
@@ -123,7 +123,7 @@ belongs_to :user
 |size|string|null: false|
 
 ## Association
--has_many :products
+- has_many :products
 
 
 ## categoriesテーブル
@@ -161,7 +161,7 @@ belongs_to :user
 ## product_commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|comment|text|null: false|
 |user_id|references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
 

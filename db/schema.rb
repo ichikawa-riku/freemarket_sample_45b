@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190309090637) do
+ActiveRecord::Schema.define(version: 20190310113600) do
 
   create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "zip_code",   null: false
@@ -38,6 +38,24 @@ ActiveRecord::Schema.define(version: 20190309090637) do
     t.integer "product_id", null: false
     t.index ["product_id"], name: "index_likes_on_product_id", using: :btree
     t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+  end
+
+  create_table "product_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "comment",    limit: 65535, null: false
+    t.integer  "user_id",                  null: false
+    t.integer  "product_id",               null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["product_id"], name: "index_product_comments_on_product_id", using: :btree
+    t.index ["user_id"], name: "index_product_comments_on_user_id", using: :btree
+  end
+
+  create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id",               null: false
+    t.text     "image",      limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["product_id"], name: "index_product_images_on_product_id", using: :btree
   end
 
   create_table "product_sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -98,6 +116,9 @@ ActiveRecord::Schema.define(version: 20190309090637) do
   add_foreign_key "adresses", "users"
   add_foreign_key "likes", "products"
   add_foreign_key "likes", "users"
+  add_foreign_key "product_comments", "products"
+  add_foreign_key "product_comments", "users"
+  add_foreign_key "product_images", "products"
   add_foreign_key "products", "areas"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "product_sizes"
