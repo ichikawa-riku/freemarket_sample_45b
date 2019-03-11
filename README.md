@@ -56,6 +56,7 @@
 ## Association
 - has_many :addresses
 - has_many :products
+<<<<<<< HEAD
 
 <!--
 ## credit_cardsテーブル
@@ -70,6 +71,8 @@
 ## Association
 belongs_to :user
  -->
+=======
+>>>>>>> master
 
 ## likesテーブル
 |Column|Type|Options|
@@ -129,14 +132,23 @@ belongs_to :user
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|parent|references|null: false, foreign_key: true|
+|name|string|null: false|
+|main_category|references|null: true, index:true|
+|sub_category|references|null: true, index:true|
 
 ## Association
 - has_many :products, through: :category_products
 - has_many :category_products
+<<<<<<< HEAD
 - belongs_to :parent_id, class_name: "Category"
 - has_many :childern, class_name: "Category", foreign_key: :parent_id
 
+=======
+- has_many :category, class_name: "Category",foreign_key: "main_category_id"
+- has_many :category, class_name: "Category",foreign_key: "sub_category_id"
+- belongs_to :main_category, class_name: "Category"
+- belongs_to :sub_category, class_name: "Category"
+>>>>>>> master
 
 ## category_productsテーブル
 |Column|Type|Options|
