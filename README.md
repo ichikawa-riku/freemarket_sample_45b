@@ -175,6 +175,7 @@ belongs_to :user
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
+|total_payment|integre|null: false|
 
 ## Association
 - belongs_to :user
