@@ -54,8 +54,8 @@ $(document).on('turbolinks:load', function() {
     var sumImages = countImages + countInputImages;
     if (sumImages <= imagesLimit ){
       if ( isCheckedFiles(files) ){
+        createNewForm(thisForm);
         $.each(files, function(i, file) {
-          createNewForm(thisForm);
           var reader = new FileReader();
           reader.onload = (function(file){
             return function(e){
