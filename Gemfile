@@ -64,6 +64,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'payjp'
+gem "jquery-slick-rails"
 
 group :production do
   gem 'unicorn'
