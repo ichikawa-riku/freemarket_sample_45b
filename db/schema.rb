@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20190310113600) do
-=======
 ActiveRecord::Schema.define(version: 20190311091309) do
->>>>>>> master
 
   create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "zip_code",   null: false
@@ -37,8 +33,6 @@ ActiveRecord::Schema.define(version: 20190311091309) do
     t.string "name", null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name",             null: false
     t.integer "main_category_id"
@@ -47,7 +41,6 @@ ActiveRecord::Schema.define(version: 20190311091309) do
     t.index ["sub_category_id"], name: "index_categories_on_sub_category_id", using: :btree
   end
 
->>>>>>> master
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id",    null: false
     t.integer "product_id", null: false
