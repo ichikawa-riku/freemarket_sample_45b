@@ -8,7 +8,7 @@
       %section.creditcard-form
         %h2.creditcard-form__title
           クレジットカード情報入力
-        = form_tag( "/users/#{current_user.id}/credit_card", method: "POST", id:'add-card', class: "creditcard-form__body" ) do 
+        = form_tag( "/users/#{current_user.id}/credit_card", method: "POST", class: "creditcard-form__body", id:"add-card" ) do 
           .creditcard-form__container
             .form-group-card-num
               %label.form-group-card-num__label カード番号
