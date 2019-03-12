@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190310113600) do
+ActiveRecord::Schema.define(version: 20190312095814) do
 
   create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "zip_code",   null: false
@@ -97,8 +97,18 @@ ActiveRecord::Schema.define(version: 20190310113600) do
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
+  create_table "purchases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",       null: false
+    t.integer  "product_id",    null: false
+    t.integer  "total_payment", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["product_id"], name: "index_purchases_on_product_id", using: :btree
+    t.index ["user_id"], name: "index_purchases_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nickname",                             null: false
+    t.string   "nickname"
     t.string   "email",                                null: false
     t.text     "introduction",           limit: 65535
     t.string   "encrypted_password",                   null: false
@@ -107,6 +117,8 @@ ActiveRecord::Schema.define(version: 20190310113600) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "uid"
+    t.string   "provider"
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
@@ -124,4 +136,6 @@ ActiveRecord::Schema.define(version: 20190310113600) do
   add_foreign_key "products", "product_sizes"
   add_foreign_key "products", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "purchases", "products"
+  add_foreign_key "purchases", "users"
 end
