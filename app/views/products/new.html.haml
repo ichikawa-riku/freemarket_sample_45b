@@ -42,9 +42,9 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = collection_select :category, :main_category, Category.main_category, :id, :name, {prompt: "---"}, {class: "select-default"}
+                      = collection_select :category, :main_category, Category.main_category, :id, :name, {prompt: "---"}, {class: "select-default", id: "main_category_form"}
                     .select-wrap
-                      = collection_select :category, :main_category, Category.sub_category(1), :id, :name, {prompt: "---"}, {class: "select-default"}
+                      %select#sub_category_form.select-default.hidden{name: "category[sub_category]"}
                     .select-wrap
                       = collection_select :category, :main_category, Category.category(15), :id, :name, {prompt: "---"}, {class: "select-default"}
                 .form-group

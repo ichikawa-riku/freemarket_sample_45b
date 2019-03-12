@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show] do
+    collection do
+      get 'sub_category'
+      get 'category'
+    end
   end
 
   resources :brands, only: [:index, :show] do
