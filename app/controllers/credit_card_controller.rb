@@ -11,17 +11,17 @@ class CreditCardController < ApplicationController
   end
 
   def create
-    binding.pry
     customer = Payjp::Customer.retrieve(@customer.id)
     @card = customer.cards.create(card: params[:payjp_token])
     render :index
+    binding.pry
+
     # customer情報を＠customer.idで呼び出すことでカードを作成する準備に入る。
   end
 
 
   def create_customer
     @customer = Payjp::Customer.create
-    @customer.id.to_i
   end
   # トークンが一回しか呼び出せないので、まず最初にcustomerを作成する。
   # この時json形式でレスポンスが返ってきていてその中身はbinding.pryや公式サイトから確認できる。
