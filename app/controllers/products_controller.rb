@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+before_action :authenticate_user!, except: [:index, :show]
 
 #トップページ
   def index
@@ -26,6 +27,6 @@ class ProductsController < ApplicationController
 
 private
   def product_params
-    params.require(:product).permit(:name, :description, :category_id, :product_size_id, :brand_id, :condition, :shipping_method, :shipping_burden, :area_id, :estimated_date, :price, product_images_attributes:[:image]).merge(user_id: 1)
+    params.require(:product).permit(:name, :description, :category_id, :product_size_id, :brand_id, :condition, :shipping_method, :shipping_burden, :area_id, :estimated_date, :price, product_images_attributes:[:image]).merge(user_id: current_user.id)
   end
 end

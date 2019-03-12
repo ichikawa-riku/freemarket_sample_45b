@@ -7,6 +7,11 @@
         .sell-container-inner
           %h2.l-single-head 商品の情報を入力
           = form_for @product, html: {class: "sell-form"} do |f|
+            - if @product.errors.any?
+              .error-messages
+                %ul
+                  - @product.errors.full_messages.each do |message|
+                    %li.error-messages__message= message
             .sell-upload-box
               %h3.sell-upload-head
                 出品画像

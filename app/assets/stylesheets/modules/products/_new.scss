@@ -22,6 +22,16 @@
     font-size: 16px !important;
   }
 
+  .error-messages{
+    padding: 40px 100px;
+    font-size: 14px;
+    color: red;
+    border-bottom: 1px solid #eee;
+    &__message{
+      margin: 0 0 10px 0;
+    }
+  }
+
   .sell-upload-errors{
     margin: 0 0 20px 0;
     color: #ea352d;

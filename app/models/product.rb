@@ -15,4 +15,16 @@ class Product < ApplicationRecord
   enum shipping_burden: {"未定": 0, "らくらくメルカリ便": 1, "ゆうメール": 2, "レターパック": 3, "普通郵便(定形、定形外)": 4, "クロネコヤマト": 5, "ゆうパック": 6, "クリックポスト": 7, "ゆうパケット": 8}
 
   enum estimated_date: {"1~2日で発送": 0, "2~3日で発送": 1, "4~7日で発送": 2}
+
+  validates :name, length: { maximum: 40 }, presence: true
+  validates :description, length: { maximum: 1000 }, presence: true
+  validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999 }, presence: true
+  validates :area_id, presence: true
+  validates :condition, presence: true
+  validates :product_size_id, presence: true
+  validates :shipping_method, presence: true
+  validates :shipping_burden, presence: true
+  validates :estimated_date, presence: true
+  validates :user_id, presence: true
+
 end
