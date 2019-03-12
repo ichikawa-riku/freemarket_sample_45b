@@ -339,6 +339,7 @@ DEPENDENCIES
   jquery-slick-rails
   listen (~> 3.0.5)
   mysql2
+  omniauth
   omniauth-facebook
   omniauth-google-oauth2
   payjp
