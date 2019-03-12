@@ -6,7 +6,14 @@ class CategoriesController < ApplicationController
   end
 
   def sub_category
-    @sub_categories = Category.sub_category(params[:main])
+    @sub_categories = Category.sub_category(params[:id])
+    respond_to do |format|
+      format.json
+    end
+  end
+
+  def category
+    @categories = Category.category(params[:id])
     respond_to do |format|
       format.json
     end

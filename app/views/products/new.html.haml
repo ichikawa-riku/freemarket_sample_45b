@@ -44,9 +44,9 @@
                     .select-wrap
                       = collection_select :category, :main_category, Category.main_category, :id, :name, {prompt: "---"}, {class: "select-default", id: "main_category_form"}
                     .select-wrap
-                      %select#sub_category_form.select-default.hidden{name: "category[sub_category]"}
+                      %select#sub_category_form.select-default.hidden
                     .select-wrap
-                      = collection_select :category, :main_category, Category.category(15), :id, :name, {prompt: "---"}, {class: "select-default"}
+                      = f.select :category_id, {}, {}, {class: "select-default hidden", id: "category_form"}
                 .form-group
                   = f.label :product_size_id do
                     サイズ
@@ -64,7 +64,7 @@
                     商品の状態
                     %span.form-require 必須
                   .select-wrap
-                    = f.select :condition, Product.conditions.keys {}, {prompt: "---"}, {class: "select-default"}
+                    = f.select :condition, Product.conditions.keys.to_a {}, {prompt: "---"}, {class: "select-default"}
             .sell-content.clearfix
               %h3.sell-sub-head 配送について
               %span.fas.fa-question-circle.blue-icon
