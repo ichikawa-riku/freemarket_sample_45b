@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20190312095814) do
 
+
   create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "zip_code",   null: false
     t.integer  "area_id",    null: false
@@ -31,6 +32,14 @@ ActiveRecord::Schema.define(version: 20190312095814) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "name",             null: false
+    t.integer "main_category_id"
+    t.integer "sub_category_id"
+    t.index ["main_category_id"], name: "index_categories_on_main_category_id", using: :btree
+    t.index ["sub_category_id"], name: "index_categories_on_sub_category_id", using: :btree
   end
 
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
