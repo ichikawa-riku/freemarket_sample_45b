@@ -17,7 +17,8 @@
                 .sell-upload-drop-box.have-item-0
                   %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
                   %i.icon-camera
-                  %input.sell-upload-drop-file{ type: "file",multiple: "multiple", name: "prdoduct[product_images][]" }
+                  = f.fields_for :product_images do |image|
+                    = image.file_field :image, class: "sell-upload-drop-file image-input-form"
                 .sell-upload-items-container
                   .sell-upload-items.have-item-0
                     %ul.sell-upload-files
