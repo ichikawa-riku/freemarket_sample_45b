@@ -13,6 +13,7 @@ before_action :authenticate_user!, except: [:index, :show]
   def new
     @product = Product.new
     @product.product_images.build
+    @product.build_brand
   end
 
 #トップページへリダイレクト
@@ -27,6 +28,6 @@ before_action :authenticate_user!, except: [:index, :show]
 
 private
   def product_params
-    params.require(:product).permit(:name, :description, :category_id, :product_size_id, :brand_id, :condition, :shipping_method, :shipping_burden, :area_id, :estimated_date, :price, product_images_attributes:[:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :category_id, :product_size_id, :brand_id, :condition, :shipping_method, :shipping_burden, :area_id, :estimated_date, :price, product_images_attributes:[:image], brand_attributes:[:name]).merge(user_id: current_user.id)
   end
 end

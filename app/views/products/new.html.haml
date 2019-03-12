@@ -64,7 +64,8 @@
                     ブランド
                     %span.form-any 任意
                   .select-wrap
-                    = f.collection_select :brand_id, Brand.all {}, :id, :name, {prompt: "---"}, {class: "select-default"}
+                    = f.fields_for :brand do |brand|
+                      = brand.text_field :name, class: "input-default", placeholder: "例）ナイキ"
                 .form-group
                   = f.label :condition do
                     商品の状態

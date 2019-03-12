@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   belongs_to :area
   belongs_to :product_size
   belongs_to :brand
+  accepts_nested_attributes_for :brand
   has_many :product_images
   accepts_nested_attributes_for :product_images, limit: 10
   belongs_to :category
