@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190313072416) do
+=======
+ActiveRecord::Schema.define(version: 20190313040911) do
+>>>>>>> master
 
   create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "zip_code",   null: false
@@ -87,7 +91,6 @@ ActiveRecord::Schema.define(version: 20190313072416) do
     t.integer  "area_id",                       null: false
     t.integer  "condition",                     null: false
     t.integer  "product_size_id",               null: false
-    t.integer  "brand_id",                      null: false
     t.integer  "shipping_method",               null: false
     t.integer  "shipping_burden",               null: false
     t.integer  "estimated_date",                null: false
@@ -95,6 +98,7 @@ ActiveRecord::Schema.define(version: 20190313072416) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.integer  "category_id"
+    t.integer  "brand_id"
     t.index ["area_id"], name: "index_products_on_area_id", using: :btree
     t.index ["brand_id"], name: "index_products_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
