@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'products#index'
 
   resources :products, only: [:show, :new, :create] do
@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show] do
+    collection do
+      get 'sub_category'
+      get 'category'
+    end
   end
 
   resources :brands, only: [:index, :show] do
