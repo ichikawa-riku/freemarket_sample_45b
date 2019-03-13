@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20190313040911) do
     t.string   "customer_id"
     t.string   "card_id"
     t.string   "token_id"
-    t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
     t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
   end
 
