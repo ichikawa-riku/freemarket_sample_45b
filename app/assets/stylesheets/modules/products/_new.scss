@@ -22,6 +22,16 @@
     font-size: 16px !important;
   }
 
+  .error-messages{
+    padding: 40px 100px;
+    font-size: 14px;
+    color: red;
+    border-bottom: 1px solid #eee;
+    &__message{
+      margin: 0 0 10px 0;
+    }
+  }
+
   .sell-upload-errors{
     margin: 0 0 20px 0;
     color: #ea352d;
@@ -48,6 +58,9 @@
         float: left;
         text-align: center;
         background: #f5f5f5;
+        color: #0099e8;
+        text-decoration: none;
+        font-size: 1.0em
       }
       &--button--delete{
         display: block;
@@ -58,6 +71,9 @@
         text-align: center;
         background: #f5f5f5;
         border-left: 1px solid #eee;
+        color: #0099e8;
+        text-decoration: none;
+        font-size: 1.0em
       }
     }
   }
@@ -115,7 +131,10 @@
   .form-require {
     background: #ea352d;
   }
-  .form-require, .form-arbitrary, .message-is-seller, .news-private {
+  .form-any {
+    background: #ccc;
+  }
+  .form-require, .form-arbitrary, .message-is-seller, .news-private, .form-any {
     margin: 0 0 0 8px;
     padding: 2px 4px;
     border-radius: 2px;
@@ -169,14 +188,14 @@
       margin-top: 40px;
     }
   }
-  .sell-content.clearfix1 {
-    height: 261px;
+  .sell-content {
+    min-height: 261px;
   }
-  .sell-content.clearfix2 {
-    height: 371px;
+  .sell-content {
+    min-height: 371px;
   }
-  .sell-content.clearfix3 {
-    height: 299px;
+  .sell-content {
+    min-height: 299px;
   }
   .form-group label {
     font-weight: 600;
@@ -316,4 +335,11 @@
     transition: all ease-out .3s;
     opacity: 0;
   }
+}
+
+.form-group.hidden{
+  display: none;
+}
+.select-default.hidden{
+  display: none;
 }
