@@ -19,7 +19,7 @@ before_action :authenticate_user!, except: [:index, :show]
 #トップページへリダイレクト
   def create
     @product = Product.new(product_params)
-    @product.update_brand(params[:product][:brand_attributes][:name]) if params[:product][:brand_attributes][:name]
+    @product.update_brand(params[:product][:brand_attributes][:name]) if params[:product][:brand_attributes][:name].present?
     if @product.save
       redirect_to root_path
     else
