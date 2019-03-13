@@ -29,7 +29,7 @@ class Product < ApplicationRecord
   validates :user_id, presence: true
 
   def reject_brand_blank(attributes)
-    exists = Brand.find_by(name: attributes[:name])
+    exists = Brand.find_by(name: attributes[:name]).present?
     empty = attributes[:name].blank?
     exists || empty
   end
