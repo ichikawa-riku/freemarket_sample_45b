@@ -73,11 +73,18 @@ $(document).on('turbolinks:load', function() {
     }
   }
 
-  $(document).on("change", "input[type=file].sell-upload-drop-file", function(){
+  $("body").on("change", "input[type=file].sell-upload-drop-file", function(){
+    console.log("イベントが発火しました")
     var thisForm = $(this);
     var file = this.files[0];
     imeageMain(thisForm, file);
   });
+
+  // $("input[type=file].sell-upload-drop-file").on("change", function(){
+  //   var thisForm = $(this);
+  //   var file = this.files[0];
+  //   imeageMain(thisForm, file);
+  // });
 
   $(document).on("click", ".sell-upload-file__buttons--button--delete", function(event){
     event.preventDefault();
