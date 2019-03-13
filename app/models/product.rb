@@ -3,8 +3,6 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :area
   belongs_to :product_size
-  belongs_to :brand
-  accepts_nested_attributes_for :brand
   belongs_to :brand, optional: true
   accepts_nested_attributes_for :brand, reject_if: :reject_brand_blank
   has_many :product_images
@@ -36,4 +34,9 @@ class Product < ApplicationRecord
     empty = attributes[:name].blank?
     exists || empty
   end
+
+  def update_brand(brand_name)
+    self.brand = Brand.find_by(name: brand_name) if Brand.find_by(name: brand_name)
+  end
+
 end
