@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20190312095814) do
 
-
   create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "zip_code",   null: false
     t.integer  "area_id",    null: false
@@ -85,8 +84,10 @@ ActiveRecord::Schema.define(version: 20190312095814) do
     t.integer  "user_id",                       null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "category_id"
     t.index ["area_id"], name: "index_products_on_area_id", using: :btree
     t.index ["brand_id"], name: "index_products_on_brand_id", using: :btree
+    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["name"], name: "index_products_on_name", using: :btree
     t.index ["product_size_id"], name: "index_products_on_product_size_id", using: :btree
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
@@ -142,6 +143,7 @@ ActiveRecord::Schema.define(version: 20190312095814) do
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "areas"
   add_foreign_key "products", "brands"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "product_sizes"
   add_foreign_key "products", "users"
   add_foreign_key "profiles", "users"
