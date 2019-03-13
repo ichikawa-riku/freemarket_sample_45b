@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   belongs_to :product_size
   belongs_to :brand
   accepts_nested_attributes_for :brand
+  belongs_to :brand, optional: true
+  accepts_nested_attributes_for :brand, reject_if: :reject_brand_blank
   has_many :product_images
   accepts_nested_attributes_for :product_images, limit: 10
   belongs_to :category
@@ -28,4 +30,10 @@ class Product < ApplicationRecord
   validates :estimated_date, presence: true
   validates :user_id, presence: true
 
+  def reject_brand_blank(attributes)
+    binding.pry
+    exists = Brand.find_by(name: attributes[:name])
+    empty = attributes[:name].blank?
+    exists || empty
+  end
 end
