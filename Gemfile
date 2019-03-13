@@ -71,6 +71,7 @@ gem "jquery-slick-rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
