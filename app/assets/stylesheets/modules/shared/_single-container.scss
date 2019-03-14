@@ -72,6 +72,7 @@
   }
   .btn-sns {
     position: relative;
+    margin: 16px 0 0;
   }
   .btn-sns i {
     font-size: 20px;
@@ -82,7 +83,6 @@
     transform: translate(0, -50%);
   }
   .btn-sns-facebook {
-    margin: 16px 0 0;
     background: #385185;
     color: #fff;
   }
@@ -90,8 +90,10 @@
     margin: 0;
   }
   .btn-sns-google {
-    margin: 16px 0 0;
     background: #fff no-repeat 3px top;
+    color: black;
+  }
+  #google-login {
     border: #979797 solid 1px;
     color: #333;
   }
