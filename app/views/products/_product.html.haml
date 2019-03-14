@@ -1,12 +1,12 @@
 = link_to "/products/1", class: "assosiation-items__items-box items-box" do
-  / = image_tag product.product_images.image.to_s ,class: "items-box__image"
+  = image_tag product.product_images.first.image ,class: "items-box__image"
   .items-box__body
     .items-box__body--details.item-details.clearfix
       %h3.item-details__name
         = product.name
       .item-details__num.clearfix
         .item-details__num--price
-        / = product.price
+        = product.price
         .item-details__num--liked
           = fa_icon "heart-o", text:"12"
       .item-details__tax

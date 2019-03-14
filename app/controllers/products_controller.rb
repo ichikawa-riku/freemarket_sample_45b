@@ -4,10 +4,11 @@ before_action :authenticate_user!, except: [:index, :show]
 #トップページ
   def index
     @ladies = Category.find(1)
-    @ladies_item = Product.joins(:category).merge(Category.where(main_category_id: 2))
-    # @mens = Category.find(2)
-    # @baby = Category.find(3)
-    # @interior = Category.find(4)
+    @ladies_item = Product.joins(:category).merge(Category.where(main_category_id: 1)).limit(4).order(id: "DESC")
+    @mens = Category.find(2)
+    @mens_item = Product.joins(:category).merge(Category.where(main_category_id: 2)).limit(4).order(id: "DESC")
+    @baby = Category.find(3)
+    @baby_item = Product.joins(:category).merge(Category.where(main_category_id: 3)).limit(4).order(id: "DESC")
   end
 
 #商品詳細ページ

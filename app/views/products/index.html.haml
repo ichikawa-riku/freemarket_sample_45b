@@ -31,21 +31,21 @@
       %h3.items-box-container__title
         = link_to "レディース 新着アイテム", "/brands/1"
       .items-box-content.clearfix
-        = render partial: "product", locals: { product: @ladies_item }
+        = render partial: "product", collection: @ladies_item
       .view-all
         = link_to "すべての商品を見る", "/brands/1"
     %section.items-box-container.clearfix
       %h3.items-box-container__title
         = link_to "メンズ 新着アイテム", "/brands/1"
       .items-box-content.clearfix
-        =# render 'product'
+        = render partial: "product", collection: @mens_item
       .view-all
         = link_to "すべての商品を見る", "/brands/1"
     %section.items-box-container.clearfix
       %h3.items-box-container__title
         = link_to "ベビー・キッズ 新着アイテム", "/brands/1"
       .items-box-content.clearfix
-        =# render 'product'
+        = render partial: "product", collection: @baby_item
       .view-all
         = link_to "すべての商品を見る", "/brands/1"
     %section.items-box-container.clearfix
