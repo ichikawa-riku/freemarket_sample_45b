@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :nickname, length: { maximum: 20 }
   validates :password, length: { minimum: 6 },allow_nil: true
   validates :nickname, presence: true
+  validates :uid, :uniqueness => {:scope => :provider}
 
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first

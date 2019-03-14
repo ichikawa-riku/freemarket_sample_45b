@@ -55,5 +55,24 @@ describe User do
       expect(user.errors[:password][0]).to include("は6文字以上で入力してください")
     end
 
+    it 'uidとproviderの組み合わせが既に存在すると保存できない' do
+      first_user = create(:user)
+      second_user = build(:user, email: "second@gmail.com", uid: first_user.uid, provider: first_user.provider)
+      second_user.valid?
+      expect(second_user.errors[:uid][0]).to include("はすでに存在します")
+    end
+
+    it 'providerが同じでもuidが違えば保存できる' do
+      first_user = create(:user)
+      second_user = build(:user, email: "second@gmail.com", provider: first_user.provider)
+      expect(second_user).to be_valid
+    end
+
+    it 'uidが同じでもproviderが違えば保存できる' do
+      first_user = create(:user)
+      second_user = build(:user, email: "second@gmail.com", uid: first_user.uid, provider: "google_oauth2")
+      expect(second_user).to be_valid
+    end
+
   end
 end
