@@ -77,17 +77,17 @@
               %span.fas.fa-question-circle.blue-icon
               .sell-form-box
                 .form-group
-                  = f.label :shipping_method do
+                  = f.label :shipping_burden do
                     配送料の負担
                     %span.form-require 必須
                   .select-wrap
-                    = f.select :shipping_method, Product.shipping_methods.keys, {prompt: "---"}, {class: "select-default", id: "shipping_method_form"}
+                    = f.select :shipping_burden, Product.shipping_burdens.keys, {prompt: "---"}, {class: "select-default", id: "shipping_method_form"}
                 .form-group.hidden#shipping_burden_form_div
-                  = f.label :shipping_burden do
+                  = f.label :shipping_method do
                     配送の方法
                     %span.form-require 必須
                   .select-wrap
-                    = f.select :shipping_burden, Product.shipping_burdens.keys {}, {prompt: "---"}, {class: "select-default", id: "shipping_burden_form"}
+                    = f.select :shipping_method, Product.shipping_methods.keys {}, {prompt: "---"}, {class: "select-default", id: "shipping_burden_form"}
                 .form-group
                   = f.label :collection_select do
                     発送元の地域
