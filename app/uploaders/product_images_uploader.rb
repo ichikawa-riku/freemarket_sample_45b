@@ -6,8 +6,7 @@ class ProductImagesUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [220, 220]
 
   # Choose what kind of storage to use for this uploader:
-  Rails.env.development?
-  if
+  if Rails.env.development?
    storage :file
   elsif Rails.env.test?
    storage :file
