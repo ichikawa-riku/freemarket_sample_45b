@@ -3,8 +3,8 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :area
   belongs_to :product_size
-  belongs_to :brand
-  accepts_nested_attributes_for :brand
+  belongs_to :brand, optional: true
+  accepts_nested_attributes_for :brand, reject_if: :reject_brand_blank
   has_many :product_images
   accepts_nested_attributes_for :product_images, limit: 10
   belongs_to :category
@@ -19,7 +19,7 @@ class Product < ApplicationRecord
 
   validates :name, length: { maximum: 40 }, presence: true
   validates :description, length: { maximum: 1000 }, presence: true
-  validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999 }, presence: true
+  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, presence: true
   validates :area_id, presence: true
   validates :condition, presence: true
   validates :product_size_id, presence: true
@@ -27,5 +27,15 @@ class Product < ApplicationRecord
   validates :shipping_burden, presence: true
   validates :estimated_date, presence: true
   validates :user_id, presence: true
+
+  def reject_brand_blank(attributes)
+    exists = Brand.find_by(name: attributes[:name]).present?
+    empty = attributes[:name].blank?
+    exists || empty
+  end
+
+  def update_brand(brand_name)
+    self.brand = Brand.find_by(name: brand_name) if Brand.find_by(name: brand_name)
+  end
 
 end
