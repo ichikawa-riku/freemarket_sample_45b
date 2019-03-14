@@ -6,6 +6,8 @@ FactoryBot.define do
     password = Faker::Internet.password(8)
     password              { password }
     password_confirmation { password }
+    uid                   {Faker::Number.number(20)}
+    provider              { "facebook" }
   end
 
 end
