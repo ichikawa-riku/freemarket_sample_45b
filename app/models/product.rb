@@ -36,7 +36,7 @@ class Product < ApplicationRecord
     exists || empty
   end
 
-  def update_brand(brand_name)
+  def new_brand(brand_name)
     self.brand = Brand.find_by(name: brand_name) if Brand.find_by(name: brand_name)
   end
 
