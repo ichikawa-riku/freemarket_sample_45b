@@ -25,12 +25,16 @@ class CreditCardController < ApplicationController
 
   def destroy
     credit_info = CreditCard.find_by(user_id: params[:user_id])
-    credit_info.delete
-    customer = Payjp::Customer.retrieve(credit_info.customer_id)
-    card = customer.cards.retrieve(credit_info.card_id)
-    card.delete
-    customer.delete
-    redirect_to action: :index
+    if curren_user.id == credit_info.user_id
+      credit_info.delete
+      customer = Payjp::Customer.retrieve(credit_info.customer_id)
+      card = customer.cards.retrieve(credit_info.card_id)
+      card.delete
+      customer.delete
+      redirect_to action: :index
+    else 
+      redirect_to :index, alert: "その権限はありません"
+    end
   end
 
   private 
