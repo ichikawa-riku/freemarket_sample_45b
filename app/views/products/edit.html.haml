@@ -27,6 +27,7 @@
                 .sell-upload-items-container
                   .sell-upload-items.have-item-0
                     %ul.sell-upload-files
+                      = render partial: "prodcut_image_thumbnail", collection: @product_images
             .sell-content
               .form-group
                 = f.label :name do
