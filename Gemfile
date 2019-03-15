@@ -71,6 +71,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'mini_magick'
+gem 'gretel'
 
 group :production do
   gem 'unicorn'

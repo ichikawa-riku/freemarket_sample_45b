@@ -1,8 +1,8 @@
 = render "shared/header"
-
+- breadcrumb :new_credit_card
 .mypage
   %nav.bread-crumbs
-
+    = breadcrumbs separator: " > "
   %main.mypage__body.clearfix
     .mypage__body__main
       %section.creditcard-form
