@@ -1,6 +1,5 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   var form = $('#add-card');
-
   $('#add-card').on("submit", function(e){
     e.preventDefault();
     Payjp.setPublicKey('pk_test_db731d8714c8a40ebc1793b4');
@@ -22,11 +21,11 @@ $(function(){
         console.log(token);
         form.append($('<input type="hidden" name="payjp_token" class="payjp-token" />').val(token));
         form.get(0).submit();
-      }
-      else {
+      }else {
         alert('error');
         form.find('button').prop('disabled', false);
       }
     });
   });
 });
+  

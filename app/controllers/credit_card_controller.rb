@@ -1,30 +1,41 @@
 class CreditCardController < ApplicationController
   
-  Payjp.api_key = 'sk_test_ee7ccb4870a47d2d5954d901'
-  before_action :create_customer
-
-
+  Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+  
   def index
+    @credit_info = CreditCard.find_by(user_id: params[:user_id])
+    if @credit_info
+      customer = Payjp::Customer.retrieve(@credit_info.customer_id) 
+      @card = customer.cards.retrieve(@credit_info.card_id)
+    end
   end
   
   def new
   end
 
   def create
-    customer = Payjp::Customer.retrieve(@customer.id)
-    @card = customer.cards.create(card: params[:payjp_token])
-    render :index
-    binding.pry
-
-    # customer情報を＠customer.idで呼び出すことでカードを作成する準備に入る。
+    customer = Payjp::Customer.create(card: params[:payjp_token])
+    card = CreditCard.new(customer_id: customer.id, card_id: customer.default_card, user_id: credit_params[:user_id])
+    if card.save
+      redirect_to action: :index
+    else
+      render :new
+    end
   end
 
-
-  def create_customer
-    @customer = Payjp::Customer.create
+  def destroy
+    credit_info = CreditCard.find_by(user_id: params[:user_id])
+    credit_info.delete
+    customer = Payjp::Customer.retrieve(credit_info.customer_id)
+    card = customer.cards.retrieve(credit_info.card_id)
+    card.delete
+    customer.delete
+    redirect_to action: :index
   end
-  # トークンが一回しか呼び出せないので、まず最初にcustomerを作成する。
-  # この時json形式でレスポンスが返ってきていてその中身はbinding.pryや公式サイトから確認できる。
 
-  
+  private 
+  def credit_params
+    params.permit(:user_id)
+  end
 end
+  
