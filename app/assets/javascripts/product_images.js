@@ -73,14 +73,7 @@ $(document).on('turbolinks:load', function() {
     }
   }
 
-  console.log($(".sell-upload-drop-file").length)
-
-  if($(".sell-upload-drop-file").length > 1){
-    console.log("inputがあります")
-  };
-
   $("body").on("change", "input[type=file].sell-upload-drop-file", function(){
-    console.log("イベントが発火しました")
     var thisForm = $(this);
     var file = this.files[0];
     imeageMain(thisForm, file);
