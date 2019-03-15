@@ -23,7 +23,8 @@
                   %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
                   %i.icon-camera
                   = f.fields_for :product_images do |image|
-                    = image.file_field :image, class: "sell-upload-drop-file image-input-form"
+                    = image.file_field :image, class: "image-input-form", type: "hidden"
+                    = image.hidden_field :image_cache
                 .sell-upload-items-container
                   .sell-upload-items.have-item-0
                     %ul.sell-upload-files

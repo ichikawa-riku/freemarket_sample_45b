@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
-
+before_action :set_product, only: [:edit, :update]
 #トップページ
   def index
   end
@@ -19,16 +19,40 @@ before_action :authenticate_user!, except: [:index, :show]
 #トップページへリダイレクト
   def create
     @product = Product.new(product_params)
-    @product.update_brand(params[:product][:brand_attributes][:name]) if params[:product][:brand_attributes][:name].present?
     if @product.save
+      @product.new_brand(params[:product][:brand_attributes][:name]) if params[:product][:brand_attributes][:name].present?
       redirect_to root_path
     else
       render :new
     end
   end
 
+  def edit
+    @product_images = @product.product_images
+    @product_images.each do |product_image|
+      product_image.image.cache!
+    end
+    @product.build_brand if @product.brand_id.nil?
+  end
+
+  def update
+    if @product.user_id == current_user.id
+      if @product.brand_id.present?
+        @product.new_brand(params[:product][:brand_attributes][:name]) if @product.brand.name != params[:product][:brand_attributes][:name]
+      else
+        @product.new_brand(params[:product][:brand_attributes][:name]) if params[:product][:brand_attributes][:name].present?
+      end
+      @product.update(product_params)
+    end
+    redirect_to root_path
+  end
+
 private
   def product_params
-    params.require(:product).permit(:name, :description, :category_id, :product_size_id, :brand_id, :condition, :shipping_method, :shipping_burden, :area_id, :estimated_date, :price, product_images_attributes:[:image], brand_attributes:[:name]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :category_id, :product_size_id, :brand_id, :condition, :shipping_method, :shipping_burden, :area_id, :estimated_date, :price, product_images_attributes:[:id, :image, :image_cache], brand_attributes:[:name]).merge(user_id: current_user.id)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end

@@ -1,6 +1,7 @@
 $(document).on('turbolinks:load', function() {
   const imagesLimit = 10
   var index = 1
+  var path = location.pathname
   function resetErrorMessage(){
     if ($(".sell-upload-errors")){
       $(".sell-upload-errors").remove()
@@ -85,6 +86,9 @@ $(document).on('turbolinks:load', function() {
     var pushButtonId = pushButton.attr('id');
     var targetNumbaer = pushButtonId.replace(/[^0-9]/g, '')
     var targetId = "product_product_images_attributes_"+ targetNumbaer +"_image"
+    if(path.match(/^[/]products[/][0-9]+[/]edit/)){
+      targetId = "product_product_images_attributes_"+ targetNumbaer +"_image_cache"
+    }
     removeForm(targetId);
     removeThumbnail(pushButton);
   });
