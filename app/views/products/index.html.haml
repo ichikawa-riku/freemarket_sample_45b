@@ -52,7 +52,7 @@
       %h3.items-box-container__title
         = link_to "コスメ・香水・美容 新着アイテム", "/brands/1"
       .items-box-content.clearfix
-        =# render 'product'
+        = render partial: "product", collection: @cosme_item
       .view-all
         = link_to "すべての商品を見る", "/brands/1"
     %h2.pickup-head ピックアップブランド
@@ -60,28 +60,28 @@
       %h3.items-box-container__title
         = link_to "シャネル 新着アイテム", "/brands/1"
       .items-box-content.clearfix
-        =# render 'product'
+        = render partial: "product", collection: @chanel
       .view-all
         = link_to "すべての商品を見る", "/brands/1"
     %section.items-box-container.clearfix
       %h3.items-box-container__title
         = link_to "ルイ ヴィトン 新着アイテム", "/brands/1"
       .items-box-content.clearfix
-        =# render 'product'
+        = render partial: "product", collection: @vuitton
       .view-all
         = link_to "すべての商品を見る", "/brands/1"
     %section.items-box-container.clearfix
       %h3.items-box-container__title
         = link_to "シュプリーム 新着アイテム", "/brands/1"
       .items-box-content.clearfix
-        =# render 'product'
+        = render partial: "product", collection: @supreme
       .view-all
         = link_to "すべての商品を見る", "/brands/1"
     %section.items-box-container.clearfix
       %h3.items-box-container__title
         = link_to "ナイキ 新着アイテム", "/brands/1"
       .items-box-content.clearfix
-        =# render 'product'
+        = render partial: "product", collection: @nike
       .view-all
         = link_to "すべての商品を見る", "/brands/1"
 

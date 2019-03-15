@@ -1,5 +1,8 @@
 = link_to "/products/1", class: "assosiation-items__items-box items-box" do
-  = image_tag product.product_images.first.image ,class: "items-box__image"
+  -if product.product_images.present?
+    = image_tag product.product_images.first.image ,class: "items-box__image"
+  -else
+    = image_tag "http://www.familys-talk.com/wp-content/themes/refinepro/img/noimage.png.pagespeed.ce.9JwMGwgNY4.png" ,class: "items-box__image"
   .items-box__body
     .items-box__body--details.item-details.clearfix
       %h3.item-details__name
