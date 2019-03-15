@@ -25,7 +25,7 @@ class CreditCardController < ApplicationController
 
   def destroy
     credit_info = CreditCard.find_by(user_id: params[:user_id])
-    if curren_user.id == credit_info.user_id
+    if current_user.id == credit_info.user_id
       credit_info.delete
       customer = Payjp::Customer.retrieve(credit_info.customer_id)
       card = customer.cards.retrieve(credit_info.card_id)
