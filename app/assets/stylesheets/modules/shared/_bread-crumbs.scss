@@ -1,0 +1,21 @@
+.bread-crumbs {
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
+  height: 50px;
+  background-color: #fff;
+  font-size: 14px;
+  position: relative;
+  .breadcrumbs {
+    overflow: visible;
+    width: 900px;
+    margin: 0 auto;
+    padding: 14px 0 17px;
+    white-space: normal;
+    a {
+      color: black;
+    }
+    .current {
+      font-weight: bold;
+    }
+  }
+}
