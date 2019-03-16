@@ -22,11 +22,14 @@
                 .sell-upload-drop-box.have-item-0
                   %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
                   %i.icon-camera
+                  = file_field "", "",id: "product_product_images_attributes_#{@product_images.length}_image", class: "sell-upload-drop-file image-input-form", name: "product[product_images_attributes][#{@product_images.length}][image]"
                   = f.fields_for :product_images do |image|
-                    = image.file_field :image, class: "sell-upload-drop-file image-input-form"
+                    = image.file_field :image, class: "image-input-form", type: "hidden"
+                    = image.hidden_field :image_cache
                 .sell-upload-items-container
                   .sell-upload-items.have-item-0
                     %ul.sell-upload-files
+                      = render partial: "prodcut_image_thumbnail", collection: @product_images
             .sell-content
               .form-group
                 = f.label :name do
@@ -48,11 +51,11 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = collection_select :category, :main_category, Category.main_category, :id, :name, {prompt: "---"}, {class: "select-default", id: "main_category_form"}
+                      = collection_select :category, :main_category, Category.main_category, :id, :name, {prompt: "---", selected: @product.category.main_category_id}, {class: "select-default", id: "main_category_form"}
                     .select-wrap
-                      %select#sub_category_form.select-default.hidden
+                      = collection_select :category, :sub_category, Category.sub_category(@product.category.main_category_id), :id, :name, {prompt: "---", selected: @product.category.sub_category_id}, {class: "select-default", id: "sub_category_form"}
                     .select-wrap
-                      = f.select :category_id, {}, {}, {class: "select-default hidden", id: "category_form"}
+                      = f.select :category_id, Category.category(@product.category.sub_category_id).map{|t| [t.name, t.id]}, {}, {class: "select-default", id: "category_form"}
                 .form-group
                   = f.label :product_size_id do
                     サイズ
@@ -118,11 +121,12 @@
                     .l-left
                       販売手数料 (10%)
                     .l-right.sales-fee
-                      ー
+                      = @product_sales_fee
                   %li.clearfix.bold
                     .l-left
                       販売利益
                     .l-right.profit
+                      = @product_sales_profit
             .modal{:role => "dialog", :tabindex => "-1"}
               .modal-inner
             .sell-content.sell-btn-box
@@ -140,7 +144,7 @@
                   また、出品をもちまして
                   = link_to "加盟店規約", "", target: "_blank"
                   に同意したことになります。
-              = f.submit class: "btn-default btn-red", value: "出品する"
+              = f.submit class: "btn-default btn-red"
               = link_to "もどる", :back, class:"btn-default btn-gray"
           .overlay
   = render 'shared/logo-footer'
