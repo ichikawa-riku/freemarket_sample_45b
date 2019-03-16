@@ -1,9 +1,9 @@
 .wrapper
   %header.pc-header
     = render 'shared/header'
-
+  - breadcrumb :new_profile
   %nav.bread-crumbs
-
+    = breadcrumbs separator: " > "
   %main.l-container.clearfix
     .l-content
       %section.l-chapter-container.mypage-identification

@@ -11,6 +11,9 @@ class CreditCardController < ApplicationController
   end
   
   def new
+    if CreditCard.find_by(user_id: params[:user_id]).present?
+      redirect_to action: :index
+    end
   end
 
   def create
