@@ -2,16 +2,16 @@
 
 %section.product-page-detail
   %h1.product-page-detail__title
-    NIKE ジャージ ナイキ ナイロンジャケット ウィンドブレーカー
+    = @product.name
   .product-page-detail__main.product-page-main.clearfix
     .product-page-main__images
-      = image_tag "https://pbs.twimg.com/profile_images/773784538350706689/PMoiE8tk_400x400.jpg" ,class: "items-box__image1", class: "product-page-main__images--main"
+      = image_tag @product.product_images[0].image ,class: "items-box__image1", class: "product-page-main__images--main"
       .product-page-main__images--soldout-badge
       .product-page-main__images--soldout
         SOLD
       .product-page-main__images--others.clearfix
-        - 10.times do
-          = image_tag "https://pbs.twimg.com/profile_images/773784538350706689/PMoiE8tk_400x400.jpg" ,class: "items-box__image1", class: "other-image"
+        - @product.product_images.each do |product_image|
+          = image_tag product_image.image, class: "items-box__image1", class: "other-image"
         .other-image-masks.clearfix
           - 10.times do
             .other-image-masks__mask
@@ -21,83 +21,85 @@
           %th.item-detail-table__record--key
             出品者
           %td.item-detail-table__record--value
-            = link_to "市川", ""
+            = link_to @product.user.nickname, ""
             .user-raitings.clearfix
               .user-raitings__raiting
-                =fa_icon "smile lg", text:12
+                = fa_icon "smile lg", text:0
               .user-raitings__raiting
-                =fa_icon "meh lg", text:12
+                = fa_icon "meh lg", text:0
               .user-raitings__raiting
-                =fa_icon "frown lg", text:12
+                = fa_icon "frown lg", text:0
         %tr.item-detail-table__record
           %th.item-detail-table__record--key
             カテゴリー
           %td.item-detail-table__record--value
-            = link_to "メンズ", "", { class: "table-link" }
+            = link_to @product.category.name, "", { class: "table-link" }
             = link_to "", {class: "table-link"} do
-              = fa_icon "angle-right lg", text:"小物"
+              = fa_icon "angle-right lg"
+              = @product.category.main_category.name
             = link_to "", {class: "table-link"} do
-              = fa_icon "angle-right lg", text:"財布"
+              = fa_icon "angle-right lg"
+              = @product.category.sub_category.name
 
         %tr.item-detail-table__record
           %th.item-detail-table__record--key
             ブランド
           %td.item-detail-table__record--value
-            = link_to "ナイキ", "", { class: "table-link" }
+            / 正しく条件分岐できていない
+            / - if @product.brand_id = nil
+            /   = link_to "", "", { class: "table-link" }
+            = link_to @product.brand.name, "", { class: "table-link" }
         %tr.item-detail-table__record
           %th.item-detail-table__record--key
             商品のサイズ
           %td.item-detail-table__record--value
-            M
+            = @product.product_size.size
         %tr.item-detail-table__record
           %th.item-detail-table__record--key
             商品の状態
           %td.item-detail-table__record--value
-            未使用に近い
+            = @product.condition
         %tr.item-detail-table__record
           %th.item-detail-table__record--key
             配送料の負担
           %td.item-detail-table__record--value
-            送料込み(出品者負担)
+            = @product.shipping_burden
         %tr.item-detail-table__record
           %th.item-detail-table__record--key
             配送の方法
           %td.item-detail-table__record--value
-            ゆうゆうメルカリ便
+            = @product.shipping_method
         %tr.item-detail-table__record
           %th.item-detail-table__record--key
             配送元地域
           %td.item-detail-table__record--value
-            = link_to "北海道", "", { class: "table-link" }
+            = link_to @product.area.prefecture, "", { class: "table-link" }
         %tr.item-detail-table__record
           %th.item-detail-table__record--key
             発送日の目安
           %td.item-detail-table__record--value
-            1~2日で発送
+            = @product.estimated_date
   .product-page-detail__price
     %span.product-page-detail__price--price
-      ￥2,222
+      ￥
+      = number_with_delimiter(@product.price)
     %span.product-page-detail__price--tax
-      (税込み)
+      (税込)
     %span.product-page-detail__price--shipping-fee
-      送料込み
+      = @product.shipping_burden.sub(/\(.*/, "")
   = link_to "", class: "product-page-detail__buy-button" do
     購入画面に進む
   .product-page-detail__buy-button--soldout
     売り切れました
   .product-page-detail__description
-    2018年12月にAmazonから購入しました。デザインなど気にいって購入したのですが、カードを入れるポケットが少し小さいのと私には全体的に少し小さいので出品します。
-    %br
-    チャームがないのを届いて数日後に知ったので、初めからなかったのか？よくわからないのでご了承願います。チャームを外して送る事も可能です。箱あり箱なしも可能です！2018年12月にAmazonから購入しました。デザインなど気にいって購入したのですが、カードを入れるポケットが少し小さいのと私には全体的に少し小さいので出品します。
-    %br
-    チャームがないのを届いて数日後に知ったので、初めからなかったのか？よくわからないのでご了承願います。チャームを外して送る事も可能です。箱あり箱なしも可能です！
+    = @product.description
   .product-page-detail__buttons
     = button_tag "", class: "product-page-detail__buttons--liked" do
       = fa_icon "heart lg"
       %span
         いいね!
       %span
-        12
+        189
     = link_to "", class: "product-page-detail__buttons--report" do
       = fa_icon "flag lg"
       %span
@@ -148,33 +150,52 @@
     = link_to "", class: "clearfix" do
       = fa_icon "angle-left lg", class: "product-page-prev-next-link__prev--icon"
       %span.product-page-prev-next-link__prev--item-name
-        未使用 TED BAKER 名刺入れ
+        = @other_products[0].name
   %li.product-page-prev-next-link__next
     = link_to "", class: "clearfix"  do
       = fa_icon "angle-right lg", class: "product-page-prev-next-link__next--icon"
       %span.product-page-prev-next-link__next--item-name
-        bulle de savon　波の刺繍スカート
+        = @other_products[1].name
 
-- 2.times do
-  %section.product-page-assosiation-items
-    = link_to "" do
-      %h2.section.product-page-assosiation-items__title
-        市川さんの別の商品
-    .clearfix
-      - 6.times do
-        = link_to "", class: "product-page-assosiation-items__items-box items-box" do
-          = image_tag "https://pbs.twimg.com/profile_images/773784538350706689/PMoiE8tk_400x400.jpg" ,class: "items-box__image1" ,class: "items-box__image"
-          .items-box__body
-            .items-box__body--details.item-details.clearfix
-              %h3.item-details__name
-                スキニーパンツ
-              .item-details__num.clearfix
-                .item-details__num--price
-                  ￥7,000
-                .item-details__num--liked
-                  = fa_icon "heart-o", text:"12"
-              .item-details__tax
-                (税込み)
+%section.product-page-assosiation-items
+  = link_to "" do
+    %h2.section.product-page-assosiation-items__title
+      = @product.user.nickname + "さんのその他の商品"
+  .clearfix
+    - 6.times do
+      = link_to "", class: "product-page-assosiation-items__items-box items-box" do
+        = image_tag "https://pbs.twimg.com/profile_images/773784538350706689/PMoiE8tk_400x400.jpg" ,class: "items-box__image1" ,class: "items-box__image"
+        .items-box__body
+          .items-box__body--details.item-details.clearfix
+            %h3.item-details__name
+              スキニーパンツ
+            .item-details__num.clearfix
+              .item-details__num--price
+                ￥7,000
+              .item-details__num--liked
+                = fa_icon "heart-o", text:"12"
+            .item-details__tax
+              (税込み)
+
+%section.product-page-assosiation-items
+  = link_to "" do
+    %h2.section.product-page-assosiation-items__title
+      = @product.brand.name + "の" + @product.category.sub_category.name + "その他の商品"
+  .clearfix
+    - 6.times do
+      = link_to "", class: "product-page-assosiation-items__items-box items-box" do
+        = image_tag "https://pbs.twimg.com/profile_images/773784538350706689/PMoiE8tk_400x400.jpg" ,class: "items-box__image1" ,class: "items-box__image"
+        .items-box__body
+          .items-box__body--details.item-details.clearfix
+            %h3.item-details__name
+              スキニーパンツ
+            .item-details__num.clearfix
+              .item-details__num--price
+                ￥7,000
+              .item-details__num--liked
+                = fa_icon "heart-o", text:"12"
+            .item-details__tax
+              (税込み)
 
 = render 'shared/appbanner'
 = render 'shared/footer'

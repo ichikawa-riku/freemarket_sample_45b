@@ -7,6 +7,10 @@ before_action :authenticate_user!, except: [:index, :show]
 
 #商品詳細ページ
   def show
+    @product = Product.find(params[:id])
+    @other_user_products = Product.where(user_id: @product.user_id).where.not(id: params[:id]).order("id DESC").limit(6)
+  # ランダムに取得できていない
+    @other_products = Product.where( 'id != ?', rand(Product.first.id..Product.last.id) ).first(2)
   end
 
 #商品出品ページ
