@@ -72,6 +72,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'mini_magick'
 gem 'gretel'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :production do
   gem 'unicorn'
