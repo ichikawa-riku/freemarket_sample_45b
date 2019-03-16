@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       get 'signout'
     end
     resources :profiles, only: [:new]
-    resources :credit_card, only: [:index, :new, :create]
+    resources :credit_card, only: [:index, :new, :create, :destroy]
   end
 
 
