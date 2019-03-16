@@ -2,6 +2,7 @@ class CreditCardController < ApplicationController
   
   Payjp.api_key = ENV['PAYJP_SECRET_KEY']
   
+  # カード情報表示
   def index
     @credit_info = CreditCard.find_by(user_id: params[:user_id])
     if @credit_info
@@ -10,12 +11,14 @@ class CreditCardController < ApplicationController
     end
   end
   
+  # カードの登録が済んでいなければカードを登録
   def new
     if CreditCard.find_by(user_id: params[:user_id]).present?
       redirect_to action: :index
     end
   end
 
+  # 顧客を作成しカード情報と紐づける
   def create
     customer = Payjp::Customer.create(card: params[:payjp_token])
     card = CreditCard.new(customer_id: customer.id, card_id: customer.default_card, user_id: credit_params[:user_id])
@@ -26,6 +29,7 @@ class CreditCardController < ApplicationController
     end
   end
 
+  # カード情報・顧客の削除
   def destroy
     credit_info = CreditCard.find_by(user_id: params[:user_id])
     if current_user.id == credit_info.user_id
