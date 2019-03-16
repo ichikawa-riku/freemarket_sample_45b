@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   belongs_to :brand, optional: true
   accepts_nested_attributes_for :brand, reject_if: :reject_brand_blank, allow_destroy: true
   has_many :product_images
-  accepts_nested_attributes_for :product_images, limit: 10, reject_if: :reject_image_no_change, allow_destroy: true
+  accepts_nested_attributes_for :product_images, reject_if: :reject_image_no_change, allow_destroy: true, limit: 10
   belongs_to :category
 
   enum condition:       {"新品、未使用": 0, "未使用に近い": 1, "目立った傷や汚れなし": 2, "やや傷や汚れあり": 3, "傷や汚れあり": 4, "全体的に状態が悪い": 5}
@@ -29,6 +29,7 @@ class Product < ApplicationRecord
   validates :shipping_burden, presence: true
   validates :estimated_date, presence: true
   validates :user_id, presence: true
+  validates :product_images, length: { minimum: 1, maximum: 10 }
 
   def reject_brand_blank(attributes)
     exists = Brand.find_by(name: attributes[:name]).present?
@@ -37,11 +38,15 @@ class Product < ApplicationRecord
   end
 
   def reject_image_no_change(attributes)
-    binding.pry
     exists = ProductImage.find_by(id: attributes[:id]).present?
-    no_destory = attributes[:image_cache].present?
-    attributes.merge!(_destroy: 1) unless exists && no_destory
-    exists && no_destory
+    destory = attributes[:image_cache].nil?
+    empty = attributes[:image].blank?
+    if exists
+      attributes.merge!(_destroy: 1) if destory
+      return !destory
+    else
+      return empty
+    end
   end
 
   def new_brand(brand_name)
