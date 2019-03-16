@@ -3,6 +3,14 @@ before_action :authenticate_user!, except: [:index, :show]
 before_action :set_product, only: [:edit, :update]
 #トップページ
   def index
+    @ladies_item = Product.joins(:category).merge(Category.where(main_category_id: 1)).limit(4).order(id: "DESC")
+    @mens_item = Product.joins(:category).merge(Category.where(main_category_id: 2)).limit(4).order(id: "DESC")
+    @baby_item = Product.joins(:category).merge(Category.where(main_category_id: 3)).limit(4).order(id: "DESC")
+    @cosme_item = Product.joins(:category).merge(Category.where(main_category_id: 7)).limit(4).order(id: "DESC")
+    @chanel = Product.where(brand_id: 1).limit(4).order(id: "DESC")
+    @vuitton = Product.where(brand_id: 2).limit(4).order(id: "DESC")
+    @supreme = Product.where(brand_id: 3).limit(4).order(id: "DESC")
+    @nike = Product.where(brand_id: 4).limit(4).order(id: "DESC")
   end
 
 #商品詳細ページ

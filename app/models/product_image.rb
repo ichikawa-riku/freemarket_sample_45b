@@ -1,4 +1,4 @@
 class ProductImage < ApplicationRecord
   mount_uploader :image, ProductImagesUploader
-  belongs_to :prodoct, optional: true
+  belongs_to :product, optional: true
 end
