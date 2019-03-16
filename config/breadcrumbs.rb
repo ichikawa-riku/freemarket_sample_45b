@@ -1,5 +1,5 @@
 crumb :root do
-  link "メルカリ🍜", root_path
+  link "メルカリ", root_path
 end
 
 # users#show
