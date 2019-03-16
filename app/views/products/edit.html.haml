@@ -51,11 +51,11 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = collection_select :category, :main_category, Category.main_category, :id, :name, {prompt: "---"}, {class: "select-default", id: "main_category_form"}
+                      = collection_select :category, :main_category, Category.main_category, :id, :name, {prompt: "---", selected: @product.category.main_category_id}, {class: "select-default", id: "main_category_form"}
                     .select-wrap
-                      %select#sub_category_form.select-default.hidden
+                      = collection_select :category, :sub_category, Category.sub_category(@product.category.main_category_id), :id, :name, {prompt: "---", selected: @product.category.sub_category_id}, {class: "select-default", id: "sub_category_form"}
                     .select-wrap
-                      = f.select :category_id, {}, {}, {class: "select-default hidden", id: "category_form"}
+                      = f.select :category_id, Category.category(@product.category.sub_category_id).map{|t| [t.name, t.id]}, {}, {class: "select-default", id: "category_form"}
                 .form-group
                   = f.label :product_size_id do
                     サイズ
