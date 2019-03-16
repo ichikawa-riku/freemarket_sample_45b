@@ -15,6 +15,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
 #商品詳細ページ
   def show
+    @product = Product.find(params[:id])
   end
 
 #商品出品ページ
