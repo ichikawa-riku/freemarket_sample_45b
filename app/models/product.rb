@@ -17,7 +17,7 @@ class Product < ApplicationRecord
 
   enum estimated_date: {"1~2日で発送": 0, "2~3日で発送": 1, "4~7日で発送": 2}
 
-  enum status: {"出品中": 0, "公開停止中": 1, "取引中": 2, "売却済み": 3}
+  enum status: {published: 0, stopped: 1, trading: 2, solded: 3}
 
   validates :name, length: { maximum: 40 }, presence: true
   validates :description, length: { maximum: 1000 }, presence: true
