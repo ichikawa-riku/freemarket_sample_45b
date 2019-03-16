@@ -42,9 +42,14 @@ before_action :set_product, only: [:edit, :update]
       else
         @product.new_brand(params[:product][:brand_attributes][:name]) if params[:product][:brand_attributes][:name].present?
       end
-      @product.update(product_params)
+      if @product.update_attributes(product_params)
+        redirect_to root_path
+      else
+        @product_images = @product.product_images
+        @product.build_brand if @product.brand_id.nil?
+        render :edit
+      end
     end
-    redirect_to root_path
   end
 
 private

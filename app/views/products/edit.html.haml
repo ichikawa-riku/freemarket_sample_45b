@@ -22,6 +22,7 @@
                 .sell-upload-drop-box.have-item-0
                   %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
                   %i.icon-camera
+                  = file_field "", "",id: "product_product_images_attributes_#{@product_images.length}_image", class: "sell-upload-drop-file image-input-form", name: "product[product_images_attributes][#{@product_images.length}][image]"
                   = f.fields_for :product_images do |image|
                     = image.file_field :image, class: "image-input-form", type: "hidden"
                     = image.hidden_field :image_cache
@@ -142,7 +143,7 @@
                   また、出品をもちまして
                   %a{:href => "/jp/seller_terms/"} 加盟店規約
                   に同意したことになります。
-              = f.submit class: "btn-default btn-red", value: "出品する"
+              = f.submit class: "btn-default btn-red"
               %a.btn-default.btn-gray もどる
           .overlay
   = render 'shared/logo-footer'
