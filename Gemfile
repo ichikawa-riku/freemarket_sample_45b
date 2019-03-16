@@ -71,11 +71,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'mini_magick'
-<<<<<<< HEAD
 gem 'gretel'
-=======
 gem 'dotenv-rails', require: 'dotenv/rails-now'
->>>>>>> Ykum4/master
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :production do
   gem 'unicorn'
