@@ -43,6 +43,7 @@ before_action :set_product, only: [:edit, :update]
         @product.new_brand(params[:product][:brand_attributes][:name]) if params[:product][:brand_attributes][:name].present?
       end
       if @product.update_attributes(product_params)
+        brand_null_update
         redirect_to root_path
       else
         @product_images = @product.product_images
@@ -54,7 +55,12 @@ before_action :set_product, only: [:edit, :update]
 
 private
   def product_params
-    params.require(:product).permit(:name, :description, :category_id, :product_size_id, :brand_id, :condition, :shipping_method, :shipping_burden, :area_id, :estimated_date, :price, product_images_attributes:[:id, :image, :image_cache], brand_attributes:[:name]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :category_id, :product_size_id, :brand_id, :condition, :shipping_method, :shipping_burden, :area_id, :estimated_date, :price, product_images_attributes:[:id, :image, :image_cache], brand_attributes:[:id, :name]).merge(user_id: current_user.id)
+  end
+
+  def brand_null_update
+    @product.brand_id = nil if params[:product][:brand_attributes][:id].present? && params[:product][:brand_attributes][:name].blank?
+    @product.save
   end
 
   def set_product
