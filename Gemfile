@@ -65,6 +65,7 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
+gem 'pry-byebug'
 gem 'payjp'
 gem "jquery-slick-rails"
 gem 'omniauth'
