@@ -29,6 +29,8 @@ before_action :set_product, only: [:edit, :update]
 
   def edit
     @product_images = @product.product_images
+    @product_sales_fee = ( @product.price * 0.1 ).floor
+    @product_sales_profit = @product.price - @product_sales_fee
     @product_images.each do |product_image|
       product_image.image.cache!
     end

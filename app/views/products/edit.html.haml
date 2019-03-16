@@ -121,11 +121,12 @@
                     .l-left
                       販売手数料 (10%)
                     .l-right.sales-fee
-                      ー
+                      = @product_sales_fee
                   %li.clearfix.bold
                     .l-left
                       販売利益
                     .l-right.profit
+                      = @product_sales_profit
             .modal{:role => "dialog", :tabindex => "-1"}
               .modal-inner
             .sell-content.sell-btn-box
