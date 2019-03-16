@@ -1,5 +1,7 @@
 = render 'shared/header'
-
+- breadcrumb :show_products, @product
+%nav.bread-crumbs
+  = breadcrumbs separator: " > "
 %section.product-page-detail
   %h1.product-page-detail__title
     NIKE ジャージ ナイキ ナイロンジャケット ウィンドブレーカー
