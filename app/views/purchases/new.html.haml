@@ -7,10 +7,11 @@
         .buy-content-inner
           %h3.buy-item-image
             %img.lazyload{:alt => "div", :src => "https://eiga.k-img.com/images/person/61029/300x.jpg",:width => "160", :height => "160"}/
-          %p.buy-item-name.bold 死神の遺言
+          %p.buy-item-name.bold 
+            = @product.name
           %form.buy-form{:action => "＃＃", :method => "POST", :novalidate => "novalidate"}
             %p.buy-price-ja.bold
-              ¥ 1919
+              = "¥ #{@product.price}"
               %span.item-shipping-fee.f14.bold 送料込み
             %ul.buy-accordion.not-have
               %li.accordion-parent
@@ -20,9 +21,10 @@
               %li.buy-price-row.buy-you-pay.bold
                 .buy-price-cell 支払い金額
                 .buy-price-cell
-                  %span{"data-buy-pay" => "980"} ¥ 1919
+                  %span{"data-buy-pay" => ""}
+                  = "¥ #{@product.price}"
+            = link_to "購入する", product_purchases_path(params[:product_id]), method: :post, class:"button btn-default btn-red bold"
 
-            %button.btn-default.btn-red.bold{:type => "submit"} 購入する
       %section.buy-content.buy-user-info
         .buy-content-inner
           %h3 配送先

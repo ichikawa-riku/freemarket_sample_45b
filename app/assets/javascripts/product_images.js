@@ -1,6 +1,8 @@
 $(document).on('turbolinks:load', function() {
   const imagesLimit = 10
-  var index = 1
+  var index = Number($(".sell-upload-drop-box input:first").attr("id").replace(/[^0-9]/g, '')) + 1
+  var path = location.pathname
+
   function resetErrorMessage(){
     if ($(".sell-upload-errors")){
       $(".sell-upload-errors").remove()
@@ -73,18 +75,19 @@ $(document).on('turbolinks:load', function() {
     }
   }
 
+  function isExistImage(image){
+    if (image.hasClass("exist-image")){
+      return true
+    }else{
+      return false
+    }
+  };
+
   $("body").on("change", "input[type=file].sell-upload-drop-file", function(){
-    console.log("イベントが発火しました")
     var thisForm = $(this);
     var file = this.files[0];
     imeageMain(thisForm, file);
   });
-
-  // $("input[type=file].sell-upload-drop-file").on("change", function(){
-  //   var thisForm = $(this);
-  //   var file = this.files[0];
-  //   imeageMain(thisForm, file);
-  // });
 
   $(document).on("click", ".sell-upload-file__buttons--button--delete", function(event){
     event.preventDefault();
@@ -92,6 +95,9 @@ $(document).on('turbolinks:load', function() {
     var pushButtonId = pushButton.attr('id');
     var targetNumbaer = pushButtonId.replace(/[^0-9]/g, '')
     var targetId = "product_product_images_attributes_"+ targetNumbaer +"_image"
+    if( path.match(/^[/]products[/][0-9]+[/]edit/) && isExistImage(pushButton) ){
+      targetId = "product_product_images_attributes_"+ targetNumbaer +"_image_cache"
+    }
     removeForm(targetId);
     removeThumbnail(pushButton);
   });
