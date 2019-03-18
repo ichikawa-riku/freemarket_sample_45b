@@ -6,17 +6,12 @@ Rails.application.routes.draw do
   }
   root 'products#index'
 
-<<<<<<< HEAD
-  resources :products, only: [:show, :new, :create] do
+  resources :products, only: [:show, :new, :create, :edit, :update] do
     resources :purchases, only: [:new, :create] do
       collection do
-        get 'card'
+      get 'card'
       end
     end
-=======
-  resources :products, only: [:show, :new, :create, :edit, :update] do
-    resources :purchases, only: [:new, :create]
->>>>>>> master
   end
 
   resources :categories, only: [:index, :show] do
