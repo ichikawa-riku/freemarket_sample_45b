@@ -9,10 +9,11 @@ class PurchasesController < ApplicationController
 
 #購入完了ページ
   def create
+    @product = Product.find(product_params[:product_id])
     if current_user.id == @credit_info.user_id
       @charge = Payjp::Charge.create(
-      :amount => 50,
-      :card => @credit_info.card_id,
+      :amount => @product.price,
+      :customer => @credit_info.customer_id,
       :currency => 'jpy',
       )
       @charge.captured == false

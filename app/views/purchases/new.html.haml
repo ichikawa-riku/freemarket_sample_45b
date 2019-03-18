@@ -6,10 +6,10 @@
       %section.buy-content.buy-item
         .buy-content-inner
           %h3.buy-item-image
-            %img.lazyload{:alt => "div", :src => "https://eiga.k-img.com/images/person/61029/300x.jpg",:width => "160", :height => "160"}/
+            = image_tag "https://eiga.k-img.com/images/person/61029/300x.jpg", :width => "160", :height => "160"
           %p.buy-item-name.bold 
             = @product.name
-          %form.buy-form{:action => "＃＃", :method => "POST", :novalidate => "novalidate"}
+          .buy-form
             %p.buy-price-ja.bold
               = "¥ #{@product.price}"
               %span.item-shipping-fee.f14.bold 送料込み

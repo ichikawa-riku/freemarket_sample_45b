@@ -14,7 +14,6 @@ class CreditCardController < ApplicationController
   # カードの登録が済んでいなければカードを登録
   def new
     if CreditCard.find_by(user_id: params[:user_id]).present?
-      redirect_to action: :index
     end
   end
 
@@ -23,6 +22,7 @@ class CreditCardController < ApplicationController
     customer = Payjp::Customer.create(card: params[:payjp_token])
     card = CreditCard.new(customer_id: customer.id, card_id: customer.default_card, user_id: credit_params[:user_id])
     if card.save
+      flash[:notice] = "カードを登録しました"
       redirect_to action: :index
     else
       render :new
@@ -38,6 +38,7 @@ class CreditCardController < ApplicationController
       card = customer.cards.retrieve(credit_info.card_id)
       card.delete
       customer.delete
+      flash[:notice] = "カードを削除しました"
       redirect_to action: :index
     else 
       redirect_to :index, alert: "その権限はありません"
