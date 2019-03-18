@@ -1,7 +1,7 @@
 = render "shared/header"
-
+- breadcrumb :index_credit_card
 %nav.bread-crumbs
-
+  = breadcrumbs separator: " > "
 .mypage
   %main.mypage__body.clearfix
     .mypage__body__main
@@ -11,7 +11,7 @@
           - if @card.present?
             %section
               .payment-method__content__head
-                %h3.payment-method__content__head__title 
+                %h3.payment-method__content__head__title
                   クレジットカード一覧
                   %ul.payment-method__content__list
                     %li
@@ -31,14 +31,14 @@
                             =  image_tag("//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?3703848211", alt: "jcb", height: "30", width: "49")
                           - else
                             = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?3703848211", alt: "saison", height: "30", width: "49")
-                            
-                         
-                        .setting-card__payment-num 
+
+
+                        .setting-card__payment-num
                           = "************" + @card.last4
-                        .setting-card__payment-num 
+                        .setting-card__payment-num
                           = "0#{@card.exp_month} / #{@card.exp_year.to_s.slice(0..1).to_i}"
                         = link_to "削除する", "/users/#{params[:user_id]}/credit_card/#{@credit_info.id}", method: :delete, class: "setting-card__payment-remove"
-                          
+
           - else
             %section.payment-method__content__add
               .payment-method__content__add__box

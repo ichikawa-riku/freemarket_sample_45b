@@ -1,5 +1,7 @@
 = render 'shared/header'
-
+- breadcrumb :show_products, @product
+%nav.bread-crumbs
+  = breadcrumbs separator: " > "
 %section.product-page-detail
   %h1.product-page-detail__title
     NIKE ジャージ ナイキ ナイロンジャケット ウィンドブレーカー
@@ -81,7 +83,7 @@
       (税込み)
     %span.product-page-detail__price--shipping-fee
       送料込み
-  = link_to "", class: "product-page-detail__buy-button" do
+  = link_to new_product_purchase_path(params[:id]), class: "product-page-detail__buy-button" do
     購入画面に進む
   .product-page-detail__buy-button--soldout
     売り切れました
