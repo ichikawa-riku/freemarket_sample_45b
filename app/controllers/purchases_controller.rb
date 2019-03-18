@@ -1,4 +1,5 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate_user!
 
   Payjp.api_key = ENV['PAYJP_SECRET_KEY']
   before_action :credit_info
@@ -27,7 +28,7 @@ class PurchasesController < ApplicationController
   end
 
 
-  private 
+  private
   def product_params
     params.permit(:product_id)
   end
