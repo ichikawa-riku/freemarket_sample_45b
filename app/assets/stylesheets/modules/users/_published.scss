@@ -1,0 +1,81 @@
+.mypage__body__main{
+  .users-products-box{
+    &__title{
+      width: 100%;
+      height: 72px;
+      line-height: 72px;
+      padding: 0 16px;
+      background: #fafafa;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__main{
+      .product-status-columns{
+        width: 100%;
+        &__column{
+          display: block;
+          width: 33%;
+          height: 74px;
+          float: left;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+          background: #eee;
+          text-align: center;
+          &--active{
+            background: #fff;
+            border-top: 2px solid #ea352d;
+            font-weight: bold;
+            width: 34%;
+          }
+        }
+      }
+      .publised-products{
+        background-color: #fff;
+        width: 100%;
+        &__product{
+          height: 83px;
+          padding: 16px;
+        }
+        .publised-products-product{
+          position: relative;
+          &__image{
+            display: block;
+            height: 48px;
+            width: 48px;
+          }
+          &__title{
+            position: absolute;
+            font-size: 16px;
+            left: 80px;
+            top: 16px
+          }
+          &__info{
+            position: absolute;
+            left: 90px;
+            top: 40px;
+          }
+          .publised-products-product-info{
+            &__like{
+              float: left;
+              color: #ccc;
+              font-weight: bold;
+              padding: 2px;
+              font-size: 16px;
+            }
+            &__comment{
+              float: left;
+              color: #ccc;
+              font-weight: bold;
+              padding: 2px;
+              font-size: 16px;
+            }
+            &__badge{
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
