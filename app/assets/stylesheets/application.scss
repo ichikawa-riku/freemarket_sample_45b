@@ -2,6 +2,7 @@
 @import "font-awesome";
 @import "slick";
 @import "common";
+@import "notification";
 @import "modules/shared/mypage-sidebar";
 @import "modules/shared/header";
 @import "modules/shared/app_banner";
@@ -13,6 +14,7 @@
 @import "modules/products/new";
 @import "modules/products/index";
 @import "modules/products/show";
+@import "modules/products/search";
 @import "modules/users/show";
 @import "modules/users/edit";
 @import "modules/users/new";
@@ -24,4 +26,5 @@
 @import "modules/credit_card/new";
 @import "modules/credit_card/index";
 @import "modules/purchases/new";
+@import "modules/purchases/card";
 @import "modules/shared/bread-crumbs";
