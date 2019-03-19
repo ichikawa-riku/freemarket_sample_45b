@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-before_action :authenticate_user!, except: [:index, :show]
+before_action :authenticate_user!, except: [:index, :show, :search]
 before_action :set_product, only: [:edit, :update]
 #トップページ
   def index
@@ -20,6 +20,11 @@ before_action :set_product, only: [:edit, :update]
     @other_product_next = Product.order(id: "DESC").where("id > ?", params[:id]).reverse.first
     @user_other_products = Product.where("(user_id = ?) AND (status = ?)", @product.user_id, 0).where.not(id: params[:id]).limit(6)
     @other_products = Product.where("brand_id = ?", @product.brand_id).joins(:category).merge(Category.where("sub_category_id = ?" , @product.category.sub_category_id)).where.not(id: params[:id]).limit(6)
+  end
+
+#商品検索機能
+  def search
+    @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
   end
 
 #商品出品ページ

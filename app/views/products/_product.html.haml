@@ -9,7 +9,8 @@
         = product.name
       .item-details__num.clearfix
         .item-details__num--price
-        = product.price
+        ¥
+        = number_with_delimiter("#{product.price}")
         .item-details__num--liked
           = fa_icon "heart-o", text:"12"
       .item-details__tax

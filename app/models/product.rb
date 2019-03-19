@@ -51,6 +51,15 @@ class Product < ApplicationRecord
 
   def new_brand(brand_name)
     self.brand = Brand.find_by(name: brand_name) if Brand.find_by(name: brand_name)
+    self.save
+  end
+
+  def self.find_products_match_category(category)
+    if category.main_category_id.nil? && category.sub_category_id.nil?
+      self.joins(:category).merge(Category.where(main_category_id: category.id)).order("created_at DESC")
+    elsif category.main_category_id.present? && category.sub_category_id.nil?
+      self.joins(:category).merge(Category.where(sub_category_id: category.id)).order("created_at DESC")
+    end
   end
 
 end
