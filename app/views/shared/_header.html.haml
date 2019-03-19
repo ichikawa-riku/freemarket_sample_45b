@@ -6,18 +6,17 @@
       = form_tag(search_products_path, method: :get,class: "pc-header__form",enforce_utf8: false ) do
         %input.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
         %i.fas.fa-search
-    .pc-header__navbox
+    .pc-header__navbox.clearfix
       .dropbox
-        %ul.pc-header__nav
+        %ul.pc-header__nav.clearfix
           %li
-            %h2
+            %h2#category-find-btn
               = link_to root_path ,class: "pc-header__nav-root" do
                 カテゴリーから探す
-          %li
+          %li#brand-find-btn
             %h2
               = link_to root_path ,class: "pc-header__nav-root" do
                 ブランドから探す
-
       .loginRegister
         %ul.pc-header__login-nav
         - if user_signed_in?
@@ -34,3 +33,33 @@
           %li
             = link_to new_user_path, class: "pc-header__btn--signup" do
               新規会員登録
+      .category-list-box.clearfix.category-list-box-hidden
+        %ul.main-category-lists
+          %li.main-category.main-category#main-category-1
+            = link_to "レディース", category_path(1), class: "main-category__link", id: "main-category-link-1"
+          %li.main-category#main-category-2
+            = link_to "メンズ", category_path(2), class: "main-category__link", id: "main-category-link-2"
+          %li.main-category#main-category-3
+            = link_to "ベビー・キッズ", category_path(3), class: "main-category__link", id: "main-category-link-3"
+          %li.main-category#main-category-4
+            = link_to "インテリア・住まい・小物", category_path(4), class: "main-category__link", id: "main-category-link-4"
+          %li.main-category#main-category-5
+            = link_to "本・音楽・ゲーム", category_path(5), class: "main-category__link", id: "main-category-link-5"
+          %li.main-category#main-category-6
+            = link_to "おもちゃ・ホビー・グッズ", category_path(6), class: "main-category__link", id: "main-category-link-6"
+          %li.main-category#main-category-7
+            = link_to "コスメ・香水・美容", category_path(7), class: "main-category__link", id: "main-category-link-7"
+          %li.main-category#main-category-8
+            = link_to "家電・スマホ・カメラ", category_path(8), class: "main-category__link", id: "main-category-link-8"
+          %li.main-category#main-category-9
+            = link_to "スポーツ・レジャー", category_path(9), class: "main-category__link", id: "main-category-link-9"
+          %li.main-category#main-category-10
+            = link_to "ハンドメイド", category_path(10), class: "main-category__link", id: "main-category-link-10"
+          %li.main-category#main-category-11
+            = link_to "チケット", category_path(11), class: "main-category__link", id: "main-category-link-11"
+          %li.main-category#main-category-12
+            = link_to "自動車・オートバイ", category_path(12), class: "main-category__link", id: "main-category-link-12"
+          %li.main-category#main-category-13
+            = link_to "その他", category_path(13), class: "main-category__link", id: "main-category-link-13"
+          %li.main-category#main-category-14
+            = link_to "カテゴリー一覧", "#", class: "main-category__link"
