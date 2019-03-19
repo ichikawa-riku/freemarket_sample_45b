@@ -17,18 +17,12 @@ class User < ApplicationRecord
         uid:      auth.uid,
         provider: auth.provider,
         nickname:     auth.info.name,
-        email:    User.dummy_email(auth),
+        email:    auth.info.email,
         password: Devise.friendly_token[0, 20]
       )
     end
 
     user
-  end
-
-  private
-
-  def self.dummy_email(auth)
-    "#{auth.uid}-#{auth.provider}@example.com"
   end
 
 end
