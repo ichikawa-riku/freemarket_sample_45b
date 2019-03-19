@@ -1,6 +1,7 @@
 .app-banner {
   background-image: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?6820409");
   background-position: center;
+  background-size: cover;
   &__inner {
     height: 260px;
     width: 800px;
