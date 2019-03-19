@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-before_action :authenticate_user!, except: [:index, :show]
+before_action :authenticate_user!, except: [:index, :show, :search]
 before_action :set_product, only: [:edit, :update]
 #トップページ
   def index
@@ -16,6 +16,11 @@ before_action :set_product, only: [:edit, :update]
 #商品詳細ページ
   def show
     @product = Product.find(params[:id])
+  end
+
+#商品検索機能
+  def search
+    @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
   end
 
 #商品出品ページ
