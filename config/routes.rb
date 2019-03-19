@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
-    resources :purchases, only: [:new, :create]
+    resources :purchases, only: [:new, :create] do
+      collection do
+      get 'card'
+      end
+    end
   end
 
   resources :categories, only: [:index, :show] do
