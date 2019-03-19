@@ -51,6 +51,7 @@ class Product < ApplicationRecord
 
   def new_brand(brand_name)
     self.brand = Brand.find_by(name: brand_name) if Brand.find_by(name: brand_name)
+    self.save
   end
 
   def self.find_products_match_category(category)
