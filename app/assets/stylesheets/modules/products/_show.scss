@@ -163,6 +163,7 @@
 
 
 .user-raitings{
+  padding: 8px 0 0 0;
   &__raiting{
     float: left;
     margin-right: 10px;
@@ -179,6 +180,7 @@
 }
 
 .table-link{
+  line-height: 16px;
   display: block;
 }
 
@@ -288,7 +290,6 @@
     word-wrap: break-word;
     &--icon{
       position: absolute;
-      top: 20%;
       left: 0;
     }
     &--item-name{
@@ -303,7 +304,6 @@
     word-wrap: break-word;
     &--icon{
       position: absolute;
-      top: 20%;
       right: 0;
     }
     &--item-name{
@@ -325,6 +325,9 @@
   margin: 0 0 20px 20px;
   &__image{
     width: 220px;
+    height: 220px;
+    object-fit: contain;
+    background-color: #fff;
     display: block;
   }
   &__body{
