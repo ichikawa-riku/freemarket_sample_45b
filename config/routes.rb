@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   }
   root 'products#index'
 
-  resources :products, only: [:show, :new, :create] do
-    resources :purchases, only: [:new, :create]
+  resources :products, only: [:show, :new, :create, :edit, :update] do
+    resources :purchases, only: [:new, :create] do
+      collection do
+      get 'card'
+      end
+    end
   end
 
   resources :categories, only: [:index, :show] do

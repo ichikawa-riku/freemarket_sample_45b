@@ -1,4 +1,7 @@
 = render 'shared/header'
+- breadcrumb :show_brands
+%nav.bread-crumbs
+  = breadcrumbs separator: " > "
 = render 'shared/product-list'
 = render 'shared/appbanner'
 = render 'shared/footer'
