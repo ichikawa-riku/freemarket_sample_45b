@@ -1,0 +1,16 @@
+= link_to product_path(product.id), class: "products-list-item-box" do
+  - if product.product_images.present?
+    = image_tag product.product_images.first.image ,class: "products-list-item-box__image"
+  - else
+    = image_tag "http://www.familys-talk.com/wp-content/themes/refinepro/img/noimage.png.pagespeed.ce.9JwMGwgNY4.png" ,class: "products-list-item-box__image"
+  .products-list-item-box__body
+    .items-box__body--details.item-details.clearfix
+      %h3.item-details__name
+        = product.name
+      .item-details__num.clearfix
+        .item-details__num--price
+          = "￥ " + product.price.to_s(:delimited)
+        .item-details__num--liked
+          = fa_icon "heart-o", text:"12"
+      .item-details__tax
+        (税込み)

@@ -2,6 +2,16 @@
 - breadcrumb :show_categories
 %nav.bread-crumbs
   = breadcrumbs separator: " > "
-= render 'shared/product-list'
+.lists-container
+  %ul.associations-links.clearfix
+    = render partial: 'shared/relation_category', collection: @relation_categories
+  %secttion.products-list
+    %h1.products-list__title
+      #{@category.name}の商品一覧
+    - if @products.length > 0
+      .products-list__item-container.clearfix
+        = render partial: 'shared/product', collection: @products
+    - else
+      商品がありません
 = render 'shared/appbanner'
 = render 'shared/footer'
