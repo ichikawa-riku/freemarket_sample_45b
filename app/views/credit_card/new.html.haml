@@ -2,13 +2,13 @@
 - breadcrumb :new_credit_card
 .mypage
   %nav.bread-crumbs
-    = breadcrumbs separator: " > "
+    = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
   %main.mypage__body.clearfix
     .mypage__body__main
       %section.creditcard-form
         %h2.creditcard-form__title
           クレジットカード情報入力
-        = form_tag( "/users/#{current_user.id}/credit_card", method: "POST", class: "creditcard-form__body", id:"add-card" ) do 
+        = form_tag( "/users/#{current_user.id}/credit_card", method: "POST", class: "creditcard-form__body", id:"add-card" ) do
           .creditcard-form__container
             .form-group-card-num
               %label.form-group-card-num__label カード番号
@@ -40,7 +40,7 @@
                 %span
                   月
               .form-group-card-expire__wrap
-                = select_tag('exp_year', options_for_select((DateTime.now.year..2029)), id:"payment_card_expire_yy", class:"form-group-card-expire__input select-default") 
+                = select_tag('exp_year', options_for_select((DateTime.now.year..2029)), id:"payment_card_expire_yy", class:"form-group-card-expire__input select-default")
                 %span
                   年
             .form-group-card-code

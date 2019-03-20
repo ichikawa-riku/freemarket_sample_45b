@@ -3,7 +3,7 @@
     = render 'shared/header'
   - breadcrumb :new_profile
   %nav.bread-crumbs
-    = breadcrumbs separator: " > "
+    = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
   %main.l-container.clearfix
     .l-content
       %section.l-chapter-container.mypage-identification

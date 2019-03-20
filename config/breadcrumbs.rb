@@ -63,10 +63,34 @@ crumb :index_categories do
 end
 
 # categories#show
-crumb :show_categories do
-  link "メンズ"
+# メンズ、レディース等の大カテゴリ
+crumb :show_categories1 do
+  link "#{Category.find_by(id: params[:id]).name}",category_path
   parent :index_categories
 end
+
+# トップス、パンツ等の中カテゴリ
+crumb :show_categories11 do
+  main_category_id = Category.find_by(id: params[:id]).main_category_id
+  link "#{Category.find_by(id: main_category_id).name}",category_path(id: main_category_id)
+  parent :index_categories
+end
+crumb :show_categories2 do
+  link "#{Category.find_by(id: params[:id]).name}"
+  parent :show_categories11
+end
+
+# ポロシャツ、スラックス等の小カテゴリ
+crumb :show_categories22 do
+  sub_category_id = Category.find_by(id: params[:id]).sub_category_id
+  link "#{Category.find_by(id: sub_category_id).name}",category_path(id: sub_category_id)
+  parent :show_categories11
+end
+crumb :show_categories3 do
+  link "#{Category.find_by(id: params[:id]).name}"
+  parent :show_categories22
+end
+
 
     ### ↓↓商品購入↓↓ ###
 

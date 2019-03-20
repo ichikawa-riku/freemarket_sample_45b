@@ -1,7 +1,7 @@
 = render "shared/header"
 - breadcrumb :users
 %nav.bread-crumbs
-  = breadcrumbs separator: " > "
+  = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
 .mypage
   %main.mypage__body.clearfix
 

@@ -1,4 +1,4 @@
-= link_to "/products/1", class: "assosiation-items__items-box items-box" do
+= link_to product_path(product.id), class: "assosiation-items__items-box items-box" do
   -if product.product_images.present?
     = image_tag product.product_images.first.image ,class: "items-box__image"
   -else
@@ -12,6 +12,6 @@
         ¥
         = number_with_delimiter("#{product.price}")
         .item-details__num--liked
-          = fa_icon "heart-o", text:"12"
+          = fa_icon "heart-o", text:"189"
       .item-details__tax
         (税込)
