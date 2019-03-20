@@ -3,7 +3,7 @@
 .mypage
 
   %nav.bread-crumbs
-    = breadcrumbs separator: " > "
+    = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
   %main.mypage__body.clearfix
     .mypage__body__main
       %section.users-products-box

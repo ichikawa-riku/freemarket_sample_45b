@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show, :search]
-before_action :set_product, only: [:edit, :update]
+before_action :set_product, only: [:edit, :update, :destroy]
 #トップページ
   def index
     @ladies_item = Product.joins(:category).merge(Category.where(main_category_id: 1)).limit(4).order(id: "DESC")
@@ -20,6 +20,7 @@ before_action :set_product, only: [:edit, :update]
     @other_product_next = Product.order(id: "DESC").where("id > ?", params[:id]).reverse.first
     @user_other_products = Product.where("(user_id = ?) AND (status = ?)", @product.user_id, 0).where.not(id: params[:id]).limit(6)
     @other_products = Product.where("brand_id = ?", @product.brand_id).joins(:category).merge(Category.where("sub_category_id = ?" , @product.category.sub_category_id)).where.not(id: params[:id]).limit(6)
+    @other_products_no_brand = Product.joins(:category).merge(Category.where("sub_category_id = ?" , @product.category.sub_category_id)).where.not(id: params[:id]).limit(6)
   end
 
 #商品検索機能
@@ -71,6 +72,13 @@ before_action :set_product, only: [:edit, :update]
         render :edit
       end
     end
+  end
+
+  def destroy
+    if @product.user == current_user
+      @product.destroy
+    end
+    redirect_to root_path
   end
 
 private
