@@ -8,11 +8,14 @@
   .product-page-detail__main.product-page-main.clearfix
     .product-page-main__images
       = image_tag @product.product_images[0].image ,class: "items-box__image1", class: "product-page-main__images--main"
-      - if @product.published?
-      - else
+      - if @product.sold?
         .product-page-main__images--soldout-badge
         .product-page-main__images--soldout
           SOLD
+      - if @product.stopped?
+        .product-page-main__images--stopped-badge
+        .product-page-main__images--stopped
+          出品停止中
       .product-page-main__images--others.clearfix
         - @product.product_images.each do |product_image|
           = image_tag product_image.image, class: "items-box__image1", class: "other-image"
@@ -95,7 +98,7 @@
         商品の編集
       .product-page-detail__or
         or
-      = link_to "", class: "product-page-detail__stop-button" do
+      = link_to stop_product_path(@product), method: :post, class: "product-page-detail__stop-button" do
         出品を一旦停止にする
       = link_to product_path(@product), method: :delete, class: "product-page-detail__delete-button" do
         商品を削除する
@@ -104,7 +107,7 @@
         商品の編集
       .product-page-detail__or
         or
-      = link_to "", class: "product-page-detail__stop-button--active" do
+      = link_to start_product_path(@product), method: :post, class: "product-page-detail__stop-button--active" do
         出品を再開にする
       = link_to product_path(@product), method: :delete, class: "product-page-detail__delete-button" do
         商品を削除する
