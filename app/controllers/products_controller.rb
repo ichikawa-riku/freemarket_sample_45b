@@ -16,9 +16,8 @@ before_action :set_product, only: [:edit, :update]
 #商品詳細ページ
   def show
     @product = Product.find(params[:id])
-    @products = Product.order(id: "DESC").page(params[:id]).per(1)
-    # @other_product_previous = Product.order(id: "DESC").where("id < ?", params[:id]).first
-    # @other_product_next = Product.order(id: "DESC").where("id > ?", params[:id]).reverse.first
+    @other_product_previous = Product.order(id: "DESC").where("id < ?", params[:id]).first
+    @other_product_next = Product.order(id: "DESC").where("id > ?", params[:id]).reverse.first
     @user_other_products = Product.where("(user_id = ?) AND (status = ?)", @product.user_id, 0).where.not(id: params[:id]).limit(6)
     @other_products = Product.where("brand_id = ?", @product.brand_id).joins(:category).merge(Category.where("sub_category_id = ?" , @product.category.sub_category_id)).where.not(id: params[:id]).limit(6)
   end
