@@ -50,7 +50,7 @@ end
 
 # brands#show
 crumb :show_brands do
-  link "ナイキ"
+  link "#{Brand.find_by(id: params[:id]).name}",brand_path
   parent :index_brands
 end
 
