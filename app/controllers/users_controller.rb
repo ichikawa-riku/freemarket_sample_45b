@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user!, except: :new
   before_action :set_user, only: [:edit, :update]
   before_action :set_cuttenr_user, only: [:published, :trading, :sold]
-  before_action :authenticate_user!, except: :new
   def new
   end
 
@@ -28,15 +27,15 @@ class UsersController < ApplicationController
   end
 
   def published
-    @products = @user.products.where(status: 0..1)
+    @products = @user.products.where(status: 'published').or(@user.products.where(status: 'stopped'))
   end
 
   def trading
-    @products = @user.products.where(status: 2)
+    @products = @user.products.trading
   end
 
   def sold
-    @products = @user.products.where(status: 3)
+    @products = @user.products.sold
   end
 
   private
