@@ -1,10 +1,6 @@
 class ProductsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show, :search]
-<<<<<<< Updated upstream
 before_action :set_product, only: [:edit, :update, :destroy]
-=======
-before_action :set_product, only: [:edit, :update, :destory]
->>>>>>> Stashed changes
 #トップページ
   def index
     @ladies = Category.find(1)
