@@ -75,6 +75,7 @@ gem 'mini_magick'
 gem 'gretel'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'kaminari'
 
 group :production do
   gem 'unicorn'

@@ -149,19 +149,21 @@
       %span
         コメントする
 
-%ul.product-page-prev-next-link.clearfix
-  %li.product-page-prev-next-link__prev
-    - if !@other_product_previous.nil?
-      = link_to product_path(@other_product_previous.id), class: "clearfix" do
-        = fa_icon "angle-left lg", class: "product-page-prev-next-link__prev--icon"
-        %span.product-page-prev-next-link__prev--item-name
-          = @other_product_previous.name
-  %li.product-page-prev-next-link__next
-    - if !@other_product_next.nil?
-      = link_to product_path(@other_product_next.id), class: "clearfix"  do
-        = fa_icon "angle-right lg", class: "product-page-prev-next-link__next--icon"
-        %span.product-page-prev-next-link__next--item-name
-          = @other_product_next.name
+= paginate @products,param_name: :id
+
+/ %ul.product-page-prev-next-link.clearfix
+/   %li.product-page-prev-next-link__prev
+/     - if !@other_product_previous.nil?
+/       = link_to product_path(@other_product_previous.id), class: "clearfix" do
+/         = fa_icon "angle-left lg", class: "product-page-prev-next-link__prev--icon"
+/         %span.product-page-prev-next-link__prev--item-name
+/           = @other_product_previous.name
+/   %li.product-page-prev-next-link__next
+/     - if !@other_product_next.nil?
+/       = link_to product_path(@other_product_next.id), class: "clearfix"  do
+/         = fa_icon "angle-right lg", class: "product-page-prev-next-link__next--icon"
+/         %span.product-page-prev-next-link__next--item-name
+/           = @other_product_next.name
 
 %section.product-page-assosiation-items
   = link_to "" do
