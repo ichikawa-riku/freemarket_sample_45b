@@ -71,7 +71,13 @@
               font-size: 16px;
             }
             &__badge{
-
+              float: left;
+              margin: 0 0 0 10px;
+              border-radius: 2px;
+              font-size: 12px;
+              background-color: #ea352d;
+              color: #fff;
+              padding: 3px;
             }
           }
         }
