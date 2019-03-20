@@ -1,7 +1,7 @@
 = render 'shared/header'
 - breadcrumb :show_brands
 %nav.bread-crumbs
-  = breadcrumbs separator: " > "
+  = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
 .lists-container
   %ul.associations-links.clearfix
     = render partial: 'shared/relation_category', collection: @relation_categories
