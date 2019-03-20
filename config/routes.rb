@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   root 'products#index'
 
   resources :products, only: [:show, :new, :create, :edit, :update, :destroy] do
+    member do
+      post 'stop'
+      post 'start'
+    end
     collection do
       get 'search'
     end
