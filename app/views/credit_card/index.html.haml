@@ -1,7 +1,7 @@
 = render "shared/header"
 - breadcrumb :index_credit_card
 %nav.bread-crumbs
-  = breadcrumbs separator: " > "
+  = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
 = render 'layouts/notifications'
 .mypage
   %main.mypage__body.clearfix

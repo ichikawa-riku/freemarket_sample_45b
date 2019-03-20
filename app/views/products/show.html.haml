@@ -1,7 +1,7 @@
 = render 'shared/header'
 - breadcrumb :show_products, @product
 %nav.bread-crumbs
-  = breadcrumbs separator: " > "
+  = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
 %section.product-page-detail
   %h1.product-page-detail__title
     = @product.name
