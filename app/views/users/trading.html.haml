@@ -1,0 +1,27 @@
+= render 'shared/header'
+- breadcrumb :signout_users
+.mypage
+
+  %nav.bread-crumbs
+    = breadcrumbs separator: " > "
+  %main.mypage__body.clearfix
+    .mypage__body__main
+      %section.users-products-box
+        %h1.users-products-box__title
+          出品した商品
+        %main.users-products-box__main
+          .product-status-columns.clearfix
+            = link_to "出品中", published_users_path, class: "product-status-columns__column"
+            = link_to "取引中", trading_users_path, class: "product-status-columns__column product-status-columns__column--active"
+            = link_to "売却済み", sold_users_path, class: "product-status-columns__column"
+          .publised-products
+            = render partial: 'product', collection: @products
+    = render 'shared/mypage-sidebar'
+
+  %aside.app-banner
+
+    = render 'shared/appbanner'
+
+  %footer.footerAll
+
+    = render 'shared/footer'
