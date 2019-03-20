@@ -17,7 +17,6 @@ class PurchasesController < ApplicationController
       :customer => @credit_info.customer_id,
       :currency => 'jpy',
       )
-      @charge.captured == false
       redirect_to root_path
     else
       redirect_to action: :new

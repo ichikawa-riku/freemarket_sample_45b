@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-
-  before_action :set_user, only: [:edit, :update]
   before_action :authenticate_user!, except: :new
+  before_action :set_user, only: [:edit, :update]
+  before_action :set_cuttenr_user, only: [:published, :trading, :sold]
   def new
   end
 
@@ -26,6 +26,18 @@ class UsersController < ApplicationController
   def identification
   end
 
+  def published
+    @products = @user.products.where(status: 'published').or(@user.products.where(status: 'stopped'))
+  end
+
+  def trading
+    @products = @user.products.trading
+  end
+
+  def sold
+    @products = @user.products.sold
+  end
+
   private
   def user_params
     params.require(:user).permit(:nickname, :introduction)
@@ -33,6 +45,10 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_cuttenr_user
+    @user = User.find(current_user.id)
   end
 
 end

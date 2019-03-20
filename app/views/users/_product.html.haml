@@ -1,0 +1,16 @@
+= link_to product_path(product.id) do
+  .publised-products__product.publised-products-product
+    - if product.product_images.present?
+      = image_tag product.product_images.first.image, class: "publised-products-product__image"
+    - else
+      = image_tag "http://www.familys-talk.com/wp-content/themes/refinepro/img/noimage.png.pagespeed.ce.9JwMGwgNY4.png" ,class: "publised-products-product__image"
+    %h3.publised-products-product__title
+      = product.name
+    .publised-products-product__info.publised-products-product-info.clearfix
+      .publised-products-product-info__like
+        = fa_icon "heart-o", text:"0"
+      .publised-products-product-info__comment
+        = fa_icon "comment-o", text:"0"
+      - if product.stopped?
+        .publised-products-product-info__badge
+          公開停止中
