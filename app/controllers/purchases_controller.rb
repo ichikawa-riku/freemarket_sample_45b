@@ -37,7 +37,7 @@ class PurchasesController < ApplicationController
 
   def credit_info
     @credit_info = CreditCard.find_by(user_id: current_user.id)
-    if !@credit_info == nil
+    if @credit_info
       @customer = Payjp::Customer.retrieve(@credit_info.customer_id)
       @card = @customer.cards.retrieve(@credit_info.card_id)
     end
