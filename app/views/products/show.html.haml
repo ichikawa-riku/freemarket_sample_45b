@@ -89,12 +89,35 @@
       (税込)
     %span.product-page-detail__price--shipping-fee
       = @product.shipping_burden.sub(/\(.*/, "")
-  - if @product.published?
-    = link_to new_product_purchase_path(params[:id]), class: "product-page-detail__buy-button" do
-      購入画面に進む
+  - if @product.user == current_user
+    - if @product.published?
+      = link_to edit_product_path(params[:id]), class: "product-page-detail__edit-button" do
+        商品の編集
+      .product-page-detail__or
+        or
+      = link_to "", class: "product-page-detail__stop-button" do
+        出品を一旦停止にする
+      = link_to product_path(params[:id]), method: :delete, class: "product-page-detail__delete-button" do
+        商品を削除する
+    - elsif @product.stopped?
+      = link_to edit_product_path(params[:id]), class: "product-page-detail__edit-button" do
+        商品の編集
+      .product-page-detail__or
+        or
+      = link_to "", class: "product-page-detail__stop-button--active" do
+        出品を再開にする
+      = link_to product_path(params[:id]), method: :delete, class: "product-page-detail__delete-button" do
+        商品を削除する
+    - else
+      .product-page-detail__buy-button--soldout
+        売り切れました
   - else
-    .product-page-detail__buy-button--soldout
-      売り切れました
+    - if @product.published?
+      = link_to new_product_purchase_path(params[:id]), class: "product-page-detail__buy-button" do
+        購入画面に進む
+    - else
+      .product-page-detail__buy-button--soldout
+        売り切れました
   .product-page-detail__description
     = @product.description
   .product-page-detail__buttons
