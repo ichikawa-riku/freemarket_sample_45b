@@ -6,7 +6,7 @@
       %section.buy-content.buy-item
         .buy-content-inner
           %h3.buy-item-image
-            = image_tag "https://eiga.k-img.com/images/person/61029/300x.jpg", :width => "160", :height => "160"
+            = image_tag @product.product_images[0].image, :width => "160", :height => "160"
           %p.buy-item-name.bold 
             = @product.name
           .buy-form
