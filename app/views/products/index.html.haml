@@ -29,61 +29,61 @@
     %h2.pickup-head ピックアップカテゴリー
     %section.items-box-container.clearfix
       %h3.items-box-container__title
-        = link_to "レディース 新着アイテム", "/categories/1"
+        = link_to "#{@ladies.name} 新着アイテム", category_path(@ladies.id)
       .items-box-content.clearfix
         = render partial: "product", collection: @ladies_item
       .view-all
-        = link_to "すべての商品を見る", "/categories/1"
+        = link_to "すべての商品を見る", category_path(@ladies.id)
     %section.items-box-container.clearfix
       %h3.items-box-container__title
-        = link_to "メンズ 新着アイテム", "/categories/2"
+        = link_to "#{@mens.name} 新着アイテム", category_path(@mens.id)
       .items-box-content.clearfix
         = render partial: "product", collection: @mens_item
       .view-all
-        = link_to "すべての商品を見る", "/categories/2"
+        = link_to "すべての商品を見る", category_path(@mens.id)
     %section.items-box-container.clearfix
       %h3.items-box-container__title
-        = link_to "ベビー・キッズ 新着アイテム", "/categories/3"
+        = link_to "#{@baby.name} 新着アイテム", category_path(@mens.id)
       .items-box-content.clearfix
         = render partial: "product", collection: @baby_item
       .view-all
-        = link_to "すべての商品を見る", "/categories/3"
+        = link_to "すべての商品を見る", category_path(@mens.id)
     %section.items-box-container.clearfix
       %h3.items-box-container__title
-        = link_to "コスメ・香水・美容 新着アイテム", "/categories/4"
+        = link_to "#{@cosme.name} 新着アイテム", category_path(@mens.id)
       .items-box-content.clearfix
         = render partial: "product", collection: @cosme_item
       .view-all
-        = link_to "すべての商品を見る", "/categories/4"
+        = link_to "すべての商品を見る", category_path(@mens.id)
     %h2.pickup-head ピックアップブランド
     %section.items-box-container.clearfix
       %h3.items-box-container__title
-        = link_to "シャネル 新着アイテム", "/brands/1"
+        = link_to "#{@chanel.name} 新着アイテム", brand_path(@chanel.id)
       .items-box-content.clearfix
-        = render partial: "product", collection: @chanel
+        = render partial: "product", collection: @chanel_item
       .view-all
-        = link_to "すべての商品を見る", "/brands/1"
+        = link_to "すべての商品を見る", brand_path(@chanel.id)
     %section.items-box-container.clearfix
       %h3.items-box-container__title
-        = link_to "ルイ ヴィトン 新着アイテム", "/brands/2"
+        = link_to "#{@vuitton.name} 新着アイテム", brand_path(@vuitton.id)
       .items-box-content.clearfix
-        = render partial: "product", collection: @vuitton
+        = render partial: "product", collection: @vuitton_item
       .view-all
-        = link_to "すべての商品を見る", "/brands/2"
+        = link_to "すべての商品を見る", brand_path(@vuitton.id)
     %section.items-box-container.clearfix
       %h3.items-box-container__title
-        = link_to "シュプリーム 新着アイテム", "/brands/3"
+        = link_to "#{@supreme.name} 新着アイテム", brand_path(@supreme.id)
       .items-box-content.clearfix
-        = render partial: "product", collection: @supreme
+        = render partial: "product", collection: @supreme_item
       .view-all
-        = link_to "すべての商品を見る", "/brands/3"
+        = link_to "すべての商品を見る", brand_path(@supreme.id)
     %section.items-box-container.clearfix
       %h3.items-box-container__title
-        = link_to "ナイキ 新着アイテム", "/brands/4"
+        = link_to "#{@nike.name} 新着アイテム", brand_path(@nike.id)
       .items-box-content.clearfix
-        = render partial: "product", collection: @nike
+        = render partial: "product", collection: @nike_item
       .view-all
-        = link_to "すべての商品を見る", "/brands/4"
+        = link_to "すべての商品を見る", brand_path(@nike.id)
 
   = render 'shared/appbanner'
 
