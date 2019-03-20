@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show, :search]
-before_action :set_product, only: [:edit, :update]
+before_action :set_product, only: [:edit, :update, :destroy]
 #トップページ
   def index
     @ladies = Category.find(1)
@@ -80,6 +80,13 @@ before_action :set_product, only: [:edit, :update]
         render :edit
       end
     end
+  end
+
+  def destroy
+    if @product.user == current_user
+      @product.destroy
+    end
+    redirect_to root_path
   end
 
 private
