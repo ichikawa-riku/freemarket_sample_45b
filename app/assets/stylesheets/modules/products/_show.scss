@@ -79,8 +79,11 @@
   &__images{
     width: 300px;
     float: left;
+    background-color: #fafafa;
     &--main{
       width: 100%;
+      height: 300px;
+      object-fit: contain;
       display: block;
     }
     &--soldout-badge{
@@ -91,14 +94,14 @@
       border: 60px solid transparent;
       border-top-color: #ea352d;
       border-left-color: #ea352d;
-      z-index: 100;
+      z-index: 30;
     }
     &--soldout{
       text-align: center;
       position: absolute;
       top: 30px;
       width: 85px;
-      z-index: 200;
+      z-index: 50;
       color: #fff;
       font-size: 20px;
       font-weight: 600;
@@ -106,9 +109,12 @@
     }
     &--others{
       width: 100%;
+      height: 120px;
       position: relative;
       .other-image{
         width: 20%;
+        height: 60px;
+        object-fit: contain;
         display: block;
         float: left;
       }
@@ -157,6 +163,7 @@
 
 
 .user-raitings{
+  padding: 8px 0 0 0;
   &__raiting{
     float: left;
     margin-right: 10px;
@@ -173,6 +180,7 @@
 }
 
 .table-link{
+  line-height: 16px;
   display: block;
 }
 
@@ -282,7 +290,6 @@
     word-wrap: break-word;
     &--icon{
       position: absolute;
-      top: 20%;
       left: 0;
     }
     &--item-name{
@@ -297,7 +304,6 @@
     word-wrap: break-word;
     &--icon{
       position: absolute;
-      top: 20%;
       right: 0;
     }
     &--item-name{
@@ -319,6 +325,9 @@
   margin: 0 0 20px 20px;
   &__image{
     width: 220px;
+    height: 220px;
+    object-fit: contain;
+    background-color: #fff;
     display: block;
   }
   &__body{
