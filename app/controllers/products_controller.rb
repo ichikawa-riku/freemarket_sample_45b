@@ -20,6 +20,7 @@ before_action :set_product, only: [:edit, :update]
     @other_product_next = Product.order(id: "DESC").where("id > ?", params[:id]).reverse.first
     @user_other_products = Product.where("(user_id = ?) AND (status = ?)", @product.user_id, 0).where.not(id: params[:id]).limit(6)
     @other_products = Product.where("brand_id = ?", @product.brand_id).joins(:category).merge(Category.where("sub_category_id = ?" , @product.category.sub_category_id)).where.not(id: params[:id]).limit(6)
+    @other_products_no_brand = Product.joins(:category).merge(Category.where("sub_category_id = ?" , @product.category.sub_category_id)).where.not(id: params[:id]).limit(6)
   end
 
 #商品検索機能
