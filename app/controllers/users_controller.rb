@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: :new
-  before_action :set_user, only: [:edit, :update]
-  before_action :set_cuttenr_user, only: [:published, :trading, :sold]
+  before_action :set_user, only: [:edit, :update, :published, :trading, :sold]
   def new
   end
 
@@ -45,10 +44,6 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-  end
-
-  def set_cuttenr_user
-    @user = User.find(current_user.id)
   end
 
 end

@@ -32,11 +32,13 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :show, :edit, :update] do
-    collection do
-      get 'signout'
+    member do
       get 'published'
       get 'trading'
       get 'sold'
+    end
+    collection do
+      get 'signout'
     end
     resources :profiles, only: [:new]
     resources :credit_card, only: [:index, :new, :create, :destroy]
