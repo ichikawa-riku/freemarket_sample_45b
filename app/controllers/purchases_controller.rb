@@ -17,6 +17,8 @@ class PurchasesController < ApplicationController
       :customer => @credit_info.customer_id,
       :currency => 'jpy',
       )
+      Purchase.create(user_id: current_user.id, product_id: @product.id, total_payment: @product.price)
+      @product.update(status: 3)
       redirect_to root_path
     else
       redirect_to action: :new
