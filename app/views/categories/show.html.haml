@@ -1,5 +1,13 @@
 = render 'shared/header'
-- breadcrumb :show_categories
+- if @category.main_category_id.nil?
+  - breadcrumb :show_categories1
+
+- elsif @category.sub_category_id.nil?
+  - breadcrumb :show_categories2
+
+- else
+  - breadcrumb :show_categories3
+
 %nav.bread-crumbs
   = breadcrumbs separator: " > "
 .lists-container
