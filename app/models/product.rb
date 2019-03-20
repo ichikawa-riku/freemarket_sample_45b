@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   belongs_to :product_size
   belongs_to :brand, optional: true
   accepts_nested_attributes_for :brand, reject_if: :reject_brand_blank, allow_destroy: true
-  has_many :product_images
+  has_many :product_images, dependent: :delete_all
   accepts_nested_attributes_for :product_images, reject_if: :reject_image_no_change, allow_destroy: true, limit: 10
   belongs_to :category
 

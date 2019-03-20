@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show, :search]
-before_action :set_product, only: [:edit, :update]
+before_action :set_product, only: [:edit, :update, :destroy]
 #トップページ
   def index
     @ladies_item = Product.joins(:category).merge(Category.where(main_category_id: 1)).limit(4).order(id: "DESC")
@@ -72,6 +72,13 @@ before_action :set_product, only: [:edit, :update]
         render :edit
       end
     end
+  end
+
+  def destroy
+    if @product.user == current_user
+      @product.destroy
+    end
+    redirect_to root_path
   end
 
 private

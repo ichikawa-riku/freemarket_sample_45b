@@ -41,6 +41,50 @@
       background: #888;
     }
   }
+  &__edit-button{
+    text-align: center;
+    background: #ea352d;
+    color: #FFF;
+    height: 60px;
+    line-height: 60px;
+    margin: 16px 0 0;
+    font-size: 18px;
+    display: block;
+    &--soldout{
+      @extend .product-page-detail__buy-button;
+      background: #888;
+    }
+  }
+  &__or{
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+  }
+  &__stop-button{
+    text-align: center;
+    background: #888;
+    color: #FFF;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    display: block;
+    &--active{
+      @extend .product-page-detail__stop-button;
+    background: #ea352d;
+    }
+  }
+  &__delete-button{
+    text-align: center;
+    background: #888;
+    color: #FFF;
+    height: 60px;
+    line-height: 60px;
+    margin: 16px 0 0;
+    font-size: 18px;
+    display: block;
+  }
   &__description{
     padding: 32px 0 0;
     font-size: 18px;
