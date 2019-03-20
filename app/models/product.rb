@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   belongs_to :product_size
   belongs_to :brand, optional: true
   accepts_nested_attributes_for :brand, reject_if: :reject_brand_blank, allow_destroy: true
-  has_many :product_images
+  has_many :product_images, dependent: :delete_all
   accepts_nested_attributes_for :product_images, reject_if: :reject_image_no_change, allow_destroy: true, limit: 10
   belongs_to :category
 
@@ -17,7 +17,7 @@ class Product < ApplicationRecord
 
   enum estimated_date: {"1~2日で発送": 0, "2~3日で発送": 1, "4~7日で発送": 2}
 
-  enum status: {published: 0, stopped: 1, trading: 2, solded: 3}
+  enum status: {published: 0, stopped: 1, trading: 2, sold: 3}
 
   validates :name, length: { maximum: 40 }, presence: true
   validates :description, length: { maximum: 1000 }, presence: true
