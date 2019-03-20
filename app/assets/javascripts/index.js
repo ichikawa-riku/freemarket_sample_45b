@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function(){
   $(".top-appbanner").slick({
     autoplay: true,
     autoplaySpeed: 5000,
