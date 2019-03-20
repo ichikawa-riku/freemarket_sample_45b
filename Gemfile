@@ -60,19 +60,23 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mysql2'
 gem 'carrierwave'
-gem 'fog-aws'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
+gem 'pry-byebug'
 gem 'payjp'
 gem "jquery-slick-rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'mini_magick'
+gem 'gretel'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :production do
   gem 'unicorn'
+  gem 'fog-aws'
 end

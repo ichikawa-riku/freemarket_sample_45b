@@ -6,8 +6,15 @@ Rails.application.routes.draw do
   }
   root 'products#index'
 
-  resources :products, only: [:show, :new, :create] do
-    resources :purchases, only: [:new, :create]
+  resources :products, only: [:show, :new, :create, :edit, :update] do
+    collection do
+      get 'search'
+    end
+    resources :purchases, only: [:new, :create] do
+      collection do
+      get 'card'
+      end
+    end
   end
 
   resources :categories, only: [:index, :show] do
@@ -25,7 +32,7 @@ Rails.application.routes.draw do
       get 'signout'
     end
     resources :profiles, only: [:new]
-    resources :credit_card, only: [:index, :new, :create]
+    resources :credit_card, only: [:index, :new, :create, :destroy]
   end
 
 

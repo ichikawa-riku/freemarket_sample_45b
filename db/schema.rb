@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190313072416) do
+ActiveRecord::Schema.define(version: 20190314111947) do
 
   create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "zip_code",   null: false
@@ -81,20 +81,21 @@ ActiveRecord::Schema.define(version: 20190313072416) do
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                          null: false
-    t.text     "description",     limit: 65535, null: false
-    t.integer  "price",                         null: false
-    t.integer  "area_id",                       null: false
-    t.integer  "condition",                     null: false
-    t.integer  "product_size_id",               null: false
-    t.integer  "shipping_method",               null: false
-    t.integer  "shipping_burden",               null: false
-    t.integer  "estimated_date",                null: false
-    t.integer  "user_id",                       null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "name",                                      null: false
+    t.text     "description",     limit: 65535,             null: false
+    t.integer  "price",                                     null: false
+    t.integer  "area_id",                                   null: false
+    t.integer  "condition",                                 null: false
+    t.integer  "product_size_id",                           null: false
+    t.integer  "shipping_method",                           null: false
+    t.integer  "shipping_burden",                           null: false
+    t.integer  "estimated_date",                            null: false
+    t.integer  "user_id",                                   null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.integer  "category_id"
     t.integer  "brand_id"
+    t.integer  "status",                        default: 0, null: false
     t.index ["area_id"], name: "index_products_on_area_id", using: :btree
     t.index ["brand_id"], name: "index_products_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree

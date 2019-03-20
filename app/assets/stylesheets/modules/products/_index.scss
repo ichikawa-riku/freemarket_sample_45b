@@ -147,11 +147,13 @@
   padding-top: 10px;
   .items-box {
     margin: 0 0 0 20px;
-    width: 220px;
+    width: 213px;
+    height: 330px;
     display: block;
     float: left;
     &__image{
       width: 220px;
+      height: 213px;
       display: block;
     }
     &__body{

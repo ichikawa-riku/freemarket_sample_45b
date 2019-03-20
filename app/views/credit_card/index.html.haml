@@ -1,38 +1,40 @@
 = render "shared/header"
-
+- breadcrumb :index_credit_card
 %nav.bread-crumbs
-
+  = breadcrumbs separator: " > "
+= render 'layouts/notifications'
 .mypage
   %main.mypage__body.clearfix
     .mypage__body__main
       %section.payment-method
         %h2.payment-method__title 支払い方法
         .payment-method__content
-          %section
-            .payment-method__content__head
-              %h3.payment-method__content__head__title クレジットカード一覧
-            / %ul.payment-method__content__list
-            /   %li
-            /     %form.setting-card{action: "#", method: "POST"}
-            /       %figure
-            /         = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2845599746", alt: "visa", height: "15", width: "49"
-            /       %input{name: "#", type: "hidden", value: "#"}/
-            /       %input{name: "#", type: "hidden", value: "#"}/
-            /       .setting-card__payment-num ************4545
-            /       .setting-card__payment-num 01 / 26
-            /       %input{name: "#", type: "hidden", value: "#"}/
-            /       %button.setting-card__payment-remove{:type => "submit"}
-            /         削除する
+          - if @card.present?
+            %section
+              .payment-method__content__head
+                %h3.payment-method__content__head__title
+                  クレジットカード一覧
+                  %ul.payment-method__content__list
+                    %li
+                      .setting-card
+                        %figure
+                          = render 'shared/card-images'
+                        .setting-card__payment-num
+                          = "************" + @card.last4
+                        .setting-card__payment-num
+                          = "0#{@card.exp_month} / #{@card.exp_year.to_s.slice(0..1).to_i}"
+                        = link_to "削除する", "/users/#{params[:user_id]}/credit_card/#{@credit_info.id}", method: :delete, class: "setting-card__payment-remove"
 
-          %section.payment-method__content__add
-            .payment-method__content__add__box
-              = link_to new_user_credit_card_path(current_user.id) , class: "payment-method__content__add__box__btn-red" do
-                = fa_icon "credit-card"
-                クレジットカードを追加する
-          .payment-method__content__explanation
-            = link_to "#" do
-              %span 支払い方法について
-              = fa_icon "angle-right"
+          - else
+            %section.payment-method__content__add
+              .payment-method__content__add__box
+                = link_to "/users/#{params[:user_id]}/credit_card/new", class: "payment-method__content__add__box__btn-red" do
+                  = fa_icon "credit-card"
+                  クレジットカードを追加する
+            .payment-method__content__explanation
+              = link_to "https://www.mercari.com/jp/help_center/category/6/" do
+                %span 支払い方法について
+                = fa_icon "angle-right"
 
     = render "shared/mypage-sidebar"
 

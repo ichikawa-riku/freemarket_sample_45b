@@ -1,14 +1,27 @@
-= render "shared/header"
-- breadcrumb :new_credit_card
-.mypage
-  %nav.bread-crumbs
-    = breadcrumbs separator: " > "
-  %main.mypage__body.clearfix
-    .mypage__body__main
-      %section.creditcard-form
-        %h2.creditcard-form__title
-          クレジットカード情報入力
-        = form_tag( "/users/#{current_user.id}/credit_card", method: "POST", class: "creditcard-form__body", id:"add-card" ) do 
+.single-container
+  = render 'shared/logo-header'
+  %main.single-main
+    %section.l-single-container.buy-item-container
+      %h2.creditcard-form__title
+        支払い方法
+      = form_tag( "/users/#{current_user.id}/credit_card", method: "POST", class: "creditcard-form__body", id:"add-card" ) do 
+        - if @card 
+          %section
+            .single-content
+              %h3.purchase-method-header__title 
+                クレジットカード一覧
+            %ul.payment-method__content__list
+              %li.transact-card
+                .card-info.single-content
+                  .setting-card
+                    %figure
+                      = render 'shared/card-images'
+                    .transact-card__payment-num 
+                      = "************" + @card.last4
+                    .transact-card__payment-num
+                      = "#{@card.exp_month} / #{@card.exp_year.to_s.slice(0..1).to_i}"
+          
+        - else
           .creditcard-form__container
             .form-group-card-num
               %label.form-group-card-num__label カード番号
@@ -58,11 +71,16 @@
                   カードの裏面をご参照ください。
                   %br/
                   %img.form-group-card-code__is-show--image{ src: "//www-mercari-jp.akamaized.net/assets/img/signup/seq-card.png?2845599746" }
-              = button_tag "追加する", {class:"form-group-card-submit"}
-    = render "shared/mypage-sidebar"
+        %section.payment-method-card-submit
+          .single-content
+            = link_to "次に進む",  new_product_purchase_path(params[:product_id]), class:"btn-red"
 
-= render 'shared/appbanner'
+= render 'shared/logo-footer'
 
-= render 'shared/footer'
-= render 'shared/sellbtn'
+
+
+
+
+
+
 

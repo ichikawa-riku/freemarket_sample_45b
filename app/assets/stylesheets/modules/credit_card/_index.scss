@@ -1,3 +1,10 @@
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+}
 .mypage__body__main {
   .payment-method {
     background-color: #fff;
@@ -18,38 +25,38 @@
           font-weight: bold;
         }
       }
-      // &__list {
-      //   li {
-      //     padding: 24px 0;
-      //     border-bottom: 1px solid #eee;
-      //     .setting-card {
-      //       position: relative;
-      //       max-width: 320px;
-      //       margin: 0 auto;
-      //       figure {
-      //         margin: 0;
-      //         img {
-      //           vertical-align: middle;
-      //         }
-      //       }
-      //       &__payment-num {
-      //         margin: 8px 0 0;
-      //         font-size: 12px;
-      //       }
-      //       &__payment-remove {
-      //         position: absolute;
-      //         top: 0;
-      //         right: 0;
-      //         padding: 4px 6px;
-      //         background: #fff;
-      //         border-radius: 3px;
-      //         border: 1px solid #ea352d;
-      //         color: #ea352d;
-      //         font-size: 14px;
-      //       }
-      //     }
-      //   }
-      // }
+      &__list {
+        li {
+          padding: 24px 0;
+          border-bottom: 1px solid #eee;
+          .setting-card {
+            position: relative;
+            max-width: 320px;
+            margin: 0 auto;
+            figure {
+              margin: 0;
+              img {
+                vertical-align: middle;
+              }
+            }
+            &__payment-num {
+              margin: 8px 0 0;
+              font-size: 12px;
+            }
+            &__payment-remove {
+              position: absolute;
+              top: 0;
+              right: 0;
+              padding: 4px 6px;
+              background: #fff;
+              border-radius: 3px;
+              border: 1px solid #ea352d;
+              color: #ea352d;
+              font-size: 14px;
+            }
+          }
+        }
+      }
       &__add {
         padding: 24px 0;
         border-bottom: 1px solid #eee;
