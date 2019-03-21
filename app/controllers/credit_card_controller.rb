@@ -1,7 +1,7 @@
 class CreditCardController < ApplicationController
   before_action :authenticate_user!
 
-  Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+  Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
 
   # カード情報表示
   def index

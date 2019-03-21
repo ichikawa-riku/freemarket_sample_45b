@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show, :search]
-before_action :set_product, only: [:edit, :update, :destroy]
+before_action :set_product, only: [:edit, :update, :destroy, :stop, :start]
 #トップページ
   def index
     @ladies = Category.find(1)
@@ -33,7 +33,12 @@ before_action :set_product, only: [:edit, :update, :destroy]
 
 #商品検索機能
   def search
-    @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
+    if params[:keyword] != ""
+      @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
+    end
+    @search = Product.ransack(params[:q])
+    @products = @search.result
+    @search.build_sort if @search.sorts.empty?
   end
 
 #商品出品ページ
@@ -87,6 +92,18 @@ before_action :set_product, only: [:edit, :update, :destroy]
       @product.destroy
     end
     redirect_to root_path
+  end
+
+  def stop
+    @product.status = 'stopped'
+    @product.save
+    render :show
+  end
+
+  def start
+    @product.status = 'published'
+    @product.save
+    render :show
   end
 
 private

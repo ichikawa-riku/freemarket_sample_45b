@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   root 'products#index'
 
   resources :products, only: [:show, :new, :create, :edit, :update, :destroy] do
+    member do
+      post 'stop'
+      post 'start'
+    end
     collection do
       get 'search'
     end
@@ -28,11 +32,15 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :show, :edit, :update] do
-    collection do
-      get 'signout'
+    member do
       get 'published'
       get 'trading'
       get 'sold'
+      get 'buy'
+      get 'bought'
+    end
+    collection do
+      get 'signout'
     end
     resources :profiles, only: [:new]
     resources :credit_card, only: [:index, :new, :create, :destroy]

@@ -1,5 +1,5 @@
 = render 'shared/header'
-- breadcrumb :signout_users
+- breadcrumb :published_user
 .mypage
   %nav.bread-crumbs
     = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
@@ -10,9 +10,9 @@
           出品した商品
         %main.users-products-box__main
           .product-status-columns.clearfix
-            = link_to "出品中", published_users_path, class: "product-status-columns__column product-status-columns__column--active"
-            = link_to "取引中", trading_users_path, class: "product-status-columns__column"
-            = link_to "売却済み", sold_users_path, class: "product-status-columns__column"
+            = link_to "出品中", published_user_path(current_user.id), class: "product-status-columns__column product-status-columns__column--active"
+            = link_to "取引中", trading_user_path(current_user.id), class: "product-status-columns__column"
+            = link_to "売却済み", sold_user_path(current_user.id), class: "product-status-columns__column"
           .publised-products
             = render partial: 'product', collection: @products
     = render 'shared/mypage-sidebar'
