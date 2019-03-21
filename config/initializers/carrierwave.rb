@@ -14,6 +14,7 @@ CarrierWave.configure do |config|
     }
     config.fog_directory  = 'freemarket-sample-45b'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket-sample-45b'
+    config.cache_dir = 'tmp/image-cache'
   else
     config.storage :file
     config.enable_processing = false if Rails.env.test?
