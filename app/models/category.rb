@@ -7,4 +7,5 @@ class Category < ApplicationRecord
   belongs_to :main_category, class_name: "Category", optional: true
   belongs_to :sub_category, class_name: "Category", optional: true
   has_many :products
+  has_ancestry
 end
