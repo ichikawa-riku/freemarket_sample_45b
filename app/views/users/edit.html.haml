@@ -11,9 +11,9 @@
         .mypage__body__main__user-name
           %figure
             = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", alt: "ユーザーアイコン", height: "60", width: "60"
-          = f.text_field :nickname, placeholder: "例) 『遊戯王』真崎杏子", class: "mypage__body__main__user-name__input"
+          = f.text_field :nickname, placeholder: "例)AYA☆セール中", class: "mypage__body__main__user-name__input"
         .mypage__body__main__profile
-          = f.text_area :introduction, placeholder: "例）「次回、『城之内 死す』。デュエルスタンバイ！」", class: "mypage__body__main__profile__input"
+          = f.text_area :introduction, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "mypage__body__main__profile__input"
           %input{name: "after_save_callback", type: "hidden", value: "#"}/
 
           = f.submit "変更する", class: "mypage__body__main__profile__btn-red"
